@@ -26,6 +26,7 @@
 
   &__button {
     $trans-dur: 0.2s;
+    $trans-back-dur: 0.4s;
 
     text-decoration-line: none;
     color: $global-text;
@@ -45,7 +46,8 @@
     overflow: hidden;
 
     transition-duration: 0.5s;
-    transition-property: color, transform, box-shadow;
+    transition-property: color, box-shadow;
+    transition-delay: $trans-back-dur, 0s;
 
     & * {
       z-index: 1;
@@ -64,6 +66,7 @@
       background-color: $link-color;
 
       transition-duration: $trans-dur;
+      transition-delay: $trans-back-dur;
     }
 
     &:hover {
@@ -73,6 +76,7 @@
         0 0 80px $link-color, 0 0 160px $link-color;
 
       &::before {
+        transition-delay: 0s;
         height: 100%;
       }
     }
