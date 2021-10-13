@@ -1,4 +1,5 @@
 @import '../../styles/colors';
+@import '../../styles/shared';
 
 .home {
   min-height: 100vh;
@@ -25,10 +26,10 @@
   }
 
   &__button {
+    @include link-shared;
     $trans-dur: 0.2s;
     $trans-back-dur: 0.4s;
 
-    text-decoration-line: none;
     color: $global-text;
     font-weight: 900;
 
@@ -46,8 +47,10 @@
     overflow: hidden;
 
     transition-duration: 0.5s;
-    transition-property: color, box-shadow;
+    transition-property: color, box-shadow, transform;
     transition-delay: $trans-back-dur, 0s;
+
+    @extend %default-link-effects;
 
     & * {
       z-index: 1;
