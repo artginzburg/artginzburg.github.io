@@ -1,0 +1,12 @@
+@import '../styles/colors';
+
+.page {
+  margin: 0;
+  background: $global-background;
+  // font-family: Menlo, Monaco, Consolas, monospace;
+  font-family: Arial, Helvetica, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

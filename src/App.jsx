@@ -1,5 +1,5 @@
 import avatar from './images/avatar.jpg';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
