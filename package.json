@@ -2,6 +2,13 @@
   "name": "artginzburg.github.io",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Art Ginzburg",
+    "email": "art.ginzburg@ya.ru",
+    "url": "https://github.com/artginzburg"
+  },
+  "repository": "https://github.com/artginzburg/artginzburg.github.io",
+  "homepage": "https://artginzburg.github.io",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build"
