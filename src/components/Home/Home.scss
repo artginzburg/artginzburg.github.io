@@ -74,13 +74,18 @@
 
     &:hover {
       transition-delay: $trans-dur - 0.02s;
-      color: #000;
       box-shadow: 0 0 10px $link-color, 0 0 20px $link-color, 0 0 40px $link-color,
         0 0 80px $link-color, 0 0 160px $link-color;
 
+      @media (hover: hover) {
+        color: #000;
+      }
+
       &::before {
         transition-delay: 0s;
-        height: 100%;
+        @media (hover: hover) {
+          height: 100%;
+        }
       }
     }
 
