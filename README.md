@@ -1,4 +1,4 @@
-# artginzburg.github.io
+# [artginzburg.github.io](https://artginzburg.github.io)
 
 > Finally making a website for myself
 
