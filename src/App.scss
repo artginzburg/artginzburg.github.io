@@ -1,10 +1,8 @@
 @import './styles/colors';
 
 .App-logo {
-  height: 30vmin;
-  pointer-events: none;
+  height: calc(150px + 5vmin);
   border-radius: 100%;
-
   filter: contrast(1.3);
 }
 
