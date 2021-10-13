@@ -24,7 +24,7 @@ export default function Home() {
 
       <img src={avatar} className="home__logo" alt="avatar" />
       <p>Я Арт, пишу код</p>
-      <nav>
+      <nav className="home__buttons">
         <a
           className="home__button"
           href="https://github.com/artginzburg"
@@ -34,7 +34,7 @@ export default function Home() {
           <span className="home__button-icon">
             <FaGithub />
           </span>
-          Код
+          <p className="home__button-text">Код</p>
         </a>
         <a
           className="home__button"
@@ -45,7 +45,7 @@ export default function Home() {
           <span className="home__button-icon">
             <FaTelegramPlane />
           </span>
-          Телеграм
+          <p className="home__button-text">Телеграм</p>
         </a>
       </nav>
     </section>
