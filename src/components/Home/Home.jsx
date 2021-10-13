@@ -1,3 +1,5 @@
+import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
+
 import avatar from '../../images/avatar.jpg';
 
 import './Home.scss';
@@ -22,14 +24,30 @@ export default function Home() {
 
       <img src={avatar} className="home__logo" alt="avatar" />
       <p>Я Арт, пишу код</p>
-      <a
-        className="home__link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
+      <nav>
+        <a
+          className="home__button"
+          href="https://github.com/artginzburg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="home__button-icon">
+            <FaGithub />
+          </span>
+          Код
+        </a>
+        <a
+          className="home__button"
+          href="https://t.me/ginzart"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="home__button-icon">
+            <FaTelegramPlane />
+          </span>
+          Телеграм
+        </a>
+      </nav>
     </section>
   );
 }
