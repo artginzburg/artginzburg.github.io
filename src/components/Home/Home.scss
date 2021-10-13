@@ -1,0 +1,23 @@
+@import '../../styles/colors';
+
+.home {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: calc(10px + 2vmin);
+  color: $global-text;
+
+  &__logo {
+    height: calc(150px + 5vmin);
+    border-radius: 100%;
+    filter: contrast(1.3);
+  }
+
+  &__link {
+    color: $link-color;
+  }
+}
