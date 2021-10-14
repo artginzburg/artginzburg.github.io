@@ -110,6 +110,35 @@
 .hiddenWords {
   $inactive-color: #0a0a0a; // #222
 
+  @mixin glow($index: 0, $shadow-color: #ff3177) {
+    @keyframes glow-#{$index} {
+      0%,
+      5%,
+      10.1%,
+      15.1%,
+      25.1%,
+      45%,
+      70.1%,
+      90%,
+      100% {
+        color: $inactive-color;
+        text-shadow: 0 0 0 $inactive-color;
+      }
+      5.1%,
+      10%,
+      15.2%,
+      25%,
+      45.1%,
+      70%,
+      90.1%,
+      95% {
+        color: $global-text;
+        text-shadow: 0 0 10px $shadow-color, 0 0 20px $shadow-color, 0 0 40px $shadow-color,
+          0 0 80px $shadow-color, 0 0 160px $shadow-color;
+      }
+    }
+  }
+
   z-index: -1;
   position: absolute;
   top: auto;
@@ -130,34 +159,18 @@
 
     &-active {
       position: relative;
-      color: $global-text;
-      animation: glow 5s ease-out infinite alternate;
+      color: $inactive-color;
 
-      @keyframes glow {
-        0%,
-        5%,
-        10.1%,
-        15.1%,
-        25.1%,
-        45%,
-        70.1%,
-        90%,
-        100% {
-          color: $inactive-color;
-          text-shadow: 0 0 0 $inactive-color;
-        }
-        5.1%,
-        10%,
-        15.2%,
-        25%,
-        45.1%,
-        70%,
-        90.1%,
-        95% {
-          color: $global-text;
-          text-shadow: 0 0 10px #ff3177, 0 0 20px #ff3177, 0 0 40px #ff3177, 0 0 80px #ff3177,
-            0 0 160px #ff3177;
-        }
+      &#char-0 {
+        @include glow();
+        animation: glow-0 5s linear infinite alternate;
+        animation-delay: 2s;
+      }
+
+      &#char-1 {
+        @include glow(1, teal);
+        animation: glow-1 4s linear infinite alternate;
+        animation-delay: -0.5s;
       }
     }
   }
