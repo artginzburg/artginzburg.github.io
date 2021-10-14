@@ -55,7 +55,7 @@ function makeHiddenWords(words) {
             </span>
           );
         } else {
-          for (let index = 0; index < wordCharacters.length; index++) {
+          for (let index = currentHorizontalCell; index < wordCharacters.length; index++) {
             const character = wordCharacters[index];
             currentGridLine[currentHorizontalCell] = (
               <span key={currentHorizontalCell++} className="hiddenWords__char-active">
