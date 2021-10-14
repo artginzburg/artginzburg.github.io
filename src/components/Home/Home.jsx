@@ -31,7 +31,7 @@ function makeHiddenWords(words) {
   const quantity = longestWordLength > height ? longestWordLength : height; // 13
   var randomGrid = makeIdMultiple(length, quantity).map((row) => row.split('')); // Ideally, length should be longestWord + 21 and quantity should be longestWord + 5
 
-  words.forEach((word) => {
+  words.forEach((word, wordIndex) => {
     const wordCharacters = word.split('');
 
     const shouldMoveRight = Math.random() > 0.5;
@@ -59,11 +59,11 @@ function makeHiddenWords(words) {
 
       if (char && currentVerticalCell === i) {
         if (shouldMoveDown) {
-          currentGridLine[currentHorizontalCell] = `active ${char}`;
+          currentGridLine[currentHorizontalCell] = `${wordIndex} ${char}`;
         } else {
           for (let index = 0; index < wordCharacters.length; index++) {
             const character = wordCharacters[index];
-            currentGridLine[currentHorizontalCell++] = `active ${character}`;
+            currentGridLine[currentHorizontalCell++] = `${wordIndex} ${character}`;
           }
         }
 
@@ -86,21 +86,23 @@ function makeHiddenWords(words) {
 }
 
 function insertHiddenWords() {
-  makeHiddenWords(['develop']);
-  return null;
-  // makeHiddenWords(['develop']).map((row, rowIndex) => (
-  //   <p className="hiddenWords__char" key={rowIndex}>
-  //     {row.map((column, columnIndex) =>
-  //       column.length === 1 ? (
-  //         column
-  //       ) : (
-  //         <span className="hiddenWords__char-active" key={columnIndex}>
-  //           {column.slice(-1)}
-  //         </span>
-  //       ),
-  //     )}
-  //   </p>
-  // ));
+  return makeHiddenWords(['develop', 'software']).map((row, rowIndex) => (
+    <p className="hiddenWords__char" key={rowIndex}>
+      {row.map((column, columnIndex) => {
+        if (column.length === 1) {
+          return column;
+        }
+
+        const [wordIndex, char] = column.split(' ');
+
+        return (
+          <span id={`char-${wordIndex}`} className="hiddenWords__char-active" key={columnIndex}>
+            {char}
+          </span>
+        );
+      })}
+    </p>
+  ));
 }
 
 export default function Home() {
