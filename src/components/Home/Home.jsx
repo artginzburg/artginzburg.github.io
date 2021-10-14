@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
 
 import avatar from '../../images/avatar.jpg';
@@ -31,6 +30,7 @@ function makeHiddenWords(words) {
   const length = longestWordLength > width ? longestWordLength : width; // 29
   const quantity = longestWordLength > height ? longestWordLength : height; // 13
   var randomGrid = makeIdMultiple(length, quantity); // Ideally, length should be longestWord + 21 and quantity should be longestWord + 5
+
   words.forEach((word) => {
     const wordCharacters = word.split('');
 
@@ -55,37 +55,19 @@ function makeHiddenWords(words) {
     for (let i = 0; i < quantity; i++) {
       const char = wordCharacters[i - initialVerticalCell];
 
-      if (char && currentVerticalCell === i) {
-        let currentGridLine = randomGrid[currentVerticalCell].split('');
+      let currentGridLine = randomGrid[i].split('');
 
+      if (char && currentVerticalCell === i) {
         if (shouldMoveDown) {
-          currentGridLine[currentHorizontalCell] = (
-            <span key={currentHorizontalCell} className="hiddenWords__char-active">
-              {char}
-            </span>
-          );
+          currentGridLine[currentHorizontalCell] = `active ${char}`;
         } else {
           for (let index = 0; index < wordCharacters.length; index++) {
             const character = wordCharacters[index];
-            currentGridLine[currentHorizontalCell] = (
-              <span key={currentHorizontalCell++} className="hiddenWords__char-active">
-                {character}
-              </span>
-            );
+            currentGridLine[currentHorizontalCell++] = `active ${character}`;
           }
         }
 
-        randomGridReplaced.push(
-          <p key={i} className="hiddenWords__char">
-            {currentGridLine.map((gridElement, index) =>
-              gridElement.length === 1 ? (
-                <Fragment key={index}>{gridElement}</Fragment>
-              ) : (
-                gridElement
-              ),
-            )}
-          </p>,
-        );
+        randomGridReplaced.push(currentGridLine);
 
         if (shouldMoveRight) {
           currentHorizontalCell++;
@@ -94,17 +76,29 @@ function makeHiddenWords(words) {
           currentVerticalCell++;
         }
       } else {
-        randomGridReplaced.push(
-          <p key={i} className="hiddenWords__char">
-            {randomGrid[i]}
-          </p>,
-        );
+        randomGridReplaced.push(currentGridLine);
       }
     }
 
     randomGrid = randomGridReplaced;
   });
   return randomGrid;
+}
+
+function insertHiddenWords() {
+  return makeHiddenWords(['develop']).map((row, rowIndex) => (
+    <p className="hiddenWords__char" key={rowIndex}>
+      {row.map((column, columnIndex) =>
+        column.length === 1 ? (
+          column
+        ) : (
+          <span className="hiddenWords__char-active" key={columnIndex}>
+            {column.slice(-1)}
+          </span>
+        ),
+      )}
+    </p>
+  ));
 }
 
 export default function Home() {
@@ -124,7 +118,7 @@ export default function Home() {
           </filter>
         </svg>
         <div className="backgroundNoise" /> */}
-      <div className="hiddenWords">{makeHiddenWords(['develop'])}</div>
+      <div className="hiddenWords">{insertHiddenWords()}</div>
 
       <img src={avatar} className="home__logo" alt="avatar" />
       <p>Я Арт, пишу код</p>
