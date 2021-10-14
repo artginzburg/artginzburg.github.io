@@ -31,7 +31,7 @@ function makeHiddenWords(words) {
   const quantity = longestWordLength > height ? longestWordLength : height; // 13
   var randomGrid = makeIdMultiple(length, quantity).map((row) => row.split('')); // Ideally, length should be longestWord + 21 and quantity should be longestWord + 5
 
-  words.forEach((word, wordIndex) => {
+  words.reverse().forEach((word, wordIndex) => {
     const wordCharacters = word.split('');
 
     const shouldMoveRight = Math.random() > 0.5;
@@ -86,7 +86,7 @@ function makeHiddenWords(words) {
 }
 
 function insertHiddenWords() {
-  return makeHiddenWords(['develop', 'software']).map((row, rowIndex) => (
+  return makeHiddenWords(['develop', 'software', 'artginzburg']).map((row, rowIndex) => (
     <p className="hiddenWords__char" key={rowIndex}>
       {row.map((column, columnIndex) => {
         if (column.length === 1) {
