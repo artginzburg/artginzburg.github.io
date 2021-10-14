@@ -31,11 +31,16 @@ function makeHiddenWords(words) {
   words.forEach((word) => {
     const wordCharacters = word.split('');
 
-    const randomStartingWidth = Math.floor(Math.random() * (length - longestWordLength + 1));
-    const randomStartingHeight = Math.floor(Math.random() * (quantity - longestWordLength + 1));
-
     const shouldMoveRight = Math.random() > 0.5;
-    const shouldMoveDown = Math.random() > 0.5;
+    const shouldMoveDown = !shouldMoveRight || Math.random() > 0.5;
+
+    const randomStartingWidth = shouldMoveRight
+      ? Math.floor(Math.random() * (length - longestWordLength + 1))
+      : Math.floor(Math.random() * (length - 1));
+
+    const randomStartingHeight = shouldMoveDown
+      ? Math.floor(Math.random() * (quantity - longestWordLength + 1))
+      : Math.floor(Math.random() * (quantity - 1));
 
     const randomGridReplaced = [];
 
