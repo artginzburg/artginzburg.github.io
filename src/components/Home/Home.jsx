@@ -39,7 +39,7 @@ function makeHiddenWords(words) {
 
     const randomGridReplaced = [];
 
-    let currentHorizontalCell = 0;
+    let currentHorizontalCell = 3;
     let currentVerticalCell = 0;
 
     for (let i = 0; i < quantity; i++) {
@@ -55,7 +55,7 @@ function makeHiddenWords(words) {
             </span>
           );
         } else {
-          for (let index = currentHorizontalCell; index < wordCharacters.length; index++) {
+          for (let index = 0; index < wordCharacters.length; index++) {
             const character = wordCharacters[index];
             currentGridLine[currentHorizontalCell] = (
               <span key={currentHorizontalCell++} className="hiddenWords__char-active">
