@@ -34,20 +34,36 @@ function makeHiddenWords(words) {
     // const randomStartingLength = Math.floor(Math.random() * (length - longestWordLength));
     // const randomStartingQuantity = Math.floor(Math.random() * (quantity - longestWordLength));
     // const displayMethod = Math.random > 0.8 ? 'diagonal' : Math.random() > 0.5 ? 'horizontal' : 'vertical';
-    // const shouldMoveVertically = true;
+    const shouldMoveRight = Math.random() > 0.5;
+    const shouldMoveDown = Math.random() > 0.5;
 
     const randomGridReplaced = [];
+
+    let currentHorizontalCell = 0;
+    let currentVerticalCell = 0;
 
     for (let i = 0; i < quantity; i++) {
       const char = wordCharacters[i];
 
-      if (char) {
+      if (char && currentVerticalCell === i) {
         let currentGridLine = randomGrid[i].split('');
-        currentGridLine[i] = (
-          <span key={i} className="hiddenWords__char-active">
-            {char}
-          </span>
-        );
+
+        if (shouldMoveDown) {
+          currentGridLine[currentHorizontalCell] = (
+            <span key={currentHorizontalCell} className="hiddenWords__char-active">
+              {char}
+            </span>
+          );
+        } else {
+          wordCharacters.forEach((character) => {
+            currentGridLine[currentHorizontalCell] = (
+              <span key={currentHorizontalCell++} className="hiddenWords__char-active">
+                {character}
+              </span>
+            );
+          });
+        }
+
         randomGridReplaced.push(
           <p key={i} className="hiddenWords__char">
             {currentGridLine.map((gridElement, index) =>
@@ -59,6 +75,13 @@ function makeHiddenWords(words) {
             )}
           </p>,
         );
+
+        if (shouldMoveRight) {
+          currentHorizontalCell++;
+        }
+        if (shouldMoveDown) {
+          currentVerticalCell++;
+        }
       } else {
         randomGridReplaced.push(
           <p key={i} className="hiddenWords__char">
