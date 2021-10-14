@@ -24,9 +24,12 @@ function makeIdMultiple(length, quantity) {
 }
 
 function makeHiddenWords(words) {
+  const width = 29;
+  const height = 13;
+
   const longestWordLength = words.sort((a, b) => b.length - a.length)[0].length;
-  const length = longestWordLength + 21; // 29
-  const quantity = longestWordLength + 5; // 13
+  const length = longestWordLength > width ? longestWordLength : width; // 29
+  const quantity = longestWordLength > height ? longestWordLength : height; // 13
   var randomGrid = makeIdMultiple(length, quantity); // Ideally, length should be longestWord + 21 and quantity should be longestWord + 5
   words.forEach((word) => {
     const wordCharacters = word.split('');

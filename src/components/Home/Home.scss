@@ -124,7 +124,7 @@
     text-transform: uppercase;
     font-weight: 900;
     color: $inactive-color;
-    font-size: 4em; // 5em
+    font-size: calc(3em + 3vmin); // 5em
     line-height: 0.9em;
     letter-spacing: 4px;
 
