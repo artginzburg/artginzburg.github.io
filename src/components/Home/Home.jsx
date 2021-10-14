@@ -29,7 +29,7 @@ function makeHiddenWords(words) {
   const longestWordLength = words.sort((a, b) => b.length - a.length)[0].length;
   const length = longestWordLength > width ? longestWordLength : width; // 29
   const quantity = longestWordLength > height ? longestWordLength : height; // 13
-  var randomGrid = makeIdMultiple(length, quantity); // Ideally, length should be longestWord + 21 and quantity should be longestWord + 5
+  var randomGrid = makeIdMultiple(length, quantity).map((row) => row.split('')); // Ideally, length should be longestWord + 21 and quantity should be longestWord + 5
 
   words.forEach((word) => {
     const wordCharacters = word.split('');
@@ -55,7 +55,7 @@ function makeHiddenWords(words) {
     for (let i = 0; i < quantity; i++) {
       const char = wordCharacters[i - initialVerticalCell];
 
-      let currentGridLine = randomGrid[i].split('');
+      let currentGridLine = randomGrid[i];
 
       if (char && currentVerticalCell === i) {
         if (shouldMoveDown) {
@@ -86,19 +86,21 @@ function makeHiddenWords(words) {
 }
 
 function insertHiddenWords() {
-  return makeHiddenWords(['develop']).map((row, rowIndex) => (
-    <p className="hiddenWords__char" key={rowIndex}>
-      {row.map((column, columnIndex) =>
-        column.length === 1 ? (
-          column
-        ) : (
-          <span className="hiddenWords__char-active" key={columnIndex}>
-            {column.slice(-1)}
-          </span>
-        ),
-      )}
-    </p>
-  ));
+  makeHiddenWords(['develop']);
+  return null;
+  // makeHiddenWords(['develop']).map((row, rowIndex) => (
+  //   <p className="hiddenWords__char" key={rowIndex}>
+  //     {row.map((column, columnIndex) =>
+  //       column.length === 1 ? (
+  //         column
+  //       ) : (
+  //         <span className="hiddenWords__char-active" key={columnIndex}>
+  //           {column.slice(-1)}
+  //         </span>
+  //       ),
+  //     )}
+  //   </p>
+  // ));
 }
 
 export default function Home() {
