@@ -31,15 +31,15 @@ function makeHiddenWords(words) {
   words.forEach((word) => {
     const wordCharacters = word.split('');
 
-    // const randomStartingLength = Math.floor(Math.random() * (length - longestWordLength));
-    // const randomStartingQuantity = Math.floor(Math.random() * (quantity - longestWordLength));
+    const randomStartingWidth = Math.floor(Math.random() * (length - longestWordLength));
+    // const randomStartingHeight = Math.floor(Math.random() * (quantity - longestWordLength));
     // const displayMethod = Math.random > 0.8 ? 'diagonal' : Math.random() > 0.5 ? 'horizontal' : 'vertical';
     const shouldMoveRight = Math.random() > 0.5;
     const shouldMoveDown = Math.random() > 0.5;
 
     const randomGridReplaced = [];
 
-    let currentHorizontalCell = 3;
+    let currentHorizontalCell = randomStartingWidth;
     let currentVerticalCell = 0;
 
     for (let i = 0; i < quantity; i++) {
