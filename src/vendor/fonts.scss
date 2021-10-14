@@ -5,3 +5,17 @@
   font-display: swap;
   src: url('./fonts/Source_Code_Pro/SourceCodePro-Light.ttf');
 }
+@font-face {
+  font-family: 'SourceCodePro';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./fonts/Source_Code_Pro/SourceCodePro-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'SourceCodePro';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('./fonts/Source_Code_Pro/SourceCodePro-Black.ttf');
+}
