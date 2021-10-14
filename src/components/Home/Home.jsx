@@ -25,28 +25,30 @@ function makeIdMultiple(length, quantity) {
 
 function makeHiddenWords(words) {
   const longestWordLength = words.sort((a, b) => b.length - a.length)[0].length;
-  const length = longestWordLength + 10; // 29
-  const quantity = longestWordLength; // 13
+  const length = longestWordLength + 9; // 29
+  const quantity = longestWordLength + 4; // 13
   var randomGrid = makeIdMultiple(length, quantity); // Ideally, length should be longestWord + 21 and quantity should be longestWord + 5
   words.forEach((word) => {
     const wordCharacters = word.split('');
 
-    const randomStartingWidth = Math.floor(Math.random() * (length - longestWordLength));
-    // const randomStartingHeight = Math.floor(Math.random() * (quantity - longestWordLength));
-    // const displayMethod = Math.random > 0.8 ? 'diagonal' : Math.random() > 0.5 ? 'horizontal' : 'vertical';
+    const randomStartingWidth = Math.floor(Math.random() * (length - longestWordLength + 1));
+    const randomStartingHeight = Math.floor(Math.random() * (quantity - longestWordLength + 1));
+
     const shouldMoveRight = Math.random() > 0.5;
     const shouldMoveDown = Math.random() > 0.5;
 
     const randomGridReplaced = [];
 
+    const initialVerticalCell = randomStartingHeight;
+
     let currentHorizontalCell = randomStartingWidth;
-    let currentVerticalCell = 0;
+    let currentVerticalCell = initialVerticalCell;
 
     for (let i = 0; i < quantity; i++) {
-      const char = wordCharacters[i];
+      const char = wordCharacters[i - initialVerticalCell];
 
       if (char && currentVerticalCell === i) {
-        let currentGridLine = randomGrid[i].split('');
+        let currentGridLine = randomGrid[currentVerticalCell].split('');
 
         if (shouldMoveDown) {
           currentGridLine[currentHorizontalCell] = (
