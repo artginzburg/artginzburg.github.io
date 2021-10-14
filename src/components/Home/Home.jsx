@@ -25,7 +25,7 @@ function makeIdMultiple(length, quantity) {
 
 function makeHiddenWords(words) {
   const longestWordLength = words.sort((a, b) => b.length - a.length)[0].length;
-  const length = longestWordLength; // 29
+  const length = longestWordLength + 10; // 29
   const quantity = longestWordLength; // 13
   var randomGrid = makeIdMultiple(length, quantity); // Ideally, length should be longestWord + 21 and quantity should be longestWord + 5
   words.forEach((word) => {
@@ -55,13 +55,14 @@ function makeHiddenWords(words) {
             </span>
           );
         } else {
-          wordCharacters.forEach((character) => {
+          for (let index = 0; index < wordCharacters.length; index++) {
+            const character = wordCharacters[index];
             currentGridLine[currentHorizontalCell] = (
               <span key={currentHorizontalCell++} className="hiddenWords__char-active">
                 {character}
               </span>
             );
-          });
+          }
         }
 
         randomGridReplaced.push(
