@@ -25,28 +25,48 @@ function makeIdMultiple(length, quantity) {
 
 function makeHiddenWords(words) {
   const longestWordLength = words.sort((a, b) => b.length - a.length)[0].length;
-  var randomGrid = makeIdMultiple(longestWordLength, longestWordLength);
+  const length = longestWordLength; // 29
+  const quantity = longestWordLength; // 13
+  var randomGrid = makeIdMultiple(length, quantity); // Ideally, length should be longestWord + 21 and quantity should be longestWord + 5
   words.forEach((word) => {
     const wordCharacters = word.split('');
+
+    // const randomStartingLength = Math.floor(Math.random() * (length - longestWordLength));
+    // const randomStartingQuantity = Math.floor(Math.random() * (quantity - longestWordLength));
     // const displayMethod = Math.random > 0.8 ? 'diagonal' : Math.random() > 0.5 ? 'horizontal' : 'vertical';
+    // const shouldMoveVertically = true;
 
     const randomGridReplaced = [];
 
-    wordCharacters.forEach((char, i) => {
-      let currentGridLine = randomGrid[i].split('');
-      currentGridLine[i] = (
-        <span key={i} className="hiddenWords__char-active">
-          {char}
-        </span>
-      );
-      randomGridReplaced.push(
-        <p key={i} className="hiddenWords__char">
-          {currentGridLine.map((gridElement, index) =>
-            gridElement.length === 1 ? <Fragment key={index}>{gridElement}</Fragment> : gridElement,
-          )}
-        </p>,
-      );
-    });
+    for (let i = 0; i < quantity; i++) {
+      const char = wordCharacters[i];
+
+      if (char) {
+        let currentGridLine = randomGrid[i].split('');
+        currentGridLine[i] = (
+          <span key={i} className="hiddenWords__char-active">
+            {char}
+          </span>
+        );
+        randomGridReplaced.push(
+          <p key={i} className="hiddenWords__char">
+            {currentGridLine.map((gridElement, index) =>
+              gridElement.length === 1 ? (
+                <Fragment key={index}>{gridElement}</Fragment>
+              ) : (
+                gridElement
+              ),
+            )}
+          </p>,
+        );
+      } else {
+        randomGridReplaced.push(
+          <p key={i} className="hiddenWords__char">
+            {randomGrid[i]}
+          </p>,
+        );
+      }
+    }
 
     randomGrid = randomGridReplaced;
   });

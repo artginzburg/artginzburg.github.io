@@ -11,6 +11,8 @@
 
   font-size: calc(10px + 2vmin);
   color: $global-text;
+  position: relative;
+  overflow: hidden;
 
   &__logo {
     height: calc(150px + 5vmin);
@@ -121,7 +123,7 @@
     text-transform: uppercase;
     font-weight: 900;
     color: $inactive-color;
-    font-size: 3em; // 5em
+    font-size: 5em; // 5em
     line-height: 0.9em;
     letter-spacing: 4px;
 
