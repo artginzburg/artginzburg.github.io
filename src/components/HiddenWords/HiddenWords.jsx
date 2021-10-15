@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 
 import { makeId } from '../../functions/makeId';
+import { makeEmptyMatrix } from '../../functions/makeEmpty';
 
 import { useTimeoutLimitedEffect } from '../../hooks/useTimeoutLimitedEffect';
 import { useWindowSize } from '../../hooks/useWindowSize';
@@ -17,12 +18,6 @@ function makeBoard(length, quantity) {
     result.push(makeId(length));
   }
   return result;
-}
-
-function makeEmptyMatrix(length, quantity) {
-  return Array(Math.trunc(quantity))
-    .fill()
-    .map(() => Array(Math.trunc(length)).fill());
 }
 
 function makeHiddenWords(words, width, height) {
