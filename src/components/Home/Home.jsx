@@ -97,7 +97,11 @@ function insertHiddenWords(width = 29, height = 13) {
           const [wordIndex, char] = column.split(' ');
 
           return (
-            <span id={`char-${wordIndex}`} className="hiddenWords__char-active" key={columnIndex}>
+            <span
+              id={`char-${wordIndex}`}
+              className="hiddenWords__char-active"
+              key={`${rowIndex}${columnIndex}`}
+            >
               {char}
             </span>
           );
@@ -113,6 +117,7 @@ export default function Home() {
   const [hiddenWords, setHiddenWords] = useState(insertHiddenWords());
 
   const recalculateHiddenWords = useCallback(() => {
+    setHiddenWords(null);
     setHiddenWords(insertHiddenWords(width / 50, height / 50));
   }, [height, width]);
 
