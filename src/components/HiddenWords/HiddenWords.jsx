@@ -125,10 +125,11 @@ export default function HiddenWords({ words }) {
   const [hiddenWords, setHiddenWords] = useState(initialBoard);
 
   const recalculateHiddenWords = useCallback(() => {
-    setHiddenWords(null);
-    setHiddenWords(
-      replaceMatrixCenter(initialBoard, makeHiddenWords(words, width / 50, height / 50)),
-    );
+    const isMobile = height > width;
+    const newWidth = isMobile ? width / 40 : width / 60;
+    const newHeight = isMobile ? height / 52 : height / 85;
+
+    setHiddenWords(replaceMatrixCenter(initialBoard, makeHiddenWords(words, newWidth, newHeight)));
   }, [height, width, words]);
 
   useTimeoutLimitedEffect(recalculateHiddenWords);
