@@ -3,6 +3,8 @@ import { useCallback, useState } from 'react';
 import { useTimeoutLimitedEffect } from '../../hooks/useTimeoutLimitedEffect';
 import { useWindowSize } from '../../hooks/useWindowSize';
 
+import './HiddenWords.scss';
+
 function makeId(length) {
   let result = [];
   const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
