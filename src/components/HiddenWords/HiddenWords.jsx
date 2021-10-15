@@ -91,28 +91,30 @@ function makeHiddenWords(words, width, height) {
 }
 
 function replaceArrayCenter(mainArray, insertedArray) {
-  const middleIndex = Math.floor(mainArray.length / 2) - Math.floor(insertedArray.length / 2);
+  const arrayToReturn = [...mainArray];
+  const middleIndex = Math.floor(arrayToReturn.length / 2) - Math.floor(insertedArray.length / 2);
   let currentIndexOfInsertedArray = 0;
   for (let i = middleIndex; i < middleIndex + insertedArray.length; i++) {
     const currentElementOfInsertedArray = insertedArray[currentIndexOfInsertedArray];
     if (currentElementOfInsertedArray) {
-      mainArray[i] = currentElementOfInsertedArray;
+      arrayToReturn[i] = currentElementOfInsertedArray;
     }
     currentIndexOfInsertedArray++;
   }
-  return mainArray;
+  return arrayToReturn;
 }
 
 function replaceMatrixCenter(mainMatrix, insertedMatrix) {
-  const middleIndex = Math.floor(mainMatrix.length / 2) - Math.floor(insertedMatrix.length / 2);
+  const matrixToReturn = [...mainMatrix];
+  const middleIndex = Math.floor(matrixToReturn.length / 2) - Math.floor(insertedMatrix.length / 2);
   let currentIndexOfInsertedMatrix = 0;
   for (let i = middleIndex; i < middleIndex + insertedMatrix.length - 1; i++) {
-    const currentArrayOfMainMatrix = mainMatrix[i];
+    const currentArrayOfMainMatrix = matrixToReturn[i];
     const currentArrayOfInsertedMatrix = insertedMatrix[currentIndexOfInsertedMatrix];
-    mainMatrix[i] = replaceArrayCenter(currentArrayOfMainMatrix, currentArrayOfInsertedMatrix);
+    matrixToReturn[i] = replaceArrayCenter(currentArrayOfMainMatrix, currentArrayOfInsertedMatrix);
     currentIndexOfInsertedMatrix++;
   }
-  return mainMatrix;
+  return matrixToReturn;
 }
 
 const initialBoard = makeBoard(30, 30);
