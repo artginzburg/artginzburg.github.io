@@ -1,4 +1,7 @@
+import { useCallback, useState } from 'react';
 import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
+import { useTimeoutLimitedEffect } from '../../hooks/useTimeoutLimitedEffect';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 import avatar from '../../images/avatar.jpg';
 
@@ -22,10 +25,7 @@ function makeIdMultiple(length, quantity) {
   return result;
 }
 
-function makeHiddenWords(words) {
-  const width = 29;
-  const height = 13;
-
+function makeHiddenWords(words, width = 29, height = 13) {
   const longestWordLength = words.sort((a, b) => b.length - a.length)[0].length;
   const length = longestWordLength > width ? longestWordLength : width; // 29
   const quantity = longestWordLength > height ? longestWordLength : height; // 13
@@ -85,27 +85,39 @@ function makeHiddenWords(words) {
   return randomGrid;
 }
 
-function insertHiddenWords() {
-  return makeHiddenWords(['develop', 'software', 'artginzburg']).map((row, rowIndex) => (
-    <p className="hiddenWords__char" key={rowIndex}>
-      {row.map((column, columnIndex) => {
-        if (column.length === 1) {
-          return column;
-        }
+function insertHiddenWords(width = 29, height = 13) {
+  return makeHiddenWords(['develop', 'software', 'artginzburg'], width, height).map(
+    (row, rowIndex) => (
+      <p className="hiddenWords__char" key={rowIndex}>
+        {row.map((column, columnIndex) => {
+          if (column.length === 1) {
+            return column;
+          }
 
-        const [wordIndex, char] = column.split(' ');
+          const [wordIndex, char] = column.split(' ');
 
-        return (
-          <span id={`char-${wordIndex}`} className="hiddenWords__char-active" key={columnIndex}>
-            {char}
-          </span>
-        );
-      })}
-    </p>
-  ));
+          return (
+            <span id={`char-${wordIndex}`} className="hiddenWords__char-active" key={columnIndex}>
+              {char}
+            </span>
+          );
+        })}
+      </p>
+    ),
+  );
 }
 
 export default function Home() {
+  const [width, height] = useWindowSize();
+
+  const [hiddenWords, setHiddenWords] = useState(insertHiddenWords());
+
+  const recalculateHiddenWords = useCallback(() => {
+    setHiddenWords(insertHiddenWords(width / 50, height / 50));
+  }, [height, width]);
+
+  useTimeoutLimitedEffect(recalculateHiddenWords);
+
   return (
     <section className="home">
       {/* <svg className="svgFilter">
@@ -122,7 +134,7 @@ export default function Home() {
           </filter>
         </svg>
         <div className="backgroundNoise" /> */}
-      <div className="hiddenWords">{insertHiddenWords()}</div>
+      <div className="hiddenWords">{hiddenWords}</div>
 
       <img src={avatar} className="home__logo" alt="avatar" />
       <p>Я Арт, пишу код</p>
