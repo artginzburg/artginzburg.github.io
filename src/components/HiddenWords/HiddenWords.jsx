@@ -91,7 +91,7 @@ export default function HiddenWords({ words }) {
   const [hiddenWords, setHiddenWords] = useState(makeBoard(29, 13));
 
   const recalculateHiddenWords = useCallback(() => {
-    // setHiddenWords(null);
+    setHiddenWords(null);
     setHiddenWords(makeHiddenWords(words, width / 50, height / 50));
   }, [height, width, words]);
 
@@ -99,27 +99,28 @@ export default function HiddenWords({ words }) {
 
   return (
     <div className="hiddenWords">
-      {hiddenWords.map((row, rowIndex) => (
-        <p className="hiddenWords__char" key={rowIndex}>
-          {row.map((column, columnIndex) => {
-            if (column.length === 1) {
-              return column;
-            }
+      {hiddenWords &&
+        hiddenWords.map((row, rowIndex) => (
+          <p className="hiddenWords__char" key={rowIndex}>
+            {row.map((column, columnIndex) => {
+              if (column.length === 1) {
+                return column;
+              }
 
-            const [wordIndex, char] = column.split(' ');
+              const [wordIndex, char] = column.split(' ');
 
-            return (
-              <span
-                id={`char-${wordIndex}`}
-                className="hiddenWords__char-active"
-                key={`${rowIndex}${columnIndex}`}
-              >
-                {char}
-              </span>
-            );
-          })}
-        </p>
-      ))}
+              return (
+                <span
+                  id={`char-${wordIndex}`}
+                  className="hiddenWords__char-active"
+                  key={`${rowIndex}${columnIndex}`}
+                >
+                  {char}
+                </span>
+              );
+            })}
+          </p>
+        ))}
     </div>
   );
 }
