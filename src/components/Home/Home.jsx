@@ -86,7 +86,7 @@ function makeHiddenWords(words, width = 29, height = 13) {
 }
 
 function insertHiddenWords(width = 29, height = 13) {
-  return makeHiddenWords(['develop', 'software', 'artginzburg'], width, height).map(
+  return makeHiddenWords(['develop', 'software', 'ginzburg'], width, height).map(
     (row, rowIndex) => (
       <p className="hiddenWords__char" key={rowIndex}>
         {row.map((column, columnIndex) => {
