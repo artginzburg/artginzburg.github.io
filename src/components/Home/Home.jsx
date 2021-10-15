@@ -20,7 +20,7 @@ export default function Home() {
       <HiddenWords words={['develop', 'software', author.name]} />
 
       <img src={avatar} className="home__logo" alt="avatar" />
-      <p>Я Арт, пишу код</p>
+      <p className="home__text">Я Арт, пишу код</p>
       <nav className="home__buttons">
         <a
           className="home__button"
