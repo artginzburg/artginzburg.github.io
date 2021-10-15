@@ -5,6 +5,9 @@ import { useWindowSize } from '../../hooks/useWindowSize';
 
 import './HiddenWords.scss';
 
+const WORD_INDEX_SEPARATOR = '禕';
+const initialBoard = makeBoard(30, 30);
+
 function makeId(length) {
   let result = [];
   const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -64,11 +67,13 @@ function makeHiddenWords(words, width, height) {
 
       if (char && currentVerticalCell === i) {
         if (shouldMoveDown) {
-          currentGridLine[currentHorizontalCell] = `${wordIndex} ${char}`;
+          currentGridLine[currentHorizontalCell] = `${wordIndex}${WORD_INDEX_SEPARATOR}${char}`;
         } else {
           for (let index = 0; index < wordCharacters.length; index++) {
             const character = wordCharacters[index];
-            currentGridLine[currentHorizontalCell++] = `${wordIndex} ${character}`;
+            currentGridLine[
+              currentHorizontalCell++
+            ] = `${wordIndex}${WORD_INDEX_SEPARATOR}${character}`;
           }
         }
 
@@ -117,8 +122,6 @@ function replaceMatrixCenter(mainMatrix, insertedMatrix) {
   return matrixToReturn;
 }
 
-const initialBoard = makeBoard(30, 30);
-
 export default function HiddenWords({ words }) {
   const [width, height] = useWindowSize();
 
@@ -144,7 +147,7 @@ export default function HiddenWords({ words }) {
                 return column;
               }
 
-              const [wordIndex, char] = column.split(' ');
+              const [wordIndex, char] = column.split(WORD_INDEX_SEPARATOR);
 
               return (
                 <span
