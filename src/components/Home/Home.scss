@@ -32,6 +32,8 @@
     $trans-dur: 0.2s;
     $trans-back-dur: 0.4s;
 
+    --link-color: #{$link-color};
+
     color: $global-text;
     font-weight: 500;
     letter-spacing: 0.08em;

@@ -3,13 +3,16 @@ import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
 import { author } from '../../../package.json';
 
 import avatar from '../../images/avatar.jpg';
+import { linkColor } from '../../utils/styles';
 
 import HiddenWords from '../HiddenWords/HiddenWords';
 
 import './Home.scss';
 
-const telegramStyle = { '--link-color': '#0088cc' };
-const githubStyle = { '--link-color': '#6e5494' };
+const customStyles = {
+  github: linkColor('#6e5494'),
+  telegram: linkColor('#0088cc'),
+};
 
 export default function Home() {
   return (
@@ -24,7 +27,7 @@ export default function Home() {
           href="https://github.com/artginzburg"
           target="_blank"
           rel="noopener noreferrer"
-          style={githubStyle}
+          style={customStyles.github}
         >
           <span className="home__button-icon">
             <FaGithub />
@@ -36,7 +39,7 @@ export default function Home() {
           href="https://t.me/ginzart"
           target="_blank"
           rel="noopener noreferrer"
-          style={telegramStyle}
+          style={customStyles.telegram}
         >
           <span className="home__button-icon">
             <FaTelegramPlane />
