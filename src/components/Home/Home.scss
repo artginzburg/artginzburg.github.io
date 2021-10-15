@@ -96,6 +96,8 @@
     }
 
     &:hover {
+      z-index: 1;
+
       transition-delay: $trans-dur - 0.02s;
       box-shadow: 0 0 10px var(--link-color), 0 0 20px var(--link-color), 0 0 40px var(--link-color),
         0 0 80px var(--link-color), 0 0 160px var(--link-color);
