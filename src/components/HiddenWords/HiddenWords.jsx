@@ -10,11 +10,14 @@ const MAXIMUM_BOARD_SIZE = 30;
 const initialBoard = makeBoard(MAXIMUM_BOARD_SIZE, MAXIMUM_BOARD_SIZE);
 
 function makeId(length) {
-  let result = [];
   const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
   const charactersLength = characters.length;
-  for (let i = 0; i < length; i++) {
+
+  const result = [];
+  let i = 0;
+  while (i < length) {
     result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+    i++;
   }
   return result;
 }
@@ -108,7 +111,6 @@ function replaceArrayCenter(mainArray, insertedArray) {
       currentElementOfInsertedArray &&
       currentElementOfInsertedArray.split(WORD_INDEX_SEPARATOR)[1].trim()
     ) {
-      console.log(currentElementOfInsertedArray);
       arrayToReturn[i] = currentElementOfInsertedArray;
     }
     currentIndexOfInsertedArray++;
