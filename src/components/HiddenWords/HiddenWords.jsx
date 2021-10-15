@@ -1,5 +1,7 @@
 import { useCallback, useState } from 'react';
 
+import { makeId } from '../../functions/makeId';
+
 import { useTimeoutLimitedEffect } from '../../hooks/useTimeoutLimitedEffect';
 import { useWindowSize } from '../../hooks/useWindowSize';
 
@@ -8,19 +10,6 @@ import './HiddenWords.scss';
 const WORD_INDEX_SEPARATOR = '禕';
 const MAXIMUM_BOARD_SIZE = 30;
 const initialBoard = makeBoard(MAXIMUM_BOARD_SIZE, MAXIMUM_BOARD_SIZE);
-
-function makeId(length) {
-  const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
-  const charactersLength = characters.length;
-
-  const result = [];
-  let i = 0;
-  while (i < length) {
-    result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
-    i++;
-  }
-  return result;
-}
 
 function makeBoard(length, quantity) {
   let result = [];
