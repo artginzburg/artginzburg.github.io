@@ -1,5 +1,7 @@
 import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
 
+import { author } from '../../../package.json';
+
 import avatar from '../../images/avatar.jpg';
 
 import HiddenWords from '../HiddenWords/HiddenWords';
@@ -9,7 +11,7 @@ import './Home.scss';
 export default function Home() {
   return (
     <section className="home">
-      <HiddenWords words={['develop', 'software', 'ginzburg']} />
+      <HiddenWords words={['develop', 'software', author.name]} />
 
       <img src={avatar} className="home__logo" alt="avatar" />
       <p>Я Арт, пишу код</p>

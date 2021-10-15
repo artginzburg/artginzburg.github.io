@@ -6,7 +6,8 @@ import { useWindowSize } from '../../hooks/useWindowSize';
 import './HiddenWords.scss';
 
 const WORD_INDEX_SEPARATOR = '禕';
-const initialBoard = makeBoard(30, 30);
+const MAXIMUM_BOARD_SIZE = 30;
+const initialBoard = makeBoard(MAXIMUM_BOARD_SIZE, MAXIMUM_BOARD_SIZE);
 
 function makeId(length) {
   let result = [];
@@ -34,6 +35,7 @@ function makeEmptyMatrix(length, quantity) {
 
 function makeHiddenWords(words, width, height) {
   const longestWordLength = [...words].sort((a, b) => b.length - a.length)[0].length;
+
   const length = longestWordLength > width ? longestWordLength : width;
   const quantity = longestWordLength > height ? longestWordLength : height;
 
@@ -132,7 +134,12 @@ export default function HiddenWords({ words }) {
     const newWidth = isMobile ? width / 40 : width / 60;
     const newHeight = isMobile ? height / 52 : height / 85;
 
-    setHiddenWords(replaceMatrixCenter(initialBoard, makeHiddenWords(words, newWidth, newHeight)));
+    const controlledWidth = newWidth > MAXIMUM_BOARD_SIZE ? MAXIMUM_BOARD_SIZE : newWidth;
+    const controlledHeight = newHeight > MAXIMUM_BOARD_SIZE ? MAXIMUM_BOARD_SIZE : newHeight;
+
+    setHiddenWords(
+      replaceMatrixCenter(initialBoard, makeHiddenWords(words, controlledWidth, controlledHeight)),
+    );
   }, [height, width, words]);
 
   useTimeoutLimitedEffect(recalculateHiddenWords);
