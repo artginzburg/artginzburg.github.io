@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 
 import { makeId } from '../../functions/makeId';
 import { makeEmptyMatrix } from '../../functions/makeEmpty';
+import { findLongestString } from '../../functions/findLongestString';
 
 import { useTimeoutLimitedEffect } from '../../hooks/useTimeoutLimitedEffect';
 import { useWindowSize } from '../../hooks/useWindowSize';
@@ -21,7 +22,7 @@ function makeBoard(length, quantity) {
 }
 
 function makeHiddenWords(words, width, height) {
-  const longestWordLength = [...words].sort((a, b) => b.length - a.length)[0].length;
+  const longestWordLength = findLongestString(words).length;
 
   const length = longestWordLength > width ? longestWordLength : width;
   const quantity = longestWordLength > height ? longestWordLength : height;
