@@ -34,7 +34,7 @@ function makeHiddenWords(words, width, height) {
   const length = longestWordLength > width ? longestWordLength : width;
   const quantity = longestWordLength > height ? longestWordLength : height;
 
-  var randomGrid = makeEmptyMatrix(length, quantity);
+  let randomGrid = makeEmptyMatrix(length, quantity);
 
   words.forEach((word, wordIndex) => {
     const wordCharacters = word.split('');
