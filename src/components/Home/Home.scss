@@ -16,7 +16,10 @@
 
   &__logo {
     height: calc(150px + 5vmin);
+    box-shadow: 0 0 3em 0.5em $global-background;
+    border: 3px solid rgba($color: $global-background, $alpha: 0.7);
     border-radius: 100%;
+
     filter: contrast(1.25) brightness(0.75);
   }
 
