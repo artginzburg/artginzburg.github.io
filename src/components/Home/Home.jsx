@@ -120,20 +120,6 @@ export default function Home() {
 
   return (
     <section className="home">
-      {/* <svg className="svgFilter">
-          <filter id="noise">
-            <feTurbulence id="turbulence">
-              <animate
-                attributeName="baseFrequency"
-                dur="1s"
-                values="0.9 0.9; 0.8 0.8; 0.9 0.9;"
-                repeatCount="indefinite"
-              />
-              <feDisplacementMap in="SourceGraphic" scale="60" />
-            </feTurbulence>
-          </filter>
-        </svg>
-        <div className="backgroundNoise" /> */}
       <div className="hiddenWords">{hiddenWords}</div>
 
       <img src={avatar} className="home__logo" alt="avatar" />
