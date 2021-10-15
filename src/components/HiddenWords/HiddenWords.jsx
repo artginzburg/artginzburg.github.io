@@ -48,28 +48,34 @@ function makeHiddenWords(words, width, height) {
 
       let currentGridLine = randomGrid[i];
 
-      if (char && currentVerticalCell === i) {
-        if (shouldMoveDown) {
-          currentGridLine[currentHorizontalCell] = `${wordIndex}${WORD_INDEX_SEPARATOR}${char}`;
-        } else {
-          for (let index = 0; index < wordCharacters.length; index++) {
-            const character = wordCharacters[index];
-            currentGridLine[
-              currentHorizontalCell++
-            ] = `${wordIndex}${WORD_INDEX_SEPARATOR}${character}`;
+      if (currentGridLine) {
+        if (char && currentVerticalCell === i) {
+          if (shouldMoveDown) {
+            currentGridLine[currentHorizontalCell] = `${wordIndex}${WORD_INDEX_SEPARATOR}${char}`;
+          } else {
+            for (let index = 0; index < wordCharacters.length; index++) {
+              const character = wordCharacters[index];
+              currentGridLine[
+                currentHorizontalCell++
+              ] = `${wordIndex}${WORD_INDEX_SEPARATOR}${character}`;
+            }
           }
-        }
 
-        randomGridReplaced.push(currentGridLine);
+          randomGridReplaced.push(currentGridLine);
 
-        if (shouldMoveRight) {
-          currentHorizontalCell++;
-        }
-        if (shouldMoveDown) {
-          currentVerticalCell++;
+          if (shouldMoveRight) {
+            currentHorizontalCell++;
+          }
+          if (shouldMoveDown) {
+            currentVerticalCell++;
+          }
+        } else {
+          randomGridReplaced.push(currentGridLine);
         }
       } else {
-        randomGridReplaced.push(currentGridLine);
+        // TODO: currentGridLine sometimes gets `undefined` here on small screens — and last character of a long word gets clipped. Really strange, shouldn't happen.
+        // console.log(randomGrid);
+        // console.log(i);
       }
     }
 
@@ -80,6 +86,9 @@ function makeHiddenWords(words, width, height) {
 
 function replaceArrayCenter(mainArray, insertedArray) {
   const arrayToReturn = [...mainArray];
+  if (!insertedArray) {
+    return arrayToReturn;
+  }
   const middleIndex = Math.floor(arrayToReturn.length / 2) - Math.floor(insertedArray.length / 2);
   let currentIndexOfInsertedArray = 0;
   for (let i = middleIndex; i < middleIndex + insertedArray.length; i++) {
