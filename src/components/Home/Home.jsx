@@ -10,8 +10,8 @@ import HiddenWords from '../HiddenWords/HiddenWords';
 import './Home.scss';
 
 const customStyles = {
-  github: linkColor('#6e5494'),
-  telegram: linkColor('#0088cc'),
+  github: linkColor('#83278f'), // 6e5494
+  telegram: linkColor('#28aaea'), // 0088cc
 };
 
 export default function Home() {
