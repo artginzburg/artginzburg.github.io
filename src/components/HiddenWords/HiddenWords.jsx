@@ -4,25 +4,21 @@ import { useTimeoutLimitedEffect } from '../../hooks/useTimeoutLimitedEffect';
 import { useWindowSize } from '../../hooks/useWindowSize';
 
 function makeId(length) {
-  let result = '';
+  let result = [];
   const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
   const charactersLength = characters.length;
   for (let i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-}
-
-function makeIdMultiple(length, quantity) {
-  let result = [];
-  for (let i = 0; i < quantity; i++) {
-    result.push(makeId(length));
+    result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
   }
   return result;
 }
 
 function makeBoard(length, quantity) {
-  return makeIdMultiple(length, quantity).map((row) => row.split(''));
+  let result = [];
+  for (let i = 0; i < quantity; i++) {
+    result.push(makeId(length));
+  }
+  return result;
 }
 
 function makeHiddenWords(words, width, height) {
