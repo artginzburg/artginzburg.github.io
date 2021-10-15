@@ -14,6 +14,10 @@
   position: relative;
   overflow: hidden;
 
+  & * {
+    z-index: 0;
+  }
+
   &__logo {
     height: calc(150px + 5vmin);
     box-shadow: 0 0 3em 0.5em $global-background;

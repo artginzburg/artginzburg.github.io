@@ -130,7 +130,7 @@ export default function HiddenWords({ words }) {
   useTimeoutLimitedEffect(recalculateHiddenWords);
 
   return (
-    <div className="hiddenWords">
+    <div className="hiddenWords" onDoubleClick={recalculateHiddenWords}>
       {hiddenWords.map((row, rowIndex) => (
         <p className="hiddenWords__char" key={rowIndex}>
           {row.map((column, columnIndex) => {
