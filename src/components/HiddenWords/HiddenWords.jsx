@@ -23,11 +23,18 @@ function makeBoard(length, quantity) {
   return result;
 }
 
+function makeEmptyMatrix(length, quantity) {
+  return Array(Math.trunc(quantity))
+    .fill()
+    .map(() => Array(Math.trunc(length)).fill());
+}
+
 function makeHiddenWords(words, width, height) {
   const longestWordLength = [...words].sort((a, b) => b.length - a.length)[0].length;
   const length = longestWordLength > width ? longestWordLength : width;
   const quantity = longestWordLength > height ? longestWordLength : height;
-  var randomGrid = makeBoard(length, quantity);
+
+  var randomGrid = makeEmptyMatrix(length, quantity);
 
   words.forEach((word, wordIndex) => {
     const wordCharacters = word.split('');
@@ -50,7 +57,7 @@ function makeHiddenWords(words, width, height) {
     let currentHorizontalCell = randomStartingWidth;
     let currentVerticalCell = initialVerticalCell;
 
-    for (let i = 0; i < quantity; i++) {
+    for (let i = 0; i < quantity - 1; i++) {
       const char = wordCharacters[i - initialVerticalCell];
 
       let currentGridLine = randomGrid[i];
@@ -83,14 +90,43 @@ function makeHiddenWords(words, width, height) {
   return randomGrid;
 }
 
+function replaceArrayCenter(mainArray, insertedArray) {
+  const middleIndex = Math.floor(mainArray.length / 2) - Math.floor(insertedArray.length / 2);
+  let currentIndexOfInsertedArray = 0;
+  for (let i = middleIndex; i < middleIndex + insertedArray.length; i++) {
+    const currentElementOfInsertedArray = insertedArray[currentIndexOfInsertedArray];
+    if (currentElementOfInsertedArray) {
+      mainArray[i] = currentElementOfInsertedArray;
+    }
+    currentIndexOfInsertedArray++;
+  }
+  return mainArray;
+}
+
+function replaceMatrixCenter(mainMatrix, insertedMatrix) {
+  const middleIndex = Math.floor(mainMatrix.length / 2) - Math.floor(insertedMatrix.length / 2);
+  let currentIndexOfInsertedMatrix = 0;
+  for (let i = middleIndex; i < middleIndex + insertedMatrix.length - 1; i++) {
+    const currentArrayOfMainMatrix = mainMatrix[i];
+    const currentArrayOfInsertedMatrix = insertedMatrix[currentIndexOfInsertedMatrix];
+    mainMatrix[i] = replaceArrayCenter(currentArrayOfMainMatrix, currentArrayOfInsertedMatrix);
+    currentIndexOfInsertedMatrix++;
+  }
+  return mainMatrix;
+}
+
+const initialBoard = makeBoard(30, 30);
+
 export default function HiddenWords({ words }) {
   const [width, height] = useWindowSize();
 
-  const [hiddenWords, setHiddenWords] = useState(makeBoard(29, 13));
+  const [hiddenWords, setHiddenWords] = useState(initialBoard);
 
   const recalculateHiddenWords = useCallback(() => {
     setHiddenWords(null);
-    setHiddenWords(makeHiddenWords(words, width / 50, height / 50));
+    setHiddenWords(
+      replaceMatrixCenter(initialBoard, makeHiddenWords(words, width / 50, height / 50)),
+    );
   }, [height, width, words]);
 
   useTimeoutLimitedEffect(recalculateHiddenWords);
