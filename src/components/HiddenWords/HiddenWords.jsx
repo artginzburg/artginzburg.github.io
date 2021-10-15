@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-import { makeId } from '../../functions/makeId';
+import { makeIdMatrix } from '../../functions/makeId';
 import { makeEmptyMatrix } from '../../functions/makeEmpty';
 import { findLongestString } from '../../functions/findLongestString';
 
@@ -11,15 +11,8 @@ import './HiddenWords.scss';
 
 const WORD_INDEX_SEPARATOR = '禕';
 const MAXIMUM_BOARD_SIZE = 30;
-const initialBoard = makeBoard(MAXIMUM_BOARD_SIZE, MAXIMUM_BOARD_SIZE);
 
-function makeBoard(length, quantity) {
-  let result = [];
-  for (let i = 0; i < quantity; i++) {
-    result.push(makeId(length));
-  }
-  return result;
-}
+const initialBoard = makeIdMatrix(MAXIMUM_BOARD_SIZE, MAXIMUM_BOARD_SIZE);
 
 function makeHiddenWords(words, width, height) {
   const longestWordLength = findLongestString(words).length;

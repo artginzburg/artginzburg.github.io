@@ -10,3 +10,13 @@ export function makeId(length) {
   }
   return result;
 }
+
+export function makeIdMatrix(width, height) {
+  const result = [];
+  let i = 0;
+  while (i < height) {
+    result.push(makeId(width));
+    i++;
+  }
+  return result;
+}
