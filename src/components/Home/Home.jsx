@@ -8,6 +8,9 @@ import HiddenWords from '../HiddenWords/HiddenWords';
 
 import './Home.scss';
 
+const telegramStyle = { '--link-color': '#0088cc' };
+const githubStyle = { '--link-color': '#6e5494' };
+
 export default function Home() {
   return (
     <section className="home">
@@ -21,6 +24,7 @@ export default function Home() {
           href="https://github.com/artginzburg"
           target="_blank"
           rel="noopener noreferrer"
+          style={githubStyle}
         >
           <span className="home__button-icon">
             <FaGithub />
@@ -32,6 +36,7 @@ export default function Home() {
           href="https://t.me/ginzart"
           target="_blank"
           rel="noopener noreferrer"
+          style={telegramStyle}
         >
           <span className="home__button-icon">
             <FaTelegramPlane />

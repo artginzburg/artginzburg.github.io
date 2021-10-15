@@ -69,7 +69,7 @@
       width: 100%;
       height: 1px;
 
-      background-color: $link-color;
+      background-color: var(--link-color);
 
       transition-duration: $trans-dur;
       transition-delay: $trans-back-dur;
@@ -77,8 +77,8 @@
 
     &:hover {
       transition-delay: $trans-dur - 0.02s;
-      box-shadow: 0 0 10px $link-color, 0 0 20px $link-color, 0 0 40px $link-color,
-        0 0 80px $link-color, 0 0 160px $link-color;
+      box-shadow: 0 0 10px var(--link-color), 0 0 20px var(--link-color), 0 0 40px var(--link-color),
+        0 0 80px var(--link-color), 0 0 160px var(--link-color);
 
       @media screen and (hover: hover) {
         color: #000;
