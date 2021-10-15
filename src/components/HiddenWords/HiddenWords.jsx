@@ -103,7 +103,12 @@ function replaceArrayCenter(mainArray, insertedArray) {
   let currentIndexOfInsertedArray = 0;
   for (let i = middleIndex; i < middleIndex + insertedArray.length; i++) {
     const currentElementOfInsertedArray = insertedArray[currentIndexOfInsertedArray];
-    if (currentElementOfInsertedArray) {
+
+    if (
+      currentElementOfInsertedArray &&
+      currentElementOfInsertedArray.split(WORD_INDEX_SEPARATOR)[1].trim()
+    ) {
+      console.log(currentElementOfInsertedArray);
       arrayToReturn[i] = currentElementOfInsertedArray;
     }
     currentIndexOfInsertedArray++;
