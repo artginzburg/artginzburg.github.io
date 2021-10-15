@@ -23,8 +23,6 @@ function makeHiddenWords(words, width, height) {
   let randomGrid = makeEmptyMatrix(length, quantity);
 
   words.forEach((word, wordIndex) => {
-    const wordCharacters = word.split('');
-
     const shouldMoveRight = Math.random() > 0.5;
     const shouldMoveDown = !shouldMoveRight || Math.random() > 0.5;
 
@@ -36,6 +34,8 @@ function makeHiddenWords(words, width, height) {
       ? Math.floor(Math.random() * (quantity - longestWordLength + 1))
       : Math.floor(Math.random() * (quantity - 1));
 
+    const wordCharacters = word.split('');
+
     const randomGridReplaced = [];
 
     const initialVerticalCell = randomStartingHeight;
@@ -43,7 +43,7 @@ function makeHiddenWords(words, width, height) {
     let currentHorizontalCell = randomStartingWidth;
     let currentVerticalCell = initialVerticalCell;
 
-    for (let i = 0; i < quantity - 1; i++) {
+    for (let i = 0; i < quantity; i++) {
       const char = wordCharacters[i - initialVerticalCell];
 
       let currentGridLine = randomGrid[i];
@@ -100,7 +100,7 @@ function replaceMatrixCenter(mainMatrix, insertedMatrix) {
   const matrixToReturn = [...mainMatrix];
   const middleIndex = Math.floor(matrixToReturn.length / 2) - Math.floor(insertedMatrix.length / 2);
   let currentIndexOfInsertedMatrix = 0;
-  for (let i = middleIndex; i < middleIndex + insertedMatrix.length - 1; i++) {
+  for (let i = middleIndex; i < middleIndex + insertedMatrix.length; i++) {
     const currentArrayOfMainMatrix = matrixToReturn[i];
     const currentArrayOfInsertedMatrix = insertedMatrix[currentIndexOfInsertedMatrix];
     matrixToReturn[i] = replaceArrayCenter(currentArrayOfMainMatrix, currentArrayOfInsertedMatrix);
