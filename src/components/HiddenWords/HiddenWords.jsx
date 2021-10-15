@@ -142,28 +142,27 @@ export default function HiddenWords({ words }) {
 
   return (
     <div className="hiddenWords">
-      {hiddenWords &&
-        hiddenWords.map((row, rowIndex) => (
-          <p className="hiddenWords__char" key={rowIndex}>
-            {row.map((column, columnIndex) => {
-              if (column.length === 1) {
-                return column;
-              }
+      {hiddenWords.map((row, rowIndex) => (
+        <p className="hiddenWords__char" key={rowIndex}>
+          {row.map((column, columnIndex) => {
+            if (column.length === 1) {
+              return column;
+            }
 
-              const [wordIndex, char] = column.split(WORD_INDEX_SEPARATOR);
+            const [wordIndex, char] = column.split(WORD_INDEX_SEPARATOR);
 
-              return (
-                <span
-                  id={`char-${wordIndex}`}
-                  className="hiddenWords__char-active"
-                  key={`${rowIndex}${columnIndex}`}
-                >
-                  {char}
-                </span>
-              );
-            })}
-          </p>
-        ))}
+            return (
+              <span
+                id={`char-${wordIndex}`}
+                className="hiddenWords__char-active"
+                key={`${rowIndex}${columnIndex}`}
+              >
+                {char}
+              </span>
+            );
+          })}
+        </p>
+      ))}
     </div>
   );
 }
