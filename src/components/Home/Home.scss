@@ -14,7 +14,7 @@
   position: relative;
   overflow: hidden;
 
-  & * {
+  * {
     z-index: 0;
   }
 
@@ -76,7 +76,7 @@
 
     @extend %default-link-effects;
 
-    & * {
+    * {
       z-index: 1;
     }
 
@@ -109,7 +109,7 @@
 
       &::before {
         transition-delay: 0s;
-        @media (hover: hover) {
+        @media screen and (hover: hover) {
           height: 100%;
         }
       }
