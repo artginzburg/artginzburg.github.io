@@ -124,6 +124,17 @@
       align-items: center;
     }
 
+    @media screen and (hover: hover) {
+      &:hover &-icon {
+        animation: spin 0.5s;
+        @keyframes spin {
+          to {
+            transform: rotate(2turn);
+          }
+        }
+      }
+    }
+
     &-text {
       margin: 0;
     }
