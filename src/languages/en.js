@@ -10,7 +10,14 @@ export const en = {
   },
   portfolio: {
     frontend: 'Front-end',
-    casProject: '3D School Map',
     moviesExplorer: 'Movies Explorer',
+    casProject: '3D School Map',
+    cli: 'CLI',
+    sudotouchid: 'sudo-touchid',
+    barhide: 'barhide',
+    nochime: 'powerchime',
+    wifipass: 'wifi-pass',
+    apps: 'Apps',
+    backend: 'Back-end',
   },
 };
