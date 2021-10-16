@@ -11,6 +11,7 @@
   "homepage": "https://artginzburg.github.io",
   "scripts": {
     "start": "react-scripts start",
+    "port": "export PORT=80 BROWSER=none && open -g http://art.local && sudo -E react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
