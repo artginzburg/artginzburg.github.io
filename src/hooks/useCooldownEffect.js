@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export function useTimeoutLimitedEffect(reactCallback, timeout = 200) {
+export function useCooldownEffect(reactCallback, timeout = 200) {
   const limiter = useRef();
 
   useEffect(() => {

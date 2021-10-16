@@ -4,7 +4,7 @@ import { makeIdMatrix } from '../../functions/makeId';
 import { makeEmptyMatrix } from '../../functions/makeEmpty';
 import { findLongestString } from '../../functions/findLongestString';
 
-import { useTimeoutLimitedEffect } from '../../hooks/useTimeoutLimitedEffect';
+import { useCooldownEffect } from '../../hooks/useCooldownEffect';
 import { useWindowSize } from '../../hooks/useWindowSize';
 
 import './HiddenWords.scss';
@@ -136,7 +136,7 @@ export default function HiddenWords({ words }) {
     );
   }, [height, width, words]);
 
-  useTimeoutLimitedEffect(recalculateHiddenWords);
+  useCooldownEffect(recalculateHiddenWords);
 
   return (
     <div className="hiddenWords" onDoubleClick={recalculateHiddenWords}>
