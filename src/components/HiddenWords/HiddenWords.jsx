@@ -14,6 +14,65 @@ const MAXIMUM_BOARD_SIZE = 30;
 
 const initialBoard = makeIdMatrix(MAXIMUM_BOARD_SIZE, MAXIMUM_BOARD_SIZE);
 
+function insertHiddenWord(word, wordIndex, randomGrid, longestWordLength, length, quantity) {
+  const shouldMoveRight = Math.random() > 0.5;
+  const shouldMoveDown = !shouldMoveRight || Math.random() > 0.5;
+
+  const randomStartingWidth = shouldMoveRight
+    ? Math.floor(Math.random() * (length - longestWordLength + 1))
+    : Math.floor(Math.random() * (length - 1));
+
+  const randomStartingHeight = shouldMoveDown
+    ? Math.floor(Math.random() * (quantity - longestWordLength + 1))
+    : Math.floor(Math.random() * (quantity - 1));
+
+  const wordCharacters = word.split('');
+
+  const result = [];
+
+  const initialVerticalCell = randomStartingHeight;
+
+  let currentHorizontalCell = randomStartingWidth;
+  let currentVerticalCell = initialVerticalCell;
+
+  for (let i = 0; i < quantity; i++) {
+    const char = wordCharacters[i - initialVerticalCell];
+
+    const currentGridLine = randomGrid[i];
+
+    if (!currentGridLine) {
+      // TODO: currentGridLine sometimes gets `undefined` here on small screens — and last character of a long word gets clipped. Really strange, shouldn't happen.
+      continue;
+    }
+
+    if (char && currentVerticalCell === i) {
+      if (shouldMoveDown) {
+        currentGridLine[currentHorizontalCell] = `${wordIndex}${WORD_INDEX_SEPARATOR}${char}`;
+      } else {
+        for (let index = 0; index < wordCharacters.length; index++) {
+          const character = wordCharacters[index];
+          currentGridLine[
+            currentHorizontalCell++
+          ] = `${wordIndex}${WORD_INDEX_SEPARATOR}${character}`;
+        }
+      }
+
+      result.push(currentGridLine);
+
+      if (shouldMoveRight) {
+        currentHorizontalCell++;
+      }
+      if (shouldMoveDown) {
+        currentVerticalCell++;
+      }
+    } else {
+      result.push(currentGridLine);
+    }
+  }
+
+  return result;
+}
+
 function makeHiddenWords(words, width, height) {
   const longestWordLength = findLongestString(words).length;
 
@@ -23,63 +82,7 @@ function makeHiddenWords(words, width, height) {
   let randomGrid = makeEmptyMatrix(length, quantity);
 
   words.forEach((word, wordIndex) => {
-    const shouldMoveRight = Math.random() > 0.5;
-    const shouldMoveDown = !shouldMoveRight || Math.random() > 0.5;
-
-    const randomStartingWidth = shouldMoveRight
-      ? Math.floor(Math.random() * (length - longestWordLength + 1))
-      : Math.floor(Math.random() * (length - 1));
-
-    const randomStartingHeight = shouldMoveDown
-      ? Math.floor(Math.random() * (quantity - longestWordLength + 1))
-      : Math.floor(Math.random() * (quantity - 1));
-
-    const wordCharacters = word.split('');
-
-    const randomGridReplaced = [];
-
-    const initialVerticalCell = randomStartingHeight;
-
-    let currentHorizontalCell = randomStartingWidth;
-    let currentVerticalCell = initialVerticalCell;
-
-    for (let i = 0; i < quantity; i++) {
-      const char = wordCharacters[i - initialVerticalCell];
-
-      let currentGridLine = randomGrid[i];
-
-      if (currentGridLine) {
-        if (char && currentVerticalCell === i) {
-          if (shouldMoveDown) {
-            currentGridLine[currentHorizontalCell] = `${wordIndex}${WORD_INDEX_SEPARATOR}${char}`;
-          } else {
-            for (let index = 0; index < wordCharacters.length; index++) {
-              const character = wordCharacters[index];
-              currentGridLine[
-                currentHorizontalCell++
-              ] = `${wordIndex}${WORD_INDEX_SEPARATOR}${character}`;
-            }
-          }
-
-          randomGridReplaced.push(currentGridLine);
-
-          if (shouldMoveRight) {
-            currentHorizontalCell++;
-          }
-          if (shouldMoveDown) {
-            currentVerticalCell++;
-          }
-        } else {
-          randomGridReplaced.push(currentGridLine);
-        }
-      } else {
-        // TODO: currentGridLine sometimes gets `undefined` here on small screens — and last character of a long word gets clipped. Really strange, shouldn't happen.
-        // console.log(randomGrid);
-        // console.log(i);
-      }
-    }
-
-    randomGrid = randomGridReplaced;
+    randomGrid = insertHiddenWord(word, wordIndex, randomGrid, longestWordLength, length, quantity);
   });
   return randomGrid;
 }
