@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react';
 import { makeIdMatrix } from '../../functions/makeId';
 import { makeEmptyMatrix } from '../../functions/makeEmpty';
 import { findLongestString } from '../../functions/findLongestString';
+import { randomInt } from '../../functions/randomInt';
 
 import { useCooldownEffect } from '../../hooks/useCooldownEffect';
 import { useWindowSize } from '../../hooks/useWindowSize';
@@ -14,17 +15,17 @@ const MAXIMUM_BOARD_SIZE = 30;
 
 const initialBoard = makeIdMatrix(MAXIMUM_BOARD_SIZE, MAXIMUM_BOARD_SIZE);
 
-function insertHiddenWord(word, wordIndex, randomGrid, longestWordLength, length, quantity) {
+function insertHiddenWord(word, wordIndex, grid, longestWordLength, length, quantity) {
   const shouldMoveRight = Math.random() > 0.5;
   const shouldMoveDown = !shouldMoveRight || Math.random() > 0.5;
 
   const randomStartingWidth = shouldMoveRight
-    ? Math.floor(Math.random() * (length - longestWordLength + 1))
-    : Math.floor(Math.random() * (length - 1));
+    ? randomInt(length - longestWordLength + 1)
+    : randomInt(length - 1);
 
   const randomStartingHeight = shouldMoveDown
-    ? Math.floor(Math.random() * (quantity - longestWordLength + 1))
-    : Math.floor(Math.random() * (quantity - 1));
+    ? randomInt(quantity - longestWordLength + 1)
+    : randomInt(quantity - 1);
 
   const wordCharacters = word.split('');
 
@@ -38,7 +39,7 @@ function insertHiddenWord(word, wordIndex, randomGrid, longestWordLength, length
   for (let i = 0; i < quantity; i++) {
     const char = wordCharacters[i - initialVerticalCell];
 
-    const currentGridLine = randomGrid[i];
+    const currentGridLine = grid[i];
 
     if (!currentGridLine) {
       // TODO: currentGridLine sometimes gets `undefined` here on small screens — and last character of a long word gets clipped. Really strange, shouldn't happen.
@@ -80,7 +81,6 @@ function makeHiddenWords(words, width, height) {
   const quantity = longestWordLength > height ? longestWordLength : height;
 
   let randomGrid = makeEmptyMatrix(length, quantity);
-
   words.forEach((word, wordIndex) => {
     randomGrid = insertHiddenWord(word, wordIndex, randomGrid, longestWordLength, length, quantity);
   });
