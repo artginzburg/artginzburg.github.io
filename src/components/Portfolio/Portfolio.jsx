@@ -22,7 +22,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noreferrer"
             >
-              Mesto, 2021, React + MongoDB
+              Mesto, 2021, React + MongoDB (Webpack, Babel, Express)
             </a>
             <p>
               Первый полноценный учебный React-проект с авторизацией (6-й курс Яндекс.Практикума)
