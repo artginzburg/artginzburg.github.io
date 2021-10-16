@@ -12,7 +12,7 @@ export default function Portfolio() {
         <ul>
           <li>
             <a href="https://deeplomka.nomoredomains.club" target="_blank" rel="noreferrer">
-              {t('portfolio', 'moviesExplorer')}, 2021, React + MongoDB
+              Movies Explorer, 2021, React + MongoDB
             </a>
             <p>Диплом на 100/100 баллов во время обучения в Yandex.Praktikum</p>
           </li>
@@ -50,7 +50,7 @@ export default function Portfolio() {
           </li>
           <li>
             <a href="https://artginzburg.github.io/CASProject/" target="_blank" rel="noreferrer">
-              {t('portfolio', 'casProject')}, 2019, Raw JS
+              3D School Map, 2019, Raw JS
             </a>
             <p>Интерактивная карта школьного здания, первый самостоятельный фронтенд-проект</p>
           </li>

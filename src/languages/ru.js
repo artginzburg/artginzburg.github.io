@@ -10,13 +10,7 @@ export const ru = {
   },
   portfolio: {
     frontend: 'Фронтенд',
-    moviesExplorer: 'Поиск Фильмов',
-    casProject: 'Карта школы в 3D',
     cli: 'Консольные утилиты',
-    sudotouchid: 'sudo-touchid',
-    barhide: 'barhide',
-    nochime: 'powerchime',
-    wifipass: 'wifi-pass',
     apps: 'Приложения',
     backend: 'Бэкенд',
   },

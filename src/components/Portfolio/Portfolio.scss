@@ -1,10 +1,13 @@
 @import '../../styles/colors';
 
 .portfolio {
+  padding-top: 50px;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   min-height: 100vh;
+
+  color: $global-text;
 
   &__subtitle {
     color: $global-text;
