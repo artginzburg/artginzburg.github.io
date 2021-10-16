@@ -12,12 +12,12 @@ export default function Portfolio() {
         <ul>
           <li>
             <a href="https://artginzburg.github.io/CASProject/" target="_blank" rel="noreferrer">
-              {t('portfolio', 'casProject')}
+              {t('portfolio', 'casProject')}, 2019
             </a>
           </li>
           <li>
             <a href="https://deeplomka.nomoredomains.club" target="_blank" rel="noreferrer">
-              {t('portfolio', 'moviesExplorer')}
+              {t('portfolio', 'moviesExplorer')}, 2021
             </a>
           </li>
         </ul>

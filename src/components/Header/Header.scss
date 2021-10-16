@@ -55,8 +55,10 @@
     text-decoration-line: none;
     color: #999;
 
-    &:hover {
-      color: $global-text;
+    @media screen and (hover: hover) {
+      &:hover {
+        color: $global-text;
+      }
     }
   }
 
@@ -69,7 +71,7 @@
       cursor: pointer;
 
       margin: 0.2em;
-      padding: 0.5em 0.2em;
+      padding: 0.4em 0.2em;
 
       background-color: transparent;
       color: #999;
@@ -87,19 +89,20 @@
 
       &_selected {
         &::after {
-          $point-size: 4px;
+          $point-size: 3px;
+          $point-width: $point-size * 2.5;
 
           content: '';
           position: absolute;
           bottom: 0;
-          left: calc(50% - #{$point-size / 2});
+          left: calc(50% - #{$point-width / 2});
 
           height: $point-size;
-          width: $point-size;
+          width: $point-width;
 
-          border-radius: 100%;
+          border-radius: 1em;
 
-          background-color: rgba($color: $link-color, $alpha: 0.5);
+          background-color: rgba($color: $link-color, $alpha: 0.7);
         }
       }
     }
