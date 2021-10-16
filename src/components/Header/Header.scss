@@ -36,7 +36,16 @@
     color: $global-text;
     margin: 0.5em 15px;
     letter-spacing: -0.08em;
-    font-weight: 500;
+    font-weight: 300;
+
+    &_active {
+      font-weight: 500;
+      cursor: default;
+
+      &:active {
+        cursor: not-allowed;
+      }
+    }
   }
 
   &__navigation {
@@ -58,6 +67,21 @@
     @media screen and (hover: hover) {
       &:hover {
         color: $global-text;
+      }
+    }
+
+    &_active {
+      color: $link-color;
+      cursor: default;
+
+      @media screen and (hover: hover) {
+        &:hover {
+          color: $link-color;
+        }
+      }
+
+      &:active {
+        cursor: not-allowed;
       }
     }
   }
@@ -88,6 +112,18 @@
       }
 
       &_selected {
+        cursor: default;
+
+        @media screen and (hover: hover) {
+          &:hover {
+            color: #999;
+          }
+        }
+
+        &:active {
+          cursor: not-allowed;
+        }
+
         &::after {
           $point-size: 3px;
           $point-width: $point-size * 2.5;

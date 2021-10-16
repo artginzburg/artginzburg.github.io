@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -19,14 +19,14 @@ export default function Header() {
   return (
     <header className="header">
       <nav className="header__links">
-        <Link to="/" className="header__logo">
+        <NavLink exact to="/" className="header__logo" activeClassName="header__logo_active">
           {t('routes', 'main')}
-        </Link>
+        </NavLink>
 
         <ul className="header__navigation">
-          <Link to="/portfolio" className="header__link">
+          <NavLink to="/portfolio" className="header__link" activeClassName="header__link_active">
             {t('routes', 'portfolio')}
-          </Link>
+          </NavLink>
         </ul>
       </nav>
 
