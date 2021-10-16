@@ -96,25 +96,6 @@
       transition-delay: $trans-back-dur;
     }
 
-    &:hover {
-      z-index: 1;
-
-      transition-delay: $trans-dur - 0.02s;
-      box-shadow: 0 0 10px var(--link-color), 0 0 20px var(--link-color), 0 0 40px var(--link-color),
-        0 0 80px var(--link-color), 0 0 160px var(--link-color);
-
-      @media screen and (hover: hover) {
-        color: #000;
-      }
-
-      &::before {
-        transition-delay: 0s;
-        @media screen and (hover: hover) {
-          height: 100%;
-        }
-      }
-    }
-
     &-icon {
       height: 1.5em;
       width: 1.5em;
@@ -124,7 +105,30 @@
       align-items: center;
     }
 
+    &-text {
+      margin: 0;
+    }
+
+    @mixin home__button-shadow {
+      z-index: 1;
+
+      transition-delay: $trans-dur - 0.02s;
+      box-shadow: 0 0 10px var(--link-color), 0 0 20px var(--link-color), 0 0 40px var(--link-color),
+        0 0 80px var(--link-color), 0 0 160px var(--link-color);
+    }
+
     @media screen and (hover: hover) {
+      &:hover {
+        @include home__button-shadow;
+
+        color: #000;
+
+        &::before {
+          transition-delay: 0s;
+          height: 100%;
+        }
+      }
+
       &:hover &-icon {
         animation: spin 0.5s;
         @keyframes spin {
@@ -135,8 +139,10 @@
       }
     }
 
-    &-text {
-      margin: 0;
+    @media screen and (hover: none) {
+      &:active {
+        @include home__button-shadow;
+      }
     }
   }
 }
