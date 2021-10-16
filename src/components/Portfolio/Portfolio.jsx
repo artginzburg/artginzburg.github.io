@@ -3,12 +3,12 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import './Portfolio.scss';
 
 export default function Portfolio() {
-  const { t } = useLanguage();
+  const { localization } = useLanguage();
 
   return (
     <section className="portfolio">
       <article>
-        <h2 className="portfolio__subtitle">{t('portfolio', 'frontend')}</h2>
+        <h2 className="portfolio__subtitle">{localization.portfolio.frontend}</h2>
         <ul>
           <li>
             <a href="https://deeplomka.nomoredomains.club" target="_blank" rel="noreferrer">
@@ -57,7 +57,7 @@ export default function Portfolio() {
         </ul>
       </article>
       <article>
-        <h2 className="portfolio__subtitle">{t('portfolio', 'cli')}</h2>
+        <h2 className="portfolio__subtitle">{localization.portfolio.cli}</h2>
         <ul>
           <li>
             <a href="https://git.io/sudotouchid" target="_blank" rel="noreferrer">
@@ -86,7 +86,7 @@ export default function Portfolio() {
         </ul>
       </article>
       <article>
-        <h2 className="portfolio__subtitle">{t('portfolio', 'apps')}</h2>
+        <h2 className="portfolio__subtitle">{localization.portfolio.apps}</h2>
         <ul>
           <li>
             <a href="https://2fatotray.unicornplatform.page" target="_blank" rel="noreferrer">
@@ -100,7 +100,7 @@ export default function Portfolio() {
         </ul>
       </article>
       <article>
-        <h2 className="portfolio__subtitle">{t('portfolio', 'backend')}</h2>
+        <h2 className="portfolio__subtitle">{localization.portfolio.backend}</h2>
         <ul>
           <li>
             <a

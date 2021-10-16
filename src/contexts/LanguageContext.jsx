@@ -16,10 +16,7 @@ export function LanguageProvider({ children }) {
   const [currentLanguage] = languageState;
 
   const context = {
-    t: (...keys) => {
-      const lang = languages[currentLanguage];
-      return lang[keys[0]][keys[1]] ?? lang[keys[0]];
-    },
+    localization: languages[currentLanguage],
     state: languageState,
   };
 

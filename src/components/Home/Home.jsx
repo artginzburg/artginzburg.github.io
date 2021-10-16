@@ -16,14 +16,14 @@ const customStyles = {
 };
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { localization } = useLanguage();
 
   return (
     <section className="home">
       <HiddenWords words={['develop', 'software', author.name]} />
 
       <img src={avatar} className="home__logo" alt="avatar" />
-      <p className="home__text">{t('home_text')}</p>
+      <p className="home__text">{localization.home_text}</p>
       <nav className="home__buttons">
         <a
           className="home__button"
@@ -35,7 +35,7 @@ export default function Home() {
           <span className="home__button-icon">
             <FaGithub />
           </span>
-          <p className="home__button-text">{t('links', 'github')}</p>
+          <p className="home__button-text">{localization.links.github}</p>
         </a>
         <a
           className="home__button"
@@ -47,7 +47,7 @@ export default function Home() {
           <span className="home__button-icon">
             <FaTelegramPlane />
           </span>
-          <p className="home__button-text">{t('links', 'telegram')}</p>
+          <p className="home__button-text">{localization.links.telegram}</p>
         </a>
       </nav>
     </section>

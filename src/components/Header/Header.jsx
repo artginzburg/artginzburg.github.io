@@ -8,7 +8,7 @@ import './Header.scss';
 
 export default function Header() {
   const {
-    t,
+    localization,
     state: [language, setLanguage],
   } = useLanguage();
 
@@ -20,12 +20,12 @@ export default function Header() {
     <header className="header">
       <nav className="header__links">
         <NavLink exact to="/" className="header__logo" activeClassName="header__logo_active">
-          {t('routes', 'main')}
+          {localization.routes.main}
         </NavLink>
 
         <ul className="header__navigation">
           <NavLink to="/portfolio" className="header__link" activeClassName="header__link_active">
-            {t('routes', 'portfolio')}
+            {localization.routes.portfolio}
           </NavLink>
         </ul>
       </nav>
