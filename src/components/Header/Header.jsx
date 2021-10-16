@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom';
 
 import { useLanguage } from '../../contexts/LanguageContext';
 
+import { classNames } from '../../utils/toClassNames';
+
 import './Header.scss';
 
 export default function Header() {
@@ -9,8 +11,6 @@ export default function Header() {
     t,
     state: [language, setLanguage],
   } = useLanguage();
-
-  console.log(language);
 
   function handleLanguageClick(e) {
     setLanguage(e.target.innerText.toLowerCase());
@@ -32,18 +32,20 @@ export default function Header() {
 
       <div className="header__language">
         <button
-          className={`header__language-button${
-            language === 'en' ? ' header__language-button_selected' : ''
-          }`}
+          {...classNames([
+            'header__language-button',
+            language === 'en' && 'header__language-button_selected',
+          ])}
           onClick={handleLanguageClick}
           type="button"
         >
           EN
         </button>
         <button
-          className={`header__language-button${
-            language === 'ru' ? ' header__language-button_selected' : ''
-          }`}
+          {...classNames([
+            'header__language-button',
+            language === 'ru' && 'header__language-button_selected',
+          ])}
           onClick={handleLanguageClick}
           type="button"
         >
