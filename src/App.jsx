@@ -4,9 +4,11 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Portfolio from './components/Portfolio/Portfolio';
 
+import { LanguageProvider } from './contexts/LanguageContext';
+
 function App() {
   return (
-    <>
+    <LanguageProvider>
       <Header />
       <main>
         <Switch>
@@ -18,7 +20,7 @@ function App() {
           </Route>
         </Switch>
       </main>
-    </>
+    </LanguageProvider>
   );
 }
 

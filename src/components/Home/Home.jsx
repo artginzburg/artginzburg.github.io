@@ -1,6 +1,7 @@
 import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
 
 import { author } from '../../../package.json';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 import avatar from '../../images/avatar.jpg';
 import { linkColor } from '../../utils/styles';
@@ -15,12 +16,14 @@ const customStyles = {
 };
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <section className="home">
       <HiddenWords words={['develop', 'software', author.name]} />
 
       <img src={avatar} className="home__logo" alt="avatar" />
-      <p className="home__text">Я Арт, пишу код</p>
+      <p className="home__text">{t('home_text')}</p>
       <nav className="home__buttons">
         <a
           className="home__button"
@@ -32,7 +35,7 @@ export default function Home() {
           <span className="home__button-icon">
             <FaGithub />
           </span>
-          <p className="home__button-text">Код</p>
+          <p className="home__button-text">{t('links', 'github')}</p>
         </a>
         <a
           className="home__button"
@@ -44,7 +47,7 @@ export default function Home() {
           <span className="home__button-icon">
             <FaTelegramPlane />
           </span>
-          <p className="home__button-text">Телеграм</p>
+          <p className="home__button-text">{t('links', 'telegram')}</p>
         </a>
       </nav>
     </section>
