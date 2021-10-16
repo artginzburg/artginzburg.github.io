@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import './index.scss';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router basename={process.env.PUBLIC_URL}>
+      <App />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root'),
 );

@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+
+.portfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  &__subtitle {
+    color: $global-text;
+  }
+}

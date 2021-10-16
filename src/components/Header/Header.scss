@@ -1,0 +1,61 @@
+@import '../../styles/colors';
+@import '../../styles/shared';
+
+.header {
+  $header-background: rgba(
+    $color: #000,
+    $alpha: 0.6,
+  );
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  min-height: 50px;
+
+  display: flex;
+  padding: 0 7em;
+
+  background: $header-background;
+  backdrop-filter: blur(2px);
+
+  box-shadow: 0 0 2em 1em $header-background;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    padding: 0;
+    justify-content: center;
+  }
+
+  &__logo {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-decoration-line: none;
+    color: $global-text;
+    margin: 0.5em 15px;
+    letter-spacing: -0.08em;
+    font-weight: 500;
+  }
+
+  &__navigation {
+    margin: 0;
+    padding: 0.25em 15px;
+    border-left: 1px solid #525252;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__link {
+    text-decoration-line: none;
+    color: #999;
+
+    &:hover {
+      color: $global-text;
+    }
+  }
+}
