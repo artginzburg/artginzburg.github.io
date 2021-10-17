@@ -34,17 +34,30 @@ export default function Portfolio() {
         return (
           <article key={categoryIndex}>
             <h2 className="portfolio__subtitle">{localization.portfolio[category]}</h2>
-            <ul>
+            <ul className="portfolio__projects">
               {categoryProjects.map((project, projectIndex) => {
                 return (
-                  <li key={projectIndex}>
-                    <a href={project.link} target="_blank" rel="noreferrer">
-                      {project.title}
+                  <li className="portfolio__project" key={projectIndex}>
+                    <a
+                      className="portfolio__project-link"
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {project.image && (
+                        <img
+                          className="portfolio__project-image"
+                          src={project.image}
+                          alt={project.title}
+                        />
+                      )}
+                      <div className="portfolio__project-container">
+                        <p className="portfolio__project-title">{project.title}</p>
+                        <p className="portfolio__project-year">{project.year}</p>
+                      </div>
                     </a>
-                    <p>
-                      {project.year}, {project.subtitle}
-                    </p>
-                    <p>{project.description[lang]}</p>
+                    <p className="portfolio__project-subtitle">{project.subtitle}</p>
+                    <p className="portfolio__project-text">{project.description[lang]}</p>
                   </li>
                 );
               })}

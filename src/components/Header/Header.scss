@@ -2,11 +2,6 @@
 @import '../../styles/shared';
 
 .header {
-  $header-background: rgba(
-    $color: #000,
-    $alpha: 0.6,
-  );
-
   position: fixed;
   top: 0;
   left: 0;

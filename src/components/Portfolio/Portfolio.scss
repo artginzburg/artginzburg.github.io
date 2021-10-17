@@ -1,7 +1,8 @@
 @import '../../styles/colors';
+@import '../../styles/shared';
 
 .portfolio {
-  padding-top: 50px;
+  padding: 50px 0;
 
   display: flex;
   flex-direction: column;
@@ -9,7 +10,92 @@
 
   color: $global-text;
 
+  margin: 0 7vmin;
+
   &__subtitle {
     color: $global-text;
+    margin: 1em 0;
+  }
+
+  &__projects {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    gap: 2em;
+  }
+
+  &__project {
+    width: 20em;
+
+    background-color: $header-background;
+    border-radius: 1em;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+
+    box-shadow: 0 0 0.5em #000;
+
+    @media screen and (hover: hover) {
+      &:hover {
+        box-shadow: 0 0.2em 0.5em rgba(#fff, 0.4);
+      }
+    }
+
+    &-image {
+      max-width: 100%;
+      user-select: none;
+      border-radius: 0.5em;
+    }
+
+    &-link {
+      color: $link-color;
+      text-decoration-line: none;
+
+      @media screen and (hover: hover) {
+        &:hover {
+          text-decoration-line: underline;
+        }
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      column-gap: 1em;
+
+      background-color: #191919;
+      border-radius: 1em;
+      padding: 0.3em 0.8em;
+    }
+
+    &-title {
+      margin: 0;
+    }
+
+    &-year {
+      margin: 0;
+    }
+
+    &-subtitle {
+      text-align: center;
+      margin: 0;
+      color: #555;
+    }
+
+    &-text {
+      margin: 0;
+      color: #ddd;
+
+      text-align: justify;
+    }
   }
 }
