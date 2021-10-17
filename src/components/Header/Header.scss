@@ -38,12 +38,28 @@
     letter-spacing: -0.08em;
     font-weight: 300;
 
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px 0;
+
+    @media screen and (hover: hover) {
+      &:hover {
+        border-bottom: 1px solid rgba($link-color, 0.4);
+      }
+    }
+
     &_active {
       font-weight: 500;
       cursor: default;
 
       &:active {
         cursor: not-allowed;
+      }
+
+      @media screen and (hover: hover) {
+        &:hover {
+          border-bottom: 1px solid transparent;
+        }
       }
     }
   }
