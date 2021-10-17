@@ -2,6 +2,12 @@
 @import '../../styles/shared';
 
 .portfolio {
+  $portfolio-shadow: -0.06em 0.05em 0 0.05em #aaa;
+  $portfolio-shadow-upper: -0.17em 0.12em 0 0.1em #aaa;
+  $portfolio-shadow-solid: -0.3em 0.2em 0 0.1em #aaa;
+
+  $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
+
   padding: 50px 0;
 
   display: flex;
@@ -32,7 +38,7 @@
   &__project {
     width: 20em;
 
-    background-color: $header-background;
+    background-color: #ddd;
     border-radius: 1em;
     padding: 1em;
 
@@ -40,7 +46,10 @@
     flex-direction: column;
     row-gap: 1em;
 
-    box-shadow: 0 0 0.5em #000;
+    border-bottom: 0.1px solid rgba($global-background, 0.6);
+    border-left: 0.1px solid rgba($global-background, 0.6);
+
+    box-shadow: $portfolio-shadow, $portfolio-shadow-upper, $portfolio-shadow-solid;
 
     @media screen and (hover: hover) {
       &:hover {
@@ -52,6 +61,8 @@
       max-width: 100%;
       user-select: none;
       border-radius: 0.5em;
+
+      margin-bottom: 1em;
     }
 
     &-link {
@@ -72,9 +83,11 @@
 
       column-gap: 1em;
 
-      background-color: #191919;
+      background-color: $global-background;
       border-radius: 1em;
       padding: 0.3em 0.8em;
+
+      box-shadow: $portfolio-shadow-inside-solid inset;
     }
 
     &-title {
@@ -93,7 +106,7 @@
 
     &-text {
       margin: 0;
-      color: #ddd;
+      color: #000;
 
       text-align: justify;
     }
