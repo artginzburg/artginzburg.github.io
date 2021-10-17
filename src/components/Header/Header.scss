@@ -19,7 +19,7 @@
   justify-content: space-between;
   padding: 0 7em;
 
-  background: $header-background;
+  background: linear-gradient(to top, $header-background 40%, $global-background);
   backdrop-filter: blur(2px);
 
   box-shadow: 0 0 2em 1em $header-background;
