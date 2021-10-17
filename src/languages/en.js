@@ -1,8 +1,8 @@
 export const en = {
-  home_text: 'Arthur, writes code.',
+  home_text: 'Arthur, builds impressive yet functional websites.',
   links: {
     github: 'Code',
-    telegram: 'Work with me',
+    telegram: "Let's work",
   },
   routes: {
     main: 'Art Ginzburg',
