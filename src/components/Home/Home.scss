@@ -28,13 +28,14 @@
   }
 
   &__text {
+    margin: 1em;
+    min-width: fit-content;
     padding: 0.2em 0.4em;
+
     background-color: rgba($color: $global-background, $alpha: 0.6);
     border-radius: 6px;
 
     text-align: center;
-    min-width: fit-content;
-
     font-weight: 300;
   }
 
