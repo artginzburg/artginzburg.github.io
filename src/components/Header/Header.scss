@@ -99,14 +99,48 @@
 
   &__language {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 0.1em;
+
+    position: relative;
+
+    &::before {
+      pointer-events: none;
+
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5%;
+
+      height: 45%;
+      width: 100%;
+
+      border-radius: 0.6em;
+
+      background-color: #ddd;
+
+      transition-duration: 0.4s;
+      transition-property: top;
+      transition-timing-function: $button-timing-function;
+
+      mix-blend-mode: difference;
+    }
+
+    &_moved {
+      &::before {
+        top: 50%;
+      }
+    }
 
     &-button {
       appearance: none;
       cursor: pointer;
+      user-select: none;
 
-      margin: 0.2em;
-      padding: 0.4em 0.2em;
+      margin: 0.1em;
+      padding: 0 0.2em;
 
       background-color: transparent;
       color: #999;
@@ -114,42 +148,11 @@
 
       border: 0;
 
-      position: relative;
-
-      @media screen and (hover: hover) {
-        &:hover {
-          color: $global-text;
-        }
-      }
-
       &_selected {
         cursor: default;
 
-        @media screen and (hover: hover) {
-          &:hover {
-            color: #999;
-          }
-        }
-
         &:active {
           cursor: not-allowed;
-        }
-
-        &::after {
-          $point-size: 3px;
-          $point-width: $point-size * 2.5;
-
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: calc(50% - #{$point-width / 2});
-
-          height: $point-size;
-          width: $point-width;
-
-          border-radius: 1em;
-
-          background-color: rgba($color: $link-color, $alpha: 0.7);
         }
       }
     }
