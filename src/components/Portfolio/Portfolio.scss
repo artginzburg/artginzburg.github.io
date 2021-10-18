@@ -2,6 +2,8 @@
 @import '../../styles/shared';
 
 .portfolio {
+  $project-transition-dur: 0.45s;
+
   $portfolio-shadow: -0.06em 0.05em 0 0.05em #aaa;
   $portfolio-shadow-upper: -0.17em 0.12em 0 0.1em #aaa;
   $portfolio-shadow-solid: -0.3em 0.2em 0 0.1em #aaa;
@@ -49,11 +51,34 @@
     border-bottom: 0.1px solid rgba($global-background, 0.6);
     border-left: 0.1px solid rgba($global-background, 0.6);
 
+    transition-property: box-shadow, transform;
+    transition-duration: $project-transition-dur;
+
     box-shadow: $portfolio-shadow, $portfolio-shadow-upper, $portfolio-shadow-solid;
 
     @media screen and (hover: hover) {
       &:hover {
-        box-shadow: 0 0.2em 0.5em rgba(#fff, 0.4);
+        $hover-shadow: 0 0 0.6em $link-color;
+        box-shadow: $hover-shadow;
+
+        transform: translateY(0.3em + 0.05em) translateX(-0.5em);
+
+        .portfolio__project-container {
+          box-shadow: $hover-shadow inset;
+        }
+      }
+
+      &:active {
+        $active-shadow: 0 0 2em #000;
+
+        transition-duration: 0.1s;
+        box-shadow: $active-shadow;
+
+        .portfolio__project-container {
+          transition-duration: 0.15s;
+
+          box-shadow: $active-shadow inset;
+        }
       }
     }
 
@@ -86,6 +111,9 @@
       background-color: $global-background;
       border-radius: 1em;
       padding: 0.3em 0.8em;
+
+      transition-property: box-shadow;
+      transition-duration: $project-transition-dur;
 
       box-shadow: $portfolio-shadow-inside-solid inset;
     }
