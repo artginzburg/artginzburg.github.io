@@ -56,18 +56,18 @@
 
     box-shadow: $portfolio-shadow, $portfolio-shadow-upper, $portfolio-shadow-solid;
 
-    @media screen and (hover: hover) {
-      &:hover {
-        $hover-shadow: 0 0 0.6em $link-color;
-        box-shadow: $hover-shadow;
+    &:hover {
+      $hover-shadow: 0 0 0.6em $link-color;
+      box-shadow: $hover-shadow;
 
-        transform: translateY(0.3em + 0.05em) translateX(-0.5em);
+      transform: translateY(0.3em + 0.05em) translateX(-0.5em);
 
-        .portfolio__project-container {
-          box-shadow: $hover-shadow inset;
-        }
+      .portfolio__project-container {
+        box-shadow: $hover-shadow inset;
       }
+    }
 
+    @media screen and (hover: hover) {
       &:active {
         $active-shadow: 0 0 2em #000;
 
