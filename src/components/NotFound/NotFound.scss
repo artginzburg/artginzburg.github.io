@@ -1,0 +1,66 @@
+@import '../../styles/colors';
+@import '../../styles/shared';
+
+.notfound {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 10px;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  &__title {
+    font-weight: normal;
+    margin: 0;
+
+    font-size: 140px;
+    line-height: 169px;
+
+    color: #ddd;
+  }
+
+  &__subtitle {
+    font-weight: normal;
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #ddd;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    padding-bottom: 50px;
+  }
+
+  &__link {
+    @include link-shared;
+
+    font-size: 14px;
+    line-height: 17px;
+
+    color: $link-color;
+
+    padding: 0.3em 1em;
+
+    @media screen and (hover: hover) {
+      &:hover {
+        background-color: #999;
+        border-radius: 0.2em;
+        color: $global-background;
+      }
+    }
+  }
+}
