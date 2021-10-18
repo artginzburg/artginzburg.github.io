@@ -15,12 +15,14 @@ const customStyles = {
   telegram: linkColor('#28aaea'), // 0088cc
 };
 
+const hiddenWords = ['develop', 'software', author.name];
+
 export default function Home() {
   const { localization } = useLanguage();
 
   return (
     <section className="home">
-      <HiddenWords words={['develop', 'software', author.name]} />
+      <HiddenWords words={hiddenWords} />
 
       <img src={avatar} className="home__logo" alt="avatar" />
       <p className="home__text">{localization.home_text}</p>

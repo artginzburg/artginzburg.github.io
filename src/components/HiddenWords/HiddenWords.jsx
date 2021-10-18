@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, memo } from 'react';
 
 import { makeIdMatrix } from '../../functions/makeId';
 import { makeEmptyMatrix } from '../../functions/makeEmpty';
@@ -121,7 +121,7 @@ function replaceMatrixCenter(mainMatrix, insertedMatrix) {
   return matrixToReturn;
 }
 
-export default function HiddenWords({ words }) {
+const HiddenWords = memo(({ words }) => {
   const [width, height] = useWindowSize();
 
   const [hiddenWords, setHiddenWords] = useState(initialBoard);
@@ -139,10 +139,10 @@ export default function HiddenWords({ words }) {
     );
   }, [height, width, words]);
 
-  useCooldownEffect(recalculateHiddenWords);
+  useCooldownEffect(recalculateHiddenWords, 300);
 
   return (
-    <div className="hiddenWords" onDoubleClick={recalculateHiddenWords}>
+    <div className="hiddenWords">
       {hiddenWords.map((row, rowIndex) => (
         <p className="hiddenWords__char" key={rowIndex}>
           {row.map((column, columnIndex) => {
@@ -166,4 +166,6 @@ export default function HiddenWords({ words }) {
       ))}
     </div>
   );
-}
+});
+
+export default HiddenWords;
