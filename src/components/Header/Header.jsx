@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 import { useLanguage } from '../../contexts/LanguageContext';
 
-import { classNames } from '../../utils/toClassNames';
+import { classNames } from '../../functions/toClassNames';
 
 import './Header.scss';
 
