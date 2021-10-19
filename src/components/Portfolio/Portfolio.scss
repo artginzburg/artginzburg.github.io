@@ -65,6 +65,17 @@
       .portfolio__project-container {
         box-shadow: $hover-shadow inset;
       }
+
+      .portfolio__project-image {
+        // BUG: This effect may cause all the layout to move
+        border-width: 0;
+        margin-bottom: 0.05em;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+          margin-bottom: 0.08em;
+        }
+        // BUG end.
+      }
     }
 
     @media screen and (hover: hover) {
@@ -87,12 +98,26 @@
       user-select: none;
       border-radius: 0.5em;
 
-      margin-bottom: 1em;
+      // BUG: This effect may cause all the layout to move
+      border-top: 0.2em solid #888;
+      border-right: 0.25em solid #888;
+
+      box-sizing: border-box;
+
+      margin-bottom: 0;
+
+      transition-duration: $project-transition-dur;
+      transition-property: border-width, margin-bottom;
+      // BUG end.
     }
 
     &-link {
       color: $link-color;
       text-decoration-line: none;
+
+      display: flex;
+      flex-direction: column;
+      row-gap: 1em;
 
       @media screen and (hover: hover) {
         &:hover {

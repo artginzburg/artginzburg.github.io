@@ -30,12 +30,15 @@ export default function Portfolio() {
                   rel="noreferrer"
                 >
                   {project.image && (
-                    <img
-                      className="portfolio__project-image"
-                      src={project.image}
-                      alt={project.title}
-                    />
+                    <div className="portfolio__project-image-container">
+                      <img
+                        className="portfolio__project-image"
+                        src={project.image}
+                        alt={project.title}
+                      />
+                    </div>
                   )}
+
                   <div className="portfolio__project-container">
                     <p className="portfolio__project-title">{project.title}</p>
                     <p className="portfolio__project-year">{project.year}</p>
