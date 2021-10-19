@@ -1,3 +1,6 @@
+import sudotouchid from '../images/projects/sudotouchid.png';
+import powerchime from '../images/projects/powerchime.png';
+
 export const projects = [
   {
     title: 'Movies Explorer',
@@ -58,8 +61,7 @@ export const projects = [
   {
     title: 'sudo-touchid',
     subtitle: 'Raw Shellscript',
-    image:
-      'https://repository-images.githubusercontent.com/389117398/2c1d846c-fe73-4f68-a0e3-98827e610e43',
+    image: sudotouchid,
     year: 2021,
     link: 'https://git.io/sudotouchid',
     category: 'cli',
@@ -82,7 +84,7 @@ export const projects = [
   {
     title: 'powerchime',
     subtitle: 'Raw Shellscript',
-    image: 'https://raw.githubusercontent.com/artginzburg/powerchime/main/misc/preview.png',
+    image: powerchime,
     year: 2019,
     link: 'https://git.io/nochime',
     category: 'cli',
