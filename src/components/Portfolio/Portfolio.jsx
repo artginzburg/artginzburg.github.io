@@ -1,5 +1,6 @@
 import { useLanguage } from '../../contexts/LanguageContext';
 import { splitIntoGroups } from '../../functions/splitIntoGroups';
+import { useTitle } from '../../hooks/useTitle';
 import { projects } from '../../utils/data';
 
 import './Portfolio.scss';
@@ -11,6 +12,8 @@ export default function Portfolio() {
     localization,
     state: [lang],
   } = useLanguage();
+
+  useTitle(localization.titles.portfolio);
 
   return (
     <section className="portfolio">

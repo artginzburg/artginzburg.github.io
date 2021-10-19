@@ -1,10 +1,11 @@
 import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
 
 import { author } from '../../../package.json';
-import { useLanguage } from '../../contexts/LanguageContext';
 
+import { useLanguage } from '../../contexts/LanguageContext';
 import avatar from '../../images/avatar.jpg';
 import { linkColor } from '../../utils/styles';
+import { useTitle } from '../../hooks/useTitle';
 
 import HiddenWords from '../HiddenWords/HiddenWords';
 
@@ -19,6 +20,8 @@ const hiddenWords = ['develop', 'software', author.name];
 
 export default function Home() {
   const { localization } = useLanguage();
+
+  useTitle(localization.titles.main);
 
   return (
     <section className="home">

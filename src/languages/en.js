@@ -1,4 +1,8 @@
 export const en = {
+  titles: {
+    main: 'Developer from Moscow',
+    portfolio: "Developer's portfolio",
+  },
   home_text: 'Arthur, builds impressive yet functional websites.',
   notFound: {
     subtitle: 'Page not found',
