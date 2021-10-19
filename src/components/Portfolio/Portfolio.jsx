@@ -51,7 +51,7 @@ export default function Portfolio() {
                   <div className="portfolio__project-badges">
                     {project.downloads && (
                       <img
-                        src={`${project.downloads}?label=⬇&style=flat-square&color=ddd&labelColor=ddd`}
+                        src={`${project.downloads}?label=▼&style=flat-square&color=ddd&labelColor=ddd`}
                         alt={`${project.title} downloads`}
                       />
                     )}
