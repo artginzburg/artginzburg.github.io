@@ -67,14 +67,14 @@
       }
 
       .portfolio__project-image {
-        // BUG: This effect may cause all the layout to move
+        // EFFECT: Image 3d
         border-width: 0;
-        margin-bottom: 0.05em;
+        margin-bottom: 1px;
 
         @media screen and (max-width: $breakpoint-mobile) {
-          margin-bottom: 0.08em;
+          margin-bottom: 1.5px;
         }
-        // BUG end.
+        // EFFECT end.
       }
     }
 
@@ -98,9 +98,9 @@
       user-select: none;
       border-radius: 0.5em;
 
-      // BUG: This effect may cause all the layout to move
-      border-top: 0.2em solid #888;
-      border-right: 0.25em solid #888;
+      // EFFECT: Image 3d
+      border-top: 3px solid #888;
+      border-right: 4px solid #888;
 
       box-sizing: border-box;
 
@@ -108,7 +108,7 @@
 
       transition-duration: $project-transition-dur;
       transition-property: border-width, margin-bottom;
-      // BUG end.
+      // EFFECT end.
     }
 
     &-link {
