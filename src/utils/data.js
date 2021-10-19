@@ -3,6 +3,36 @@ import powerchime from '../images/projects/powerchime.png';
 
 export const projects = [
   {
+    title: '2FA to Tray',
+    subtitle: 'Swift & JS',
+    image:
+      'https://raw.githubusercontent.com/artginzburg/2FAtoTray/main/res/screenshot_full_res.png',
+    year: 2020,
+    link: 'https://2fatotray.unicornplatform.page',
+    category: 'apps',
+    description: {
+      en: 'One-time password manager for mac OS, which, despite its simplicity, has almost passed into the daily top of Product Hunt',
+      ru: 'Менеджер одноразовых паролей для macOS, который, несмотря на свою простоту, почти прошёл в ежедневный топ Product Hunt',
+    },
+    downloads: 'https://img.shields.io/github/downloads/artginzburg/2fatotray/total',
+    stars: 'https://img.shields.io/github/stars/artginzburg/2fatotray',
+  },
+  {
+    title: 'MiddleClick',
+    subtitle: 'Objective-C',
+    image: 'https://github.com/artginzburg/MiddleClick-Catalina/raw/master/demo.png',
+    year: 2019,
+    link: 'https://github.com/artginzburg/MiddleClick-Catalina',
+    category: 'apps',
+    description: {
+      en: ' Middleclick with three-finger click/tap for MacBook trackpad and Magic Mouse.',
+      ru: ' "Клик колёсиком" тремя пальцами для трекпада и Magic Mouse',
+    },
+    downloads: 'https://img.shields.io/github/downloads/artginzburg/middleclick-catalina/total',
+    stars: 'https://img.shields.io/github/stars/artginzburg/middleclick-catalina',
+  },
+
+  {
     title: 'Movies Explorer',
     subtitle: 'React Hooks & MongoDB',
     year: 2021,
@@ -110,36 +140,6 @@ export const projects = [
       ru: 'Быстрый шеринг паролей Wi-Fi',
     },
     stars: 'https://img.shields.io/github/stars/artginzburg/wifi-pass',
-  },
-
-  {
-    title: '2FA to Tray',
-    subtitle: 'Swift & JS',
-    image:
-      'https://raw.githubusercontent.com/artginzburg/2FAtoTray/main/res/screenshot_full_res.png',
-    year: 2020,
-    link: 'https://2fatotray.unicornplatform.page',
-    category: 'apps',
-    description: {
-      en: 'One-time password manager for mac OS, which, despite its simplicity, has almost passed into the daily top of Product Hunt',
-      ru: 'Менеджер одноразовых паролей для macOS, который, несмотря на свою простоту, почти прошёл в ежедневный топ Product Hunt',
-    },
-    downloads: 'https://img.shields.io/github/downloads/artginzburg/2fatotray/total',
-    stars: 'https://img.shields.io/github/stars/artginzburg/2fatotray',
-  },
-  {
-    title: 'MiddleClick',
-    subtitle: 'Objective-C',
-    image: 'https://github.com/artginzburg/MiddleClick-Catalina/raw/master/demo.png',
-    year: 2019,
-    link: 'https://github.com/artginzburg/MiddleClick-Catalina',
-    category: 'apps',
-    description: {
-      en: ' Middleclick with three-finger click/tap for MacBook trackpad and Magic Mouse.',
-      ru: ' "Клик колёсиком" тремя пальцами для трекпада и Magic Mouse',
-    },
-    downloads: 'https://img.shields.io/github/downloads/artginzburg/middleclick-catalina/total',
-    stars: 'https://img.shields.io/github/stars/artginzburg/middleclick-catalina',
   },
 
   {
