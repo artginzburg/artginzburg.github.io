@@ -116,6 +116,18 @@ export const projects = [
       ru: 'Менеджер одноразовых паролей для macOS, который, несмотря на свою простоту, почти прошёл в ежедневный топ Product Hunt',
     },
   },
+  {
+    title: 'MiddleClick',
+    subtitle: 'Objective-C',
+    image: 'https://github.com/artginzburg/MiddleClick-Catalina/raw/master/demo.png',
+    year: 2019,
+    link: 'https://github.com/artginzburg/MiddleClick-Catalina',
+    category: 'apps',
+    description: {
+      en: ' Middleclick with three-finger click/tap for MacBook trackpad and Magic Mouse.',
+      ru: ' "Клик колёсиком" тремя пальцами для трекпада и Magic Mouse',
+    },
+  },
 
   {
     title: 'Flight Notifier',
