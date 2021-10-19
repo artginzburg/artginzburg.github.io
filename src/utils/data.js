@@ -20,7 +20,7 @@ export const projects = [
   {
     title: 'MiddleClick',
     subtitle: 'Objective-C',
-    image: 'https://github.com/artginzburg/MiddleClick-Catalina/raw/master/demo.png',
+    image: 'https://raw.githubusercontent.com/artginzburg/MiddleClick-Catalina/master/demo.png',
     year: 2019,
     link: 'https://github.com/artginzburg/MiddleClick-Catalina',
     category: 'apps',
