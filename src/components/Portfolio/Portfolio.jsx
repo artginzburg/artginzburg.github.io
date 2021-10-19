@@ -40,6 +40,23 @@ export default function Portfolio() {
                 </a>
                 <p className="portfolio__project-subtitle">{project.subtitle}</p>
                 <p className="portfolio__project-text">{project.description[lang]}</p>
+
+                {(project.downloads || project.stars) && (
+                  <div className="portfolio__project-badges">
+                    {project.downloads && (
+                      <img
+                        src={`${project.downloads}?label=⬇&style=flat-square&color=ddd&labelColor=ddd`}
+                        alt={`${project.title} downloads`}
+                      />
+                    )}
+                    {project.stars && (
+                      <img
+                        src={`${project.stars}?color=ddd&label=★&style=flat-square&labelColor=ddd`}
+                        alt={`${project.title} stars`}
+                      />
+                    )}
+                  </div>
+                )}
               </li>
             ))}
           </ul>

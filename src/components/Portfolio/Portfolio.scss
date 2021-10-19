@@ -137,6 +137,14 @@
       color: #000;
 
       text-align: justify;
+
+      margin: auto 0;
+    }
+
+    &-badges {
+      display: flex;
+      justify-content: space-between;
+      margin-top: auto;
     }
   }
 }

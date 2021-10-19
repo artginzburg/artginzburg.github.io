@@ -69,6 +69,8 @@ export const projects = [
       en: 'Script for automating the use of Touch ID instead of a password on the command line',
       ru: 'Скрипт для автоматизации использования TouchID вместо пароля в командной строке',
     },
+    downloads: 'https://img.shields.io/github/downloads/artginzburg/sudo-touchid/total',
+    stars: 'https://img.shields.io/github/stars/artginzburg/sudo-touchid',
   },
   {
     title: 'barhide',
@@ -80,6 +82,8 @@ export const projects = [
       en: 'Hiding extra icons from the Menu Bar',
       ru: 'Скрытие лишних иконок из Menu Bar',
     },
+    downloads: 'https://img.shields.io/github/downloads/artginzburg/barhide/total',
+    stars: 'https://img.shields.io/github/stars/artginzburg/barhide',
   },
   {
     title: 'powerchime',
@@ -92,6 +96,8 @@ export const projects = [
       en: 'Switching the sound of the charging cable connection',
       ru: ' Тот самый переключатель звука зарядки для MacBook 🔊',
     },
+    downloads: 'https://img.shields.io/github/downloads/artginzburg/powerchime/total',
+    stars: 'https://img.shields.io/github/stars/artginzburg/powerchime',
   },
   {
     title: 'wifi-pass',
@@ -103,6 +109,7 @@ export const projects = [
       en: 'Fast sharing of Wi-Fi passwords',
       ru: 'Быстрый шеринг паролей Wi-Fi',
     },
+    stars: 'https://img.shields.io/github/stars/artginzburg/wifi-pass',
   },
 
   {
@@ -117,6 +124,8 @@ export const projects = [
       en: 'One-time password manager for mac OS, which, despite its simplicity, has almost passed into the daily top of Product Hunt',
       ru: 'Менеджер одноразовых паролей для macOS, который, несмотря на свою простоту, почти прошёл в ежедневный топ Product Hunt',
     },
+    downloads: 'https://img.shields.io/github/downloads/artginzburg/2fatotray/total',
+    stars: 'https://img.shields.io/github/stars/artginzburg/2fatotray',
   },
   {
     title: 'MiddleClick',
@@ -129,6 +138,8 @@ export const projects = [
       en: ' Middleclick with three-finger click/tap for MacBook trackpad and Magic Mouse.',
       ru: ' "Клик колёсиком" тремя пальцами для трекпада и Magic Mouse',
     },
+    downloads: 'https://img.shields.io/github/downloads/artginzburg/middleclick-catalina/total',
+    stars: 'https://img.shields.io/github/stars/artginzburg/middleclick-catalina',
   },
 
   {
