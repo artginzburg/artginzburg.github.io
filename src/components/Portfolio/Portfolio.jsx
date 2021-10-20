@@ -7,6 +7,8 @@ import './Portfolio.scss';
 
 const categories = splitIntoGroups(projects, 'category');
 
+const publicGithubReposQuantity = 28;
+
 export default function Portfolio() {
   const {
     localization,
@@ -17,6 +19,20 @@ export default function Portfolio() {
 
   return (
     <section className="portfolio">
+      <div className="portfolio__stats">
+        <a href="https://www.npmjs.com/~artginzburg" target="_blank" rel="noreferrer">
+          <img
+            src="https://img.shields.io/endpoint?url=https://artginzburg.runkit.io/npmstalk/branches/master/artginzburg&style=flat-square&labelColor=rgba(0,0,0,0)&color=000&label=NPM%20downloads"
+            alt="My NPM downloads"
+          />
+        </a>
+
+        <img
+          src="https://img.shields.io/github/stars/artginzburg?style=flat-square&labelColor=rgba(0,0,0,0)&color=000&logo=github&label=GitHub%20stars"
+          alt="My GitHub stars"
+        />
+      </div>
+
       {Object.keys(categories).map((category, categoryIndex) => (
         <article key={categoryIndex}>
           <h2 className="portfolio__subtitle">{localization.portfolio[category]}</h2>
@@ -68,6 +84,10 @@ export default function Portfolio() {
           </ul>
         </article>
       ))}
+
+      <p className="portfolio__quantity">
+        {projects.length} of {publicGithubReposQuantity} projects listed here
+      </p>
     </section>
   );
 }
