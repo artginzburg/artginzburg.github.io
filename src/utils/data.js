@@ -33,6 +33,60 @@ export const projects = [
   },
 
   {
+    title: 'sudo-touchid',
+    subtitle: 'Raw Shellscript',
+    image: sudotouchid,
+    year: 2021,
+    link: 'https://git.io/sudotouchid',
+    category: 'cli',
+    description: {
+      en: 'Script for automating the use of Touch ID instead of a password on the command line',
+      ru: 'Скрипт для автоматизации использования TouchID вместо пароля в командной строке',
+    },
+    downloads: 'https://img.shields.io/github/downloads/artginzburg/sudo-touchid/total',
+    stars: 'https://img.shields.io/github/stars/artginzburg/sudo-touchid',
+  },
+  {
+    title: 'barhide',
+    subtitle: 'Raw Shellscript',
+    year: 2019,
+    link: 'https://git.io/barhide',
+    category: 'cli',
+    description: {
+      en: 'Hiding extra icons from the Menu Bar',
+      ru: 'Скрытие лишних иконок из Menu Bar',
+    },
+    downloads: 'https://img.shields.io/github/downloads/artginzburg/barhide/total',
+    stars: 'https://img.shields.io/github/stars/artginzburg/barhide',
+  },
+  {
+    title: 'powerchime',
+    subtitle: 'Raw Shellscript',
+    image: powerchime,
+    year: 2019,
+    link: 'https://git.io/nochime',
+    category: 'cli',
+    description: {
+      en: 'Switching the sound of the charging cable connection',
+      ru: ' Тот самый переключатель звука зарядки для MacBook 🔊',
+    },
+    downloads: 'https://img.shields.io/github/downloads/artginzburg/powerchime/total',
+    stars: 'https://img.shields.io/github/stars/artginzburg/powerchime',
+  },
+  {
+    title: 'wifi-pass',
+    subtitle: 'Raw Shellscript',
+    year: 2019,
+    link: 'https://git.io/wifi-pass',
+    category: 'cli',
+    description: {
+      en: 'Fast sharing of Wi-Fi passwords',
+      ru: 'Быстрый шеринг паролей Wi-Fi',
+    },
+    stars: 'https://img.shields.io/github/stars/artginzburg/wifi-pass',
+  },
+
+  {
     title: 'Movies Explorer',
     subtitle: 'React Hooks & MongoDB',
     year: 2021,
@@ -86,60 +140,6 @@ export const projects = [
       en: 'Interactive map of the school building, the first independent frontend project',
       ru: 'Интерактивная карта школьного здания, первый самостоятельный фронтенд-проект',
     },
-  },
-
-  {
-    title: 'sudo-touchid',
-    subtitle: 'Raw Shellscript',
-    image: sudotouchid,
-    year: 2021,
-    link: 'https://git.io/sudotouchid',
-    category: 'cli',
-    description: {
-      en: 'Script for automating the use of Touch ID instead of a password on the command line',
-      ru: 'Скрипт для автоматизации использования TouchID вместо пароля в командной строке',
-    },
-    downloads: 'https://img.shields.io/github/downloads/artginzburg/sudo-touchid/total',
-    stars: 'https://img.shields.io/github/stars/artginzburg/sudo-touchid',
-  },
-  {
-    title: 'barhide',
-    subtitle: 'Raw Shellscript',
-    year: 2019,
-    link: 'https://git.io/barhide',
-    category: 'cli',
-    description: {
-      en: 'Hiding extra icons from the Menu Bar',
-      ru: 'Скрытие лишних иконок из Menu Bar',
-    },
-    downloads: 'https://img.shields.io/github/downloads/artginzburg/barhide/total',
-    stars: 'https://img.shields.io/github/stars/artginzburg/barhide',
-  },
-  {
-    title: 'powerchime',
-    subtitle: 'Raw Shellscript',
-    image: powerchime,
-    year: 2019,
-    link: 'https://git.io/nochime',
-    category: 'cli',
-    description: {
-      en: 'Switching the sound of the charging cable connection',
-      ru: ' Тот самый переключатель звука зарядки для MacBook 🔊',
-    },
-    downloads: 'https://img.shields.io/github/downloads/artginzburg/powerchime/total',
-    stars: 'https://img.shields.io/github/stars/artginzburg/powerchime',
-  },
-  {
-    title: 'wifi-pass',
-    subtitle: 'Raw Shellscript',
-    year: 2019,
-    link: 'https://git.io/wifi-pass',
-    category: 'cli',
-    description: {
-      en: 'Fast sharing of Wi-Fi passwords',
-      ru: 'Быстрый шеринг паролей Wi-Fi',
-    },
-    stars: 'https://img.shields.io/github/stars/artginzburg/wifi-pass',
   },
 
   {
