@@ -72,7 +72,8 @@
   }
 
   &__link {
-    text-decoration-line: none;
+    @include link-shared;
+
     color: #999;
 
     @media screen and (hover: hover) {

@@ -112,8 +112,9 @@
     }
 
     &-link {
+      @include link-shared;
+
       color: $link-color;
-      text-decoration-line: none;
 
       display: flex;
       flex-direction: column;
