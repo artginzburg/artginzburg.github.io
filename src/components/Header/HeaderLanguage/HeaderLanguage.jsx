@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
 import { useLanguage } from '../../../contexts/LanguageContext';
-
 import { classNames } from '../../../functions/toClassNames';
+
+import './HeaderLanguage.scss';
 
 export default function HeaderLanguage() {
   // Logic
