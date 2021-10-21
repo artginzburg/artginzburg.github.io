@@ -57,7 +57,7 @@ export default function Life() {
           .
         </p>
         <p className="life__text">
-          Moving further with the stats, I connected to WakaTime on August 29 2021 and spent{' '}
+          Moving further with the stats, I spent{' '}
           <a
             href="https://wakatime.com/@artginzburg"
             target="_blank"
@@ -70,11 +70,61 @@ export default function Life() {
               className="life__badge"
             />
           </a>{' '}
-          coding since then.
+          coding since August 29 2021.
         </p>
-        <p className="life__text">
-          This website section is not complete 'cause everyone should sleep sometimes...
-        </p>
+      </article>
+      <article>
+        <h2 className="life__subtitle">Education</h2>
+        <ul>
+          <li className="life__text">
+            <p>
+              <a
+                href="https://praktikum.yandex.ru"
+                target="_blank"
+                rel="noreferrer"
+                className="life__link"
+              >
+                Yandex.Praktikum
+              </a>{' '}
+              | Jan, 2021 - Oct, 2021
+            </p>
+            <p>
+              Web-Developer{' '}
+              <a
+                href="https://github.com/artginzburg/yandex.praktikum-portfolio"
+                target="_blank"
+                rel="noreferrer"
+                className="life__link"
+              >
+                Portfolio
+              </a>
+            </p>
+          </li>
+          <li className="life__text">
+            <p>
+              <a
+                href="https://www.ibo.org/programmes/diploma-programme/"
+                target="_blank"
+                rel="noreferrer"
+                className="life__link"
+              >
+                International Baccalaureate® (IB) Diploma Programme (DP)
+              </a>{' '}
+              | Sep, 2018 - Jun, 2020
+            </p>
+            <p>
+              Film · Computer Science · Business & Management{' '}
+              <a
+                href="https://artginzburg.github.io/CASProject/"
+                target="_blank"
+                rel="noreferrer"
+                className="life__link"
+              >
+                CAS Project
+              </a>
+            </p>
+          </li>
+        </ul>
       </article>
     </section>
   );
