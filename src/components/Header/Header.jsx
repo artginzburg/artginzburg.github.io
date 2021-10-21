@@ -20,6 +20,9 @@ export default function Header() {
           <NavLink to="/portfolio" className="header__link" activeClassName="header__link_active">
             {localization.routes.portfolio}
           </NavLink>
+          <NavLink to="/life" className="header__link" activeClassName="header__link_active">
+            {localization.routes.life}
+          </NavLink>
         </ul>
       </nav>
 

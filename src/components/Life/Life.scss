@@ -1,0 +1,27 @@
+@import '../../styles/colors';
+@import '../../styles/shared';
+
+.life {
+  padding: 50px 0;
+  margin: 0 7vmin;
+
+  &__subtitle {
+    color: #aaa;
+  }
+
+  &__text {
+    color: #ccc;
+  }
+
+  &__link {
+    @include link-shared;
+
+    color: #eee;
+
+    @media screen and (hover: hover) {
+      &:hover {
+        text-decoration-line: underline;
+      }
+    }
+  }
+}

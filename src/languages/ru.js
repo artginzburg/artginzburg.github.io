@@ -15,6 +15,7 @@ export const ru = {
   routes: {
     main: 'Арт Гинзбург',
     portfolio: 'Портфолио',
+    life: 'Лайф',
   },
   portfolio: {
     frontend: 'Фронтенд',

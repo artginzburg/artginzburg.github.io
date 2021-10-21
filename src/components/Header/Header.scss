@@ -25,6 +25,13 @@
   }
 
   &__logo {
+    @media screen and (max-width: 400px) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 25vw;
+    }
+
     font-size: 1.25rem;
     line-height: 1.75rem;
     text-decoration-line: none;
@@ -63,6 +70,9 @@
     margin: 0;
     padding: 0.25em 15px;
     border-left: 1px solid #525252;
+
+    display: flex;
+    column-gap: 15px;
   }
 
   &__links {

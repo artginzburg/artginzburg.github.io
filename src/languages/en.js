@@ -15,6 +15,7 @@ export const en = {
   routes: {
     main: 'Art Ginzburg',
     portfolio: 'Portfolio',
+    life: 'Life',
   },
   portfolio: {
     frontend: 'Front-end',
