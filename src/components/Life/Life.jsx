@@ -2,42 +2,18 @@ import { shuffle } from '../../functions/shuffle';
 import { humanizeArray } from '../../functions/humanizeArray';
 import { mathRoundRough } from '../../functions/mathRoundRough';
 
+import { countries, insights, age } from '../../utils/data';
+
 import './Life.scss';
 
 // TODO: Limit the badges size everywhere on the website (in case it can't load, alternative text becomes about the window size large)
 
-const countries = shuffle([
-  'Bulgaria',
-  'Finland',
-  'Spain',
-  'France',
-  'Ukraine',
-  'Cyprus',
-  'Italy',
-  'Abkhazia',
-  'Thailand',
-  'Israel',
-  'Croatia',
-  'Russia',
-]);
+const countriesShuffled = shuffle(countries);
 
-const mustAppInsights = {
-  hoursMovies: 595.7,
-  hoursSeries: 1000,
+const timeSpent = {
+  films: mathRoundRough((insights.mustapp.total / age.hours) * 100),
+  games: mathRoundRough((insights.steam.hours / age.hours) * 100),
 };
-const steamInsights = {
-  hours: 2979.7,
-  gamesPlayed: 76,
-}; // https://steamdb.info/calculator/76561198194789443/
-
-const birthday = new Date('25 Mar 2002');
-const age = new Date(Date.now()) - birthday;
-const ageInHours = age / 1000 / 60 / 60;
-
-const spentWatchingFilms = mustAppInsights.hoursMovies + mustAppInsights.hoursSeries;
-const spentWatchingFilmsInPercents = mathRoundRough((spentWatchingFilms / ageInHours) * 100);
-
-const spentPlayingGames = mathRoundRough((steamInsights.hours / ageInHours) * 100);
 
 export default function Life() {
   return (
@@ -45,13 +21,13 @@ export default function Life() {
       <article>
         <h2 className="life__subtitle">Story</h2>
         <p className="life__text">
-          I've been to {humanizeArray(countries)} to bring you the user experience learned from the
-          architecture, culture, and urban planning of many cities. Technical knowledge is just half
-          of the package.
+          I've been to {humanizeArray(countriesShuffled)} to bring you the user experience learned
+          from the architecture, culture, and urban planning of many cities. Technical knowledge is
+          just half of the package.
         </p>
         <p className="life__text">
           But let's step aside from that to take a look at what I do for fun. Mainly, it's either
-          playing these {steamInsights.gamesPlayed}{' '}
+          playing these {insights.steam.gamesPlayed}{' '}
           <a
             href="https://steamcommunity.com/id/artginzburg"
             target="_blank"
@@ -60,7 +36,7 @@ export default function Life() {
           >
             Computer games
           </a>{' '}
-          ({spentPlayingGames}%) or taking{' '}
+          ({timeSpent.games}%) or taking{' '}
           <a
             href="https://www.instagram.com/art.ginzburg/"
             target="_blank"
@@ -69,7 +45,7 @@ export default function Life() {
           >
             Photos
           </a>
-          . Also, {spentWatchingFilmsInPercents}% of my life was dedicated to watching these{' '}
+          . Also, {timeSpent.films}% of my life was dedicated to watching these{' '}
           <a
             href="https://mustapp.com/@artginzburg"
             target="_blank"

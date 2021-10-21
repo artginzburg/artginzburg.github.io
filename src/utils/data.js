@@ -166,6 +166,40 @@ export const projects = [
   },
 ];
 
+export const countries = [
+  'Bulgaria',
+  'Finland',
+  'Spain',
+  'France',
+  'Ukraine',
+  'Cyprus',
+  'Italy',
+  'Abkhazia',
+  'Thailand',
+  'Israel',
+  'Croatia',
+  'Russia',
+];
+
+export const insights = {
+  mustapp: {
+    hoursMovies: 595.7,
+    hoursSeries: 1000,
+  },
+  steam: {
+    // https://steamdb.info/calculator/76561198194789443/
+    hours: 2979.7,
+    gamesPlayed: 76,
+  },
+};
+insights.mustapp.total = insights.mustapp.hoursMovies + insights.mustapp.hoursSeries;
+
+export const age = {
+  birthday: new Date('25 Mar 2002'),
+};
+age.ms = new Date(Date.now()) - age.birthday;
+age.hours = age.ms / 1000 / 60 / 60;
+
 // export const testimonials = [
 //   {
 //     quote: 'Powerchime for the win! Thanks mate.',
