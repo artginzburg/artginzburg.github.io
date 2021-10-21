@@ -23,4 +23,8 @@ export const ru = {
     apps: 'Приложения',
     backend: 'Бэкенд',
   },
+  badges: {
+    npm: 'Загрузки с NPM',
+    github: 'Звёзды на GitHub',
+  },
 };

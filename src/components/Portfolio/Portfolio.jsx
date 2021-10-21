@@ -22,15 +22,19 @@ export default function Portfolio() {
       <div className="portfolio__stats">
         <a href="https://www.npmjs.com/~artginzburg" target="_blank" rel="noreferrer">
           <img
-            src="https://img.shields.io/endpoint?url=https://artginzburg.runkit.io/npmstalk/branches/master/artginzburg&style=flat-square&labelColor=rgba(0,0,0,0)&color=000&label=NPM%20downloads"
+            src={`https://img.shields.io/endpoint?url=https://artginzburg.runkit.io/npmstalk/branches/master/artginzburg&style=flat-square&labelColor=rgba(0,0,0,0)&color=000&label=${localization.badges.npm}`}
             alt="My NPM downloads"
+            className="portfolio__stats-badge"
           />
         </a>
 
-        <img
-          src="https://img.shields.io/github/stars/artginzburg?style=flat-square&labelColor=rgba(0,0,0,0)&color=000&logo=github&label=GitHub%20stars"
-          alt="My GitHub stars"
-        />
+        <a href="https://github.com/artginzburg" target="_blank" rel="noreferrer">
+          <img
+            src={`https://img.shields.io/github/stars/artginzburg?style=flat-square&labelColor=rgba(0,0,0,0)&color=000&logo=github&label=${localization.badges.github}`}
+            alt="My GitHub stars"
+            className="portfolio__stats-badge"
+          />
+        </a>
       </div>
 
       {Object.keys(categories).map((category, categoryIndex) => (

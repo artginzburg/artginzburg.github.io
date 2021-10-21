@@ -23,4 +23,8 @@ export const en = {
     apps: 'Apps',
     backend: 'Back-end',
   },
+  badges: {
+    npm: 'NPM downloads',
+    github: 'GitHub stars',
+  },
 };

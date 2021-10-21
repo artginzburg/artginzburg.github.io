@@ -26,6 +26,10 @@
     display: flex;
     justify-content: center;
     column-gap: 5vmin;
+
+    &-badge {
+      vertical-align: middle;
+    }
   }
 
   &__subtitle {
