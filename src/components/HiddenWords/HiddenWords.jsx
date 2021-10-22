@@ -1,4 +1,4 @@
-import { useCallback, useState, memo } from 'react';
+import { useCallback, useState, memo, useRef } from 'react';
 
 import { makeIdMatrix } from '../../functions/makeId';
 import { makeEmptyMatrix } from '../../functions/makeEmpty';
@@ -14,6 +14,11 @@ const WORD_INDEX_SEPARATOR = '禕';
 const MAXIMUM_BOARD_SIZE = 30;
 
 const initialBoard = makeIdMatrix(MAXIMUM_BOARD_SIZE, MAXIMUM_BOARD_SIZE);
+
+function getSizeOfALetter(containerElement) {
+  const rect = containerElement.getBoundingClientRect();
+  return { width: rect.width / MAXIMUM_BOARD_SIZE, height: rect.height / MAXIMUM_BOARD_SIZE };
+}
 
 function insertHiddenWord(word, wordIndex, grid, longestWordLength, length, quantity) {
   const shouldMoveRight = Math.random() > 0.5;
@@ -126,10 +131,17 @@ const HiddenWords = memo(({ words }) => {
 
   const [hiddenWords, setHiddenWords] = useState(initialBoard);
 
-  const recalculateHiddenWords = useCallback(() => {
-    const isMobile = height > width;
-    const newWidth = isMobile ? width / 40 : width / 60;
-    const newHeight = isMobile ? height / 52 : height / 85;
+  const containerRef = useRef();
+
+  const recalc = useCallback(() => {
+    const sizeOfALetter = getSizeOfALetter(containerRef.current);
+    const howMuchLettersFit = {
+      horizontally: Math.round(width / sizeOfALetter.width),
+      vertically: Math.round(height / sizeOfALetter.height),
+    };
+
+    const newWidth = howMuchLettersFit.horizontally;
+    const newHeight = howMuchLettersFit.vertically;
 
     const controlledWidth = newWidth > MAXIMUM_BOARD_SIZE ? MAXIMUM_BOARD_SIZE : newWidth;
     const controlledHeight = newHeight > MAXIMUM_BOARD_SIZE ? MAXIMUM_BOARD_SIZE : newHeight;
@@ -139,10 +151,10 @@ const HiddenWords = memo(({ words }) => {
     );
   }, [height, width, words]);
 
-  useCooldownEffect(recalculateHiddenWords, 300);
+  useCooldownEffect(recalc, 300);
 
   return (
-    <div className="hiddenWords">
+    <div ref={containerRef} className="hiddenWords">
       {hiddenWords.map((row, rowIndex) => (
         <p className="hiddenWords__char" key={rowIndex}>
           {row.map((column, columnIndex) => {

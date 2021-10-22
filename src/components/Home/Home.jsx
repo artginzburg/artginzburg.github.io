@@ -1,7 +1,5 @@
 import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
 
-import { author } from '../../../package.json';
-
 import { useLanguage } from '../../contexts/LanguageContext';
 import avatar from '../../images/avatar.jpg';
 import { linkColor } from '../../utils/styles';
@@ -16,7 +14,7 @@ const customStyles = {
   telegram: linkColor('#28aaea'), // 0088cc
 };
 
-const hiddenWords = ['develop', 'software', author.name];
+const hiddenWords = ['develop', 'software', 'ginzburg'];
 
 export default function Home() {
   const { localization } = useLanguage();
