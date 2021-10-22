@@ -166,21 +166,6 @@ export const projects = [
   },
 ];
 
-export const countries = [
-  'Bulgaria',
-  'Finland',
-  'Spain',
-  'France',
-  'Ukraine',
-  'Cyprus',
-  'Italy',
-  'Abkhazia',
-  'Thailand',
-  'Israel',
-  'Croatia',
-  'Russia',
-];
-
 export const insights = {
   mustapp: {
     hoursMovies: 595.7,

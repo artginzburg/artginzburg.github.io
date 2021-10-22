@@ -2,13 +2,10 @@ import { shuffle } from '../../functions/shuffle';
 import { humanizeArray } from '../../functions/humanizeArray';
 import { mathRoundRough } from '../../functions/mathRoundRough';
 
-import { countries, insights, age } from '../../utils/data';
+import { insights, age } from '../../utils/data';
 
 import './Life.scss';
-
-// TODO: Limit the badges size everywhere on the website (in case it can't load, alternative text becomes about the window size large)
-
-const countriesShuffled = shuffle(countries);
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const timeSpent = {
   films: mathRoundRough((insights.mustapp.total / age.hours) * 100),
@@ -16,14 +13,19 @@ const timeSpent = {
 };
 
 export default function Life() {
+  const { localization } = useLanguage();
+
+  const countriesShuffledHumanized = humanizeArray(
+    shuffle(localization.countries),
+    localization.listLastWord,
+  );
+
   return (
     <section className="life">
       <article>
-        <h2 className="life__subtitle">Story</h2>
+        <h2 className="life__subtitle">{localization.life.story}</h2>
         <p className="life__text">
-          I've been to {humanizeArray(countriesShuffled)} to bring you the user experience learned
-          from the architecture, culture, and urban planning of many cities. Technical knowledge is
-          just half of the package.
+          {localization.life.texts.countries(countriesShuffledHumanized)}
         </p>
         <p className="life__text">
           But let's step aside from that to take a look at what I do for fun. Mainly, it's either
@@ -74,7 +76,7 @@ export default function Life() {
         </p>
       </article>
       <article>
-        <h2 className="life__subtitle">Education</h2>
+        <h2 className="life__subtitle">{localization.life.education}</h2>
         <ul>
           <li className="life__text">
             <p>

@@ -27,4 +27,27 @@ export const en = {
     npm: 'NPM downloads',
     github: 'GitHub stars',
   },
+  countries: [
+    'Bulgaria',
+    'Finland',
+    'Spain',
+    'France',
+    'Ukraine',
+    'Cyprus',
+    'Italy',
+    'Abkhazia',
+    'Thailand',
+    'Israel',
+    'Croatia',
+    'Russia',
+  ],
+  life: {
+    story: 'Story',
+    education: 'Education',
+    texts: {
+      countries: (humanizedCountries) =>
+        `I've been to ${humanizedCountries} to bring you the user experience learned from the architecture, culture, and urban planning of many cities. Technical knowledge is just half of the package.`,
+    },
+  },
+  listLastWord: ', and',
 };
