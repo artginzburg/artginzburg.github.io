@@ -176,6 +176,9 @@ export const insights = {
     hours: 2979.7,
     gamesPlayed: 76,
   },
+  github: {
+    totalRepos: 28,
+  },
 };
 insights.mustapp.total = insights.mustapp.hoursMovies + insights.mustapp.hoursSeries;
 
