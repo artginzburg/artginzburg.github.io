@@ -84,13 +84,13 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
     margin-bottom: 0;
 
     transition-duration: $project-transition-dur;
-    transition-property: border-width, margin-bottom, transform, box-shadow;
+    transition-property: border-width, margin-bottom, box-shadow, transform;
     transition-delay: 0s;
     // EFFECT end.
 
     @media screen and (hover: hover) {
       &:hover {
-        transition-delay: 0s, 0s, $project-transition-dur/2.5, 0s;
+        transition-delay: 0s, 0s, 0s, $project-transition-dur/2.5;
         transform: scale(1.33) translateY(-1em);
         box-shadow: 0 0 2.5em rgba(rgb(163, 84, 74), 0.55);
       }
