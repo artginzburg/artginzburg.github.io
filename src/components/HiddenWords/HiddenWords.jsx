@@ -6,7 +6,7 @@ import { findLongestString } from '../../functions/findLongestString';
 import { randomInt } from '../../functions/randomInt';
 
 import { useDebounce } from '../../hooks/useDebounce';
-import { useWindowSize } from '../../hooks/useWindowSize';
+import { useWindowSizeThrottled } from '../../hooks/useWindowSizeThrottled';
 
 import './HiddenWords.scss';
 
@@ -127,7 +127,7 @@ function replaceMatrixCenter(mainMatrix, insertedMatrix) {
 }
 
 const HiddenWords = memo(({ words }) => {
-  const [width, height] = useWindowSize();
+  const [width, height] = useWindowSizeThrottled();
 
   const [hiddenWords, setHiddenWords] = useState(initialBoard);
 
