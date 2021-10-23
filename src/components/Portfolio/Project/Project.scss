@@ -73,7 +73,7 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
   &__image {
     max-width: 100%;
     user-select: none;
-    border-radius: 0.5em;
+    border-radius: 0.6em;
 
     // EFFECT: Image 3d
     border-top: 3px solid #888;
@@ -91,7 +91,7 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
       &:hover {
         transition-delay: 0s, 0s, $project-transition-dur/3, 0s;
         transform: scale(1.33) translateY(-1em);
-        box-shadow: 0 0 2.5em rgba($link-color, 0.75);
+        box-shadow: 0 0 2.5em rgba(rgb(163, 84, 74), 0.55);
       }
     }
   }
