@@ -28,6 +28,11 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
 
   box-shadow: $portfolio-shadow, $portfolio-shadow-upper, $portfolio-shadow-solid;
 
+  ::selection {
+    text-shadow: 0 0 6px #515656, 0 0 20px #5156566b !important;
+    background-color: #fff !important;
+  }
+
   &:hover {
     $hover-shadow: 0 0 0.6em $link-color;
     box-shadow: $hover-shadow;
@@ -79,8 +84,16 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
     margin-bottom: 0;
 
     transition-duration: $project-transition-dur;
-    transition-property: border-width, margin-bottom;
+    transition-property: border-width, margin-bottom, transform, box-shadow;
     // EFFECT end.
+
+    @media screen and (hover: hover) {
+      &:hover {
+        transition-delay: 0s, 0s, $project-transition-dur/3, 0s;
+        transform: scale(1.33) translateY(-1em);
+        box-shadow: 0 0 2.5em rgba($link-color, 0.75);
+      }
+    }
   }
 
   &__link {

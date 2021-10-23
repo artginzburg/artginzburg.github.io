@@ -20,6 +20,9 @@
 
     &-badge {
       vertical-align: middle;
+
+      max-width: 43vw;
+      flex-shrink: 1;
     }
   }
 

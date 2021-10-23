@@ -96,7 +96,7 @@ export default function Life() {
                 href="https://github.com/artginzburg/yandex.praktikum-portfolio"
                 target="_blank"
                 rel="noreferrer"
-                className="life__link"
+                className="life__link life__link_button"
               >
                 Portfolio
               </a>
@@ -120,7 +120,7 @@ export default function Life() {
                 href="https://artginzburg.github.io/CASProject/"
                 target="_blank"
                 rel="noreferrer"
-                className="life__link"
+                className="life__link life__link_button"
               >
                 CAS Project
               </a>
