@@ -5,7 +5,7 @@ import { makeEmptyMatrix } from '../../functions/makeEmpty';
 import { findLongestString } from '../../functions/findLongestString';
 import { randomInt } from '../../functions/randomInt';
 
-import { useCooldownEffect } from '../../hooks/useCooldownEffect';
+import { useDebounce } from '../../hooks/useDebounce';
 import { useWindowSize } from '../../hooks/useWindowSize';
 
 import './HiddenWords.scss';
@@ -149,9 +149,9 @@ const HiddenWords = memo(({ words }) => {
     setHiddenWords(
       replaceMatrixCenter(initialBoard, makeHiddenWords(words, controlledWidth, controlledHeight)),
     );
-  }, [height, width, words]);
+  }, [width, height, words]);
 
-  useCooldownEffect(recalc, 300);
+  useDebounce(recalc, 300);
 
   return (
     <div ref={containerRef} className="hiddenWords">
