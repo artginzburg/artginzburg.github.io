@@ -15,14 +15,17 @@
     margin-top: 1em;
 
     display: flex;
-    justify-content: center;
-    column-gap: 5vmin;
+    justify-content: space-evenly;
+    column-gap: 9%;
 
     &-badge {
       vertical-align: middle;
 
       max-width: 43vw;
+      height: 28px;
       flex-shrink: 1;
+
+      border-radius: 1em;
     }
   }
 
