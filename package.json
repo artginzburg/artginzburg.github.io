@@ -8,7 +8,7 @@
     "url": "https://github.com/artginzburg"
   },
   "repository": "https://github.com/artginzburg/artginzburg.github.io",
-  "homepage": "https://artginzburg.github.io",
+  "homepage": "https://ginzburg.art",
   "scripts": {
     "start": "react-scripts start",
     "port": "export PORT=80 BROWSER=none && open -g http://art.local && sudo -E react-scripts start",
