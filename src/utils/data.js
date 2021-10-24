@@ -185,7 +185,7 @@ insights.mustapp.total = insights.mustapp.hoursMovies + insights.mustapp.hoursSe
 export const age = {
   birthday: new Date('25 Mar 2002'),
 };
-age.ms = new Date(Date.now()) - age.birthday;
+age.ms = new Date() - age.birthday;
 age.hours = age.ms / 1000 / 60 / 60;
 
 // export const testimonials = [
