@@ -28,38 +28,37 @@ export default function Life() {
           {localization.life.texts.countries(countriesShuffledHumanized)}
         </p>
         <p className="life__text">
-          But let's step aside from that to take a look at what I do for fun. Mainly, it's either
-          playing these {insights.steam.gamesPlayed}{' '}
+          {localization.life.texts.stats[0]} {insights.steam.gamesPlayed}{' '}
           <a
             href="https://steamcommunity.com/id/artginzburg"
             target="_blank"
             rel="noreferrer"
             className="life__link"
           >
-            Computer games
+            {localization.life.texts.links.steam}
           </a>{' '}
-          ({timeSpent.games}%) or taking{' '}
+          ({timeSpent.games}%) {localization.life.texts.stats[1]}
           <a
             href="https://www.instagram.com/art.ginzburg/"
             target="_blank"
             rel="noreferrer"
             className="life__link"
           >
-            Photos
+            {localization.life.texts.links.instagram}
           </a>
-          . Also, {timeSpent.films}% of my life was dedicated to watching these{' '}
+          {localization.life.texts.stats[2]} {timeSpent.films}% {localization.life.texts.stats[3]}
           <a
             href="https://mustapp.com/@artginzburg"
             target="_blank"
             rel="noreferrer"
             className="life__link"
           >
-            Movies
+            {localization.life.texts.links.mustapp}
           </a>
           .
         </p>
         <p className="life__text">
-          Moving further with the stats, I spent{' '}
+          {localization.life.texts.stats[4]}
           <a
             href="https://wakatime.com/@artginzburg"
             target="_blank"
@@ -71,8 +70,8 @@ export default function Life() {
               src="https://wakatime.com/badge/user/992f2c32-f468-4d6e-a817-ac32f0029edf.svg"
               className="life__badge"
             />
-          </a>{' '}
-          coding since August 29 2021.
+          </a>
+          {localization.life.texts.stats[5]}
         </p>
       </article>
       <article>
@@ -86,19 +85,19 @@ export default function Life() {
                 rel="noreferrer"
                 className="life__link"
               >
-                Yandex.Praktikum
-              </a>{' '}
-              | Jan, 2021 - Oct, 2021
+                {localization.life.texts.links.practicum}
+              </a>
+              {localization.life.texts.education.practicum.dates}
             </p>
             <p>
-              Web-Developer{' '}
+              {localization.life.texts.education.practicum.faculty}
               <a
                 href="https://github.com/artginzburg/yandex.praktikum-portfolio"
                 target="_blank"
                 rel="noreferrer"
                 className="life__link life__link_button"
               >
-                Portfolio
+                {localization.life.texts.education.practicum.project}
               </a>
             </p>
           </li>
@@ -110,19 +109,19 @@ export default function Life() {
                 rel="noreferrer"
                 className="life__link"
               >
-                International Baccalaureate® (IB) Diploma Programme (DP)
-              </a>{' '}
-              | Sep, 2018 - Jun, 2020
+                {localization.life.texts.links.ibdp}
+              </a>
+              {localization.life.texts.education.ibdp.dates}
             </p>
             <p>
-              Film · Computer Science · Business & Management{' '}
+              {localization.life.texts.education.ibdp.faculty}
               <a
                 href="https://artginzburg.github.io/CASProject/"
                 target="_blank"
                 rel="noreferrer"
                 className="life__link life__link_button"
               >
-                CAS Project
+                {localization.life.texts.education.ibdp.project}
               </a>
             </p>
           </li>
