@@ -89,6 +89,8 @@ export const projects = [
   {
     title: 'Movies Explorer',
     subtitle: 'React Hooks & MongoDB',
+    image:
+      'https://raw.githubusercontent.com/artginzburg-learning/movies-explorer-frontend/master/resources/preview.png',
     year: 2021,
     link: 'https://deeplomka.nomoredomains.club',
     category: 'frontend',
@@ -100,6 +102,8 @@ export const projects = [
   {
     title: 'Mesto',
     subtitle: 'React Hooks & MongoDB (Webpack, Babel, Express)',
+    image:
+      'https://raw.githubusercontent.com/artginzburg-learning/react-mesto-auth/master/resources/preview.png',
     year: 2021,
     link: 'https://artginzburg-learning.github.io/react-mesto-auth/',
     category: 'frontend',
@@ -111,6 +115,8 @@ export const projects = [
   {
     title: 'Travelling in Russia',
     subtitle: 'CSS & BEM',
+    image:
+      'https://raw.githubusercontent.com/artginzburg-learning/russian-travel/master/resources/preview.png',
     year: 2020,
     link: 'https://artginzburg-learning.github.io/russian-travel/',
     category: 'frontend',
@@ -122,6 +128,8 @@ export const projects = [
   {
     title: 'How to Learn',
     subtitle: 'CSS & BEM',
+    image:
+      'https://raw.githubusercontent.com/artginzburg-learning/how-to-learn/master/resources/preview.png',
     year: 2020,
     link: 'https://artginzburg-learning.github.io/how-to-learn/',
     category: 'frontend',
@@ -133,6 +141,7 @@ export const projects = [
   {
     title: '3D School Map',
     subtitle: 'Raw JS',
+    image: 'https://raw.githubusercontent.com/artginzburg/CASProject/develop/resources/preview.png',
     year: 2019,
     link: 'https://artginzburg.github.io/CASProject/',
     category: 'frontend',

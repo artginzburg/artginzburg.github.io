@@ -71,9 +71,32 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
   }
 
   &__image {
+    &-scroller {
+      border-radius: 0.6em;
+      transition-duration: $project-transition-dur;
+      transition-property: transform;
+
+      @media screen and (hover: hover) {
+        &:hover {
+          transition-delay: $project-transition-dur - 0.1s;
+          transform: scale(1.33) translateY(-12%);
+        }
+      }
+    }
+
+    &-container {
+      max-height: 200px;
+
+      overflow: scroll;
+
+      border-radius: inherit;
+    }
+
     max-width: 100%;
     user-select: none;
-    border-radius: 0.6em;
+    border-radius: inherit;
+
+    background-color: #000; // visible while image loads
 
     // EFFECT: Image 3d
     border-top: 3px solid #888;
@@ -84,16 +107,8 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
     margin-bottom: 0;
 
     transition-duration: $project-transition-dur;
-    transition-property: border-width, margin-bottom, box-shadow, transform, -webkit-transform;
+    transition-property: border-width, margin-bottom;
     // EFFECT end.
-
-    @media screen and (hover: hover) {
-      &:hover {
-        transition-delay: 0s, 0s, 0s, $project-transition-dur/2.5, $project-transition-dur/2.5;
-        transform: scale(1.33) translateY(-1em);
-        box-shadow: 0 0 2.5em rgba(rgb(163, 84, 74), 0.55);
-      }
-    }
   }
 
   &__link {

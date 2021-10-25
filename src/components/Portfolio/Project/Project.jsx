@@ -11,8 +11,10 @@ export default function Project({ project }) {
     <li className="project">
       <a className="project__link" href={project.link} target="_blank" rel="noreferrer">
         {project.image && (
-          <div>
-            <img className="project__image" src={project.image} alt={project.title} />
+          <div className="project__image-scroller">
+            <div className="project__image-container">
+              <img className="project__image" src={project.image} alt={project.title} />
+            </div>
           </div>
         )}
 
