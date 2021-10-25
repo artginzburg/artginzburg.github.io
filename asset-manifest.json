@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.fe7b31e9.chunk.css",
+    "main.css": "/static/css/main.88b55704.chunk.css",
     "main.js": "/static/js/main.a939c65a.chunk.js",
     "main.js.map": "/static/js/main.a939c65a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.eeecfe68.js",
@@ -12,7 +12,7 @@
     "static/js/3.cfbd04e0.chunk.js.map": "/static/js/3.cfbd04e0.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.473b12ad.chunk.css.map": "/static/css/2.473b12ad.chunk.css.map",
-    "static/css/main.fe7b31e9.chunk.css.map": "/static/css/main.fe7b31e9.chunk.css.map",
+    "static/css/main.88b55704.chunk.css.map": "/static/css/main.88b55704.chunk.css.map",
     "static/js/2.12c58a4e.chunk.js.LICENSE.txt": "/static/js/2.12c58a4e.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/SourceCodePro-SemiBold.4d4c53c0.ttf",
     "static/media/avatar.665f1a88.jpg": "/static/media/avatar.665f1a88.jpg",
@@ -23,7 +23,7 @@
     "static/js/runtime-main.eeecfe68.js",
     "static/css/2.473b12ad.chunk.css",
     "static/js/2.12c58a4e.chunk.js",
-    "static/css/main.fe7b31e9.chunk.css",
+    "static/css/main.88b55704.chunk.css",
     "static/js/main.a939c65a.chunk.js"
   ]
 }
