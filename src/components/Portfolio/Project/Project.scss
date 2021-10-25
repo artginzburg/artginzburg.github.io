@@ -33,25 +33,27 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
     background-color: #fff !important;
   }
 
-  &:hover {
-    $hover-shadow: 0 0 0.6em $link-color;
-    box-shadow: $hover-shadow;
+  @media screen and (hover: hover) {
+    &:hover {
+      $hover-shadow: 0 0 0.6em $link-color;
+      box-shadow: $hover-shadow;
 
-    transform: translateY(0.3em + 0.05em) translateX(-0.5em);
+      transform: translateY(0.3em + 0.05em) translateX(-0.5em);
 
-    .project__container {
-      box-shadow: $hover-shadow inset;
-    }
-
-    .project__image {
-      // EFFECT: Image 3d
-      border-width: 0;
-      margin-bottom: 1px;
-
-      @media screen and (max-width: $breakpoint-mobile) {
-        margin-bottom: 1.5px;
+      .project__container {
+        box-shadow: $hover-shadow inset;
       }
-      // EFFECT end.
+
+      .project__image {
+        // EFFECT: Image 3d
+        border-width: 0;
+        margin-bottom: 1px;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+          margin-bottom: 1.5px;
+        }
+        // EFFECT end.
+      }
     }
   }
 
