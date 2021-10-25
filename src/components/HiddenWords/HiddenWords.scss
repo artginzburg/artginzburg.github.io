@@ -5,7 +5,7 @@
   $inactive-color: #0a0a0a; // #222
 
   @mixin glow($index: 0, $shadow-color: #ff3177) {
-    $shadow-color: rgba($shadow-color, 0.2);
+    $shadow-color: rgba($shadow-color, 0.1);
 
     @keyframes glow-#{$index} {
       0%,
