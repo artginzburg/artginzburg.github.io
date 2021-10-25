@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import 'pace-js';
+import 'pace-js/themes/silver/pace-theme-minimal.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
