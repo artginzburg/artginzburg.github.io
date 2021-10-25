@@ -131,15 +131,6 @@
           height: 100%;
         }
       }
-
-      &:hover &-icon {
-        animation: spin 0.5s;
-        @keyframes spin {
-          to {
-            transform: rotate(2turn);
-          }
-        }
-      }
     }
 
     @media screen and (hover: none) {
