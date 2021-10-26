@@ -12,17 +12,19 @@
   margin: 0 7vmin;
 
   &__stats {
-    margin-top: 1em;
-
     display: flex;
-    justify-content: space-evenly;
-    column-gap: 9%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: calc(25px * 2 + 1.2em);
 
     &-badge {
+      opacity: 0.7;
       vertical-align: middle;
 
       max-width: 43vw;
-      height: 28px;
+      height: 25px;
       flex-shrink: 1;
 
       border-radius: 1em;
@@ -32,12 +34,16 @@
   &__subtitle {
     color: $global-text;
     margin: 1em 0;
+    text-align: center;
+    font-weight: 600;
   }
 
   &__projects {
     list-style-type: none;
     margin: 0;
     padding: 0;
+
+    margin-bottom: 5em;
 
     display: flex;
     flex-wrap: wrap;
