@@ -2,6 +2,9 @@ import { useLanguage } from '../../../contexts/LanguageContext';
 
 import './Project.scss';
 
+const project_color_background = 'ddd';
+const projectBadgeStyle = `style=flat-square&color=${project_color_background}&labelColor=${project_color_background}`;
+
 export default function Project({ project }) {
   const {
     state: [language],
@@ -30,13 +33,13 @@ export default function Project({ project }) {
         <div className="project__badges">
           {project.downloads && (
             <img
-              src={`${project.downloads}?label=▼&style=flat-square&color=ddd&labelColor=ddd`}
+              src={`${project.downloads}?${projectBadgeStyle}&label=▼`}
               alt={`${project.title} downloads`}
             />
           )}
           {project.stars && (
             <img
-              src={`${project.stars}?color=ddd&label=★&style=flat-square&labelColor=ddd`}
+              src={`${project.stars}?${projectBadgeStyle}&label=★`}
               alt={`${project.title} stars`}
             />
           )}
