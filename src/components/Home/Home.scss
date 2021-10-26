@@ -65,7 +65,8 @@
     align-items: center;
     column-gap: 0.3em;
 
-    background-color: #000;
+    background-color: rgba(#fff, 0.05);
+    backdrop-filter: blur(3px);
     border-radius: 0.9em;
     box-shadow: 0 0 1.5em $global-background;
 
@@ -95,6 +96,7 @@
 
       background-color: var(--link-color);
 
+      transition-property: height;
       transition-duration: $trans-dur;
       transition-delay: $trans-back-dur;
     }
