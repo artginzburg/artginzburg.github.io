@@ -9,12 +9,14 @@ $button-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   user-select: none;
   cursor: pointer;
 
-  &:not(:disabled):active {
-    transform: scale(0.8);
-    transition-duration: 0.2s;
-    transition-timing-function: $button-timing-function;
-    transition-delay: 0s;
-    transition-timing-function: ease;
+  @media screen and (hover: hover) {
+    &:not(:disabled):active {
+      transform: scale(0.8);
+      transition-duration: 0.2s;
+      transition-timing-function: $button-timing-function;
+      transition-delay: 0s;
+      transition-timing-function: ease;
+    }
   }
 
   &:disabled {

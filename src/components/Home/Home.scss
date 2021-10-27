@@ -64,6 +64,7 @@
     display: inline-flex;
     align-items: center;
     column-gap: 0.3em;
+    user-select: none;
 
     background-color: rgba(#fff, 0.05);
     backdrop-filter: blur(3px);
