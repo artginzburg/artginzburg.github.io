@@ -3,7 +3,7 @@ export const en = {
     main: 'Developer from Moscow',
     portfolio: "Developer's portfolio",
   },
-  home_text: 'Arthur, builds impressive yet functional websites.',
+  home_text: 'Arthur, builds impressive yet functional websites, APIs, CLI tools, apps.',
   notFound: {
     subtitle: 'Page not found',
     back: 'Back',

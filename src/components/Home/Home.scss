@@ -82,6 +82,13 @@
     font-weight: 300;
   }
 
+  &__description {
+    @include link-shared;
+
+    margin-top: 2em;
+    color: #555;
+  }
+
   &__buttons {
     margin-top: 3em;
 

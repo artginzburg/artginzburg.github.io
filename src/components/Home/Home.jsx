@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
 
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -53,6 +54,9 @@ export default function Home() {
           <p className="home__button-text">{localization.links.telegram}</p>
         </a>
       </nav>
+      <Link to="/portfolio" className="home__description">
+        Express.js, MongoDB, React
+      </Link>
     </section>
   );
 }
