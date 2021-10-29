@@ -34,19 +34,6 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
   }
 
   @media screen and (hover: hover) {
-    &:hover {
-      .project__image {
-        // EFFECT: Image 3d
-        border-width: 0;
-        margin-bottom: 1px;
-
-        @media screen and (max-width: $breakpoint-mobile) {
-          margin-bottom: 1.5px;
-        }
-        // EFFECT end.
-      }
-    }
-
     &:active {
       $hover-shadow: 0 0 0.6em $link-color;
       box-shadow: $hover-shadow;
@@ -67,7 +54,7 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
 
       @media screen and (hover: hover) {
         &:hover {
-          transition-delay: $project-transition-dur - 0.1s;
+          transition-delay: 0.1s;
           transform: scale(1.33) translateY(-12%);
         }
       }
@@ -86,18 +73,6 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
     border-radius: inherit;
 
     background-color: #000; // visible while image loads
-
-    // EFFECT: Image 3d
-    border-top: 3px solid #888;
-    border-right: 4px solid #888;
-
-    box-sizing: border-box;
-
-    margin-bottom: 0;
-
-    transition-duration: $project-transition-dur;
-    transition-property: border-width, margin-bottom;
-    // EFFECT end.
   }
 
   &__link {

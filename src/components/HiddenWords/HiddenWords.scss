@@ -5,7 +5,7 @@
   $inactive-color: #0a0a0a; // #222
 
   @mixin glow($index: 0, $shadow-color: #ff3177) {
-    $shadow-color: rgba($shadow-color, 0.1);
+    $shadow-color: rgba($shadow-color, 0.2);
 
     @keyframes glow-#{$index} {
       0%,
@@ -28,7 +28,7 @@
       70%,
       90.1%,
       95% {
-        color: rgba($global-text, 0.2);
+        color: rgba($global-text, 0.3);
         text-shadow: 0 0 10px $shadow-color, 0 0 20px $shadow-color, 0 0 40px $shadow-color,
           0 0 80px $shadow-color, 0 0 160px $shadow-color;
       }
@@ -60,7 +60,7 @@
       color: $inactive-color;
 
       &#char-0 {
-        @include glow();
+        @include glow(0, #fff);
         animation: glow-0 10s linear infinite alternate;
       }
 

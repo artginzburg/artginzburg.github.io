@@ -100,10 +100,8 @@
 
   &__button {
     @include link-shared;
-    $trans-dur: 0.2s;
-    $trans-back-dur: 0.4s;
 
-    --link-color: #{$link-color};
+    --link-color: #fff;
 
     color: $global-text;
     font-weight: 500;
@@ -125,9 +123,8 @@
 
     overflow: hidden;
 
-    transition-duration: 1s;
-    transition-property: color, box-shadow, transform;
-    transition-delay: $trans-back-dur, 0s;
+    transition-duration: 1.2s;
+    transition-property: color, box-shadow, transform, filter;
 
     @extend %default-link-effects;
 
@@ -148,8 +145,7 @@
       background-color: var(--link-color);
 
       transition-property: height;
-      transition-duration: $trans-dur;
-      transition-delay: $trans-back-dur;
+      transition-duration: 0.4s;
     }
 
     &-icon {
@@ -168,7 +164,7 @@
     @mixin home__button-shadow {
       z-index: 1;
 
-      transition-delay: $trans-dur - 0.02s;
+      filter: brightness(1.5);
       box-shadow: 0 0 10px var(--link-color), 0 0 20px var(--link-color), 0 0 40px var(--link-color),
         0 0 80px var(--link-color), 0 0 160px var(--link-color);
     }
@@ -180,7 +176,6 @@
         color: #000;
 
         &::before {
-          transition-delay: 0s;
           height: 100%;
         }
       }
