@@ -136,15 +136,15 @@
       content: '';
       position: absolute;
 
-      bottom: 0;
+      top: calc(100% - 1px);
       left: 0;
 
       width: 100%;
-      height: 1px;
+      height: 100%;
 
       background-color: var(--link-color);
 
-      transition-property: height;
+      transition-property: top;
       transition-duration: 0.4s;
     }
 
@@ -176,7 +176,7 @@
         color: #000;
 
         &::before {
-          height: 100%;
+          top: 0;
         }
       }
     }
