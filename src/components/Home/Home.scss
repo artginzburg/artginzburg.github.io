@@ -135,20 +135,20 @@
     &::before {
       content: '';
       position: absolute;
-      left: -50%;
+      left: 0;
       top: 0;
-      right: -50%;
+      right: 0;
       bottom: 0;
 
       background-color: var(--link-color);
 
-      scale: 2.5;
-      translate: 0 ((2.5 * 100%) - 2%);
+      transform: scaleY(0.03);
       transform-origin: bottom;
+      border-radius: inherit;
 
-      transition-property: rotate, scale;
-      transition-duration: 1s;
-      transition-timing-function: ease-in-out;
+      transition-property: transform, box-shadow;
+      transition-duration: 0.7s;
+      transition-timing-function: ease-out;
     }
 
     &-icon {
@@ -164,12 +164,16 @@
       margin: 0;
     }
 
+    @mixin home__button-shadow-only {
+      box-shadow: 0 0 10px var(--link-color), 0 0 20px var(--link-color), 0 0 40px var(--link-color),
+        0 0 80px var(--link-color), 0 0 160px var(--link-color);
+    }
+
     @mixin home__button-shadow {
       z-index: 1;
 
       filter: brightness(1.5);
-      box-shadow: 0 0 10px var(--link-color), 0 0 20px var(--link-color), 0 0 40px var(--link-color),
-        0 0 80px var(--link-color), 0 0 160px var(--link-color);
+      @include home__button-shadow-only;
     }
 
     @media screen and (hover: hover) {
@@ -179,8 +183,8 @@
         color: #000;
 
         &::before {
-          scale: 2 4;
-          rotate: 45deg;
+          transform: scaleY(1);
+          @include home__button-shadow-only;
         }
       }
     }
