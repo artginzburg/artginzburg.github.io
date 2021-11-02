@@ -132,7 +132,7 @@
     overflow: hidden;
 
     transition-duration: 1.5s;
-    transition-property: color, box-shadow, transform, filter;
+    transition-property: color, box-shadow, transform;
 
     @extend %default-link-effects;
 
@@ -180,7 +180,6 @@
     @mixin home__button-shadow {
       z-index: 1;
 
-      filter: brightness(1.5);
       @include home__button-shadow-only;
     }
 
@@ -191,7 +190,7 @@
         color: #000;
 
         &::before {
-          transform: scaleY(1);
+          transform: scaleY(1) translateY(-18%);
           @include home__button-shadow-only;
         }
       }
