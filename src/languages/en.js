@@ -59,7 +59,7 @@ export const en = {
         steam: 'Computer games',
         instagram: 'Photos',
         mustapp: 'Movies',
-        practicum: 'Yandex.Praktikum',
+        practicum: 'Yandex.Praсtiсum',
         ibdp: 'International Baccalaureate® (IB) Diploma Programme (DP)',
       },
       education: {
