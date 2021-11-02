@@ -94,7 +94,63 @@
     @include link-shared;
 
     margin-top: 2em;
-    color: #555;
+    color: #777;
+    text-shadow: 0 0 1px #000;
+
+    $typewriter-speed: 4s;
+    $typewriter-delay: 1.5s;
+    $typewriter-steps: steps(var(--typewriter-characters-length));
+    $rotate-speed: calc(#{$typewriter-speed} / (var(--typewriter-characters-length) - 1));
+
+    border-radius: 0.3em;
+    backdrop-filter: blur(7px) brightness(1.5);
+
+    position: relative;
+
+    @keyframes typewriter {
+      to {
+        left: 100%;
+      }
+    }
+    @keyframes blink {
+      to {
+        background: transparent;
+      }
+    }
+    @keyframes rotate {
+      to {
+        transform: rotate(180deg);
+      }
+    }
+
+    $typewriter-animation: typewriter $typewriter-speed $typewriter-steps forwards $typewriter-delay;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    &::before {
+      // "curtain"
+      top: 0;
+      background: $global-background;
+      border-radius: inherit;
+
+      animation: $typewriter-animation;
+    }
+
+    &::after {
+      // cursor ("caret")
+      width: 0.6em;
+      height: 0.1em;
+      background: #aaa;
+      animation: $typewriter-animation, blink 800ms $typewriter-steps infinite,
+        rotate $rotate-speed $typewriter-steps var(--typewriter-characters-length) $typewriter-delay;
+    }
   }
 
   &__buttons {

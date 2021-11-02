@@ -18,6 +18,8 @@ export default function Home() {
 
   useTitle(localization.titles.main);
 
+  const description = 'Express.js, MongoDB, React.';
+
   return (
     <>
       <section className="home">
@@ -49,8 +51,14 @@ export default function Home() {
             <p className="home__button-text">{localization.links.telegram}</p>
           </a>
         </nav>
-        <Link to="/portfolio" className="home__description">
-          Express.js, MongoDB, React
+        <Link
+          to="/portfolio"
+          className="home__description"
+          style={{
+            '--typewriter-characters-length': description.length,
+          }}
+        >
+          {description}
         </Link>
       </section>
       <Life />
