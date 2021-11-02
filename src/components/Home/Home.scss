@@ -211,8 +211,8 @@
       border-radius: inherit;
 
       transition-property: transform, box-shadow;
-      transition-duration: 0.5s;
-      transition-timing-function: ease-in-out;
+      transition-duration: 0.4s;
+      transition-timing-function: ease-in;
     }
 
     &-icon {
@@ -246,7 +246,7 @@
         color: #000;
 
         &::before {
-          transform: scaleY(1) translateY(-18%);
+          transform: scaleY(0.9) translateY(-18%);
           @include home__button-shadow-only;
         }
       }
