@@ -141,7 +141,7 @@ export const projects = [
   {
     title: '3D School Map',
     subtitle: 'Raw JS',
-    image: 'https://raw.githubusercontent.com/artginzburg/CASProject/develop/resources/preview.png',
+    image: 'https://raw.githubusercontent.com/artginzburg/CASProject/main/resources/preview.png',
     year: 2019,
     link: 'https://artginzburg.github.io/CASProject/',
     category: 'frontend',
