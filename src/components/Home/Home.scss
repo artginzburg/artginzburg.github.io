@@ -131,7 +131,7 @@
       position: absolute;
       right: 0;
       bottom: 0;
-      left: 0;
+      left: 0%; // % is required — for iOS Safari, 0 and 0% is not the same
     }
 
     &::before {
