@@ -42,6 +42,16 @@
   top: auto;
   left: auto;
 
+  opacity: 0;
+
+  @keyframes appear {
+    to {
+      opacity: 1;
+    }
+  }
+
+  animation: appear 4s forwards;
+
   &__char {
     user-select: none;
     margin: 0;
