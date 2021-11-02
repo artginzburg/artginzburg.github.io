@@ -14,8 +14,16 @@
   position: relative;
   overflow: hidden;
 
-  * {
-    z-index: 0;
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(transparent 80%, $global-background);
   }
 
   &__logo {
