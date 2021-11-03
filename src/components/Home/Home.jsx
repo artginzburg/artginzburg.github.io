@@ -60,6 +60,9 @@ export default function Home() {
         >
           {description}
         </Link>
+        <a href="#life" className="home__next">
+          <span className="home__next-text">{localization.routes.portfolio}</span>
+        </a>
       </section>
       <Life />
       <Portfolio />

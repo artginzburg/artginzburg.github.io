@@ -23,7 +23,9 @@ export default function Life() {
   return (
     <section className="life">
       <article>
-        <h2 className="life__subtitle">{localization.life.story}</h2>
+        <h2 id="life" className="life__subtitle">
+          {localization.life.story}
+        </h2>
         <p className="life__text">
           {localization.life.texts.countries(countriesShuffledHumanized)}
         </p>

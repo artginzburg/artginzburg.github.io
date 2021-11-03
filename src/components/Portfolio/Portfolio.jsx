@@ -15,7 +15,7 @@ export default function Portfolio() {
   useTitle(localization.titles.portfolio);
 
   return (
-    <section className="portfolio">
+    <section id="portfolio" className="portfolio">
       <div className="portfolio__stats">
         <a href="https://www.npmjs.com/~artginzburg" target="_blank" rel="noreferrer">
           <img
