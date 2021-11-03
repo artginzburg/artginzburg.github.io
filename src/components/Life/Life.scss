@@ -15,7 +15,7 @@
   &__link {
     @include link-shared;
 
-    color: #00a6ff;
+    color: $link-color;
 
     @media screen and (hover: hover) {
       &:hover {
