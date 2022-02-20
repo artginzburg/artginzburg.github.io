@@ -25,7 +25,10 @@ export const en = {
   },
   badges: {
     npm: 'NPM downloads',
-    github: 'GitHub stars',
+    github: {
+      stars: 'GitHub stars',
+      downloads: 'GitHub downloads',
+    },
   },
   countries: [
     'Bulgaria',

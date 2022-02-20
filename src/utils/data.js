@@ -197,6 +197,8 @@ export const age = {
 age.ms = new Date() - age.birthday;
 age.hours = age.ms / 1000 / 60 / 60;
 
+export const statsUrl = 'https://raw.githubusercontent.com/artginzburg/stats-fetcher/main/data.json';
+
 // export const testimonials = [
 //   {
 //     quote: 'Powerchime for the win! Thanks mate.',

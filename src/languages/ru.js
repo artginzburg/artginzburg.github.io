@@ -26,7 +26,10 @@ export const ru = {
   },
   badges: {
     npm: 'Загрузки с NPM',
-    github: 'Звёзды на GitHub',
+    github: {
+      stars: 'Звёзды на GitHub',
+      downloads: 'Загрузки с GitHub',
+    },
   },
   countries: [
     'Болгарию',
