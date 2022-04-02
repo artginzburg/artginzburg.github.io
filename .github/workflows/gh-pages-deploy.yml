@@ -9,16 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies (production)
+        run: npm i --production
 
       - name: Build 🔧
         run: npm run build
