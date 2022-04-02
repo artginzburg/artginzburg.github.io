@@ -3,17 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> <!-- 'maximum-scale=1' fixes auto-zooming inputs on some mobile devices -->
+    <meta name="theme-color" content="#0f0f0f" /> <!-- should match /src/styles/_colors.scss/$global-background -->
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Software Engineer focused on Open Source work. Hireable."
     />
+    <meta name="author" content="Art Ginzburg" /> <!-- custom (not from CRA) -->
+    <link rel="canonical" href="https://ginzburg.art%PUBLIC_URL%" /> <!-- custom (not from CRA) -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>React App</title>
+    <meta property="og:image" content="%PUBLIC_URL%/social-image.png"> <!-- custom (not from CRA) -->
+    <title>Art Ginzburg · Developer from Moscow</title>
   </head>
-  <body>
+  <body class="page">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
