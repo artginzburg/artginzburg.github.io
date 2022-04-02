@@ -1,25 +1,25 @@
 {
-  "background_color": "#ffffff",
-  "display": "standalone",
+  "short_name": "artginzburg",
+  "name": "Art Ginzburg's personal website",
   "icons": [
     {
-      "sizes": "64x64 32x32 24x24 16x16",
       "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "sizes": "192x192",
       "src": "logo192.png",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "192x192"
     },
     {
-      "sizes": "512x512",
       "src": "logo512.png",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
-  "name": "Art Ginzburg personal website",
-  "short_name": "artginzburg",
   "start_url": ".",
-  "theme_color": "#000000"
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }

@@ -1,6 +1,6 @@
 {
   "name": "artginzburg.github.io",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "author": {
     "name": "Art Ginzburg",
@@ -11,7 +11,6 @@
   "homepage": "https://ginzburg.art",
   "scripts": {
     "start": "react-scripts start",
-    "port": "export PORT=80 BROWSER=none && open -g http://art.local && sudo -E react-scripts start",
     "build": "react-scripts build",
     "postbuild": "ln -s index.html build/404.html",
     "predeploy": "npm run build",
@@ -35,13 +34,17 @@
     ]
   },
   "dependencies": {
-    "node-sass": "^6.0.1",
+    "@types/node": "^16.11.26",
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
+    "node-sass": "^7.0.1",
     "pace-js": "^1.2.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
-    "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.0",
+    "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
