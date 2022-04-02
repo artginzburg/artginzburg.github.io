@@ -1,0 +1,90 @@
+@import '../../styles/colors';
+@import '../../styles/shared';
+
+.hiddenWords {
+  $inactive-color: #0a0a0a; // #222
+
+  @mixin glow($index: 0, $shadow-color: #ff3177) {
+    $shadow-color: rgba($shadow-color, 0.2);
+
+    @keyframes glow-#{$index} {
+      0%,
+      5%,
+      10.1%,
+      15.1%,
+      25.1%,
+      45%,
+      70.1%,
+      90%,
+      100% {
+        color: $inactive-color;
+        text-shadow: 0 0 0 $inactive-color;
+      }
+      5.1%,
+      10%,
+      15.2%,
+      25%,
+      45.1%,
+      70%,
+      90.1%,
+      95% {
+        color: #000;
+        text-shadow: 0 0 10px $shadow-color, 0 0 20px $shadow-color, 0 0 40px $shadow-color,
+          0 0 80px $shadow-color, 0 0 160px $shadow-color;
+      }
+    }
+  }
+
+  z-index: -1;
+  cursor: default;
+
+  position: absolute;
+  top: auto;
+  left: auto;
+
+  opacity: 0;
+
+  @keyframes appear {
+    to {
+      opacity: 1;
+    }
+  }
+
+  animation: appear 4s forwards;
+
+  &__char {
+    user-select: none;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $inactive-color;
+    font-size: calc(5vh + 5vw); // 5em
+    line-height: 0.9em;
+    letter-spacing: 4px;
+
+    &-active {
+      position: relative;
+      color: $inactive-color;
+
+      &#char-0 {
+        @include glow(0, #fff);
+        animation: glow-0 10s linear infinite alternate;
+      }
+
+      &#char-1 {
+        @include glow(1, teal);
+        animation: glow-1 8s linear infinite alternate;
+        animation-delay: 2s;
+      }
+
+      &#char-2 {
+        @include glow(2, #000);
+        animation: glow-2 15s linear infinite alternate;
+        animation-delay: 4s;
+      }
+    }
+  }
+}

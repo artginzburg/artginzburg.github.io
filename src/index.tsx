@@ -1,5 +1,9 @@
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss'; /* scss instead of css */
+
+import 'pace-js'; /* custom (not from CRA) */
+import 'pace-js/themes/silver/pace-theme-minimal.css'; /* custom (not from CRA) */
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

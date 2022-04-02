@@ -1,0 +1,16 @@
+@import '../styles/colors';
+
+.page {
+  margin: 0;
+  background: $global-background;
+  font-family: 'SourceCodePro', 'Courier New', Courier, monospace;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  ::selection {
+    text-shadow: 0 0 6px #cec9c9, 0 0 20px #cec9c96b;
+    background-color: #000;
+  }
+}
