@@ -1,29 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.b4429189.chunk.css",
-    "main.js": "/static/js/main.107e0b1c.chunk.js",
-    "main.js.map": "/static/js/main.107e0b1c.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2342ab17.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2342ab17.js.map",
-    "static/css/2.473b12ad.chunk.css": "/static/css/2.473b12ad.chunk.css",
-    "static/js/2.450217dd.chunk.js": "/static/js/2.450217dd.chunk.js",
-    "static/js/2.450217dd.chunk.js.map": "/static/js/2.450217dd.chunk.js.map",
-    "static/js/3.39b3d9bc.chunk.js": "/static/js/3.39b3d9bc.chunk.js",
-    "static/js/3.39b3d9bc.chunk.js.map": "/static/js/3.39b3d9bc.chunk.js.map",
+    "main.css": "/static/css/main.02f201e8.css",
+    "main.js": "/static/js/main.e1ebc820.js",
+    "static/js/787.c468f98e.chunk.js": "/static/js/787.c468f98e.chunk.js",
+    "static/media/SourceCodePro-Light.ttf": "/static/media/SourceCodePro-Light.122409891594a6f9afc2.ttf",
+    "static/media/SourceCodePro-Regular.ttf": "/static/media/SourceCodePro-Regular.70cc7ff27245e82ad414.ttf",
+    "static/media/SourceCodePro-Medium.ttf": "/static/media/SourceCodePro-Medium.8502e42c812c53aacf37.ttf",
+    "static/media/SourceCodePro-SemiBold.ttf": "/static/media/SourceCodePro-SemiBold.4d4c53c06b5bebed1cf3.ttf",
+    "static/media/SourceCodePro-Black.ttf": "/static/media/SourceCodePro-Black.9ed400a32595fb94e96b.ttf",
+    "static/media/sudotouchid.png": "/static/media/sudotouchid.b6d577076fcf174d4aa2.png",
+    "static/media/avatar.jpg": "/static/media/avatar.027bee14bfe26cdbec63.jpg",
+    "static/media/powerchime.png": "/static/media/powerchime.88506f7d8ca8b4c407fc.png",
     "index.html": "/index.html",
-    "static/css/2.473b12ad.chunk.css.map": "/static/css/2.473b12ad.chunk.css.map",
-    "static/css/main.b4429189.chunk.css.map": "/static/css/main.b4429189.chunk.css.map",
-    "static/js/2.450217dd.chunk.js.LICENSE.txt": "/static/js/2.450217dd.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/static/media/SourceCodePro-SemiBold.4d4c53c0.ttf",
-    "static/media/avatar.027bee14.jpg": "/static/media/avatar.027bee14.jpg",
-    "static/media/powerchime.88506f7d.png": "/static/media/powerchime.88506f7d.png",
-    "static/media/sudotouchid.b6d57707.png": "/static/media/sudotouchid.b6d57707.png"
+    "main.02f201e8.css.map": "/static/css/main.02f201e8.css.map",
+    "main.e1ebc820.js.map": "/static/js/main.e1ebc820.js.map",
+    "787.c468f98e.chunk.js.map": "/static/js/787.c468f98e.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.2342ab17.js",
-    "static/css/2.473b12ad.chunk.css",
-    "static/js/2.450217dd.chunk.js",
-    "static/css/main.b4429189.chunk.css",
-    "static/js/main.107e0b1c.chunk.js"
+    "static/css/main.02f201e8.css",
+    "static/js/main.e1ebc820.js"
   ]
 }
