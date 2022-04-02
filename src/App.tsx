@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
-            <Route element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
       </LanguageProvider>
