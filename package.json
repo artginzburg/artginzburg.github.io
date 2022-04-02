@@ -1,7 +1,14 @@
 {
   "name": "artginzburg.github.io",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "author": {
+    "name": "Art Ginzburg",
+    "email": "art.ginzburg@ya.ru",
+    "url": "https://github.com/artginzburg"
+  },
+  "repository": "https://github.com/artginzburg/artginzburg.github.io",
+  "homepage": "https://ginzburg.art",
   "dependencies": {
     "@types/node": "^16.11.26",
     "@types/react": "^17.0.43",
@@ -14,8 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
