@@ -1,7 +1,7 @@
 export function shuffle(array) {
-  let result = [...array],
-    i = result.length,
-    randomIndex;
+  const result = [...array];
+  let i = result.length;
+  let randomIndex;
 
   // While there remain elements to shuffle...
   while (i !== 0) {

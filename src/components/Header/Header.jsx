@@ -7,8 +7,8 @@ import HeaderLanguage from './HeaderLanguage/HeaderLanguage';
 import './Header.scss';
 
 function CustomNavLink({ children, to, className, activeClassName, ...props }) {
-  let resolved = useResolvedPath(to);
-  let match = useMatch({ path: resolved.pathname, end: true });
+  const resolved = useResolvedPath(to);
+  const match = useMatch({ path: resolved.pathname, end: true });
 
   return (
     <Link to={to} className={`${className}${match ? ` ${activeClassName}` : ''}`} {...props}>

@@ -1,0 +1,49 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["react-app" /* from CRA */, "react-app/jest" /* from CRA */, "airbnb"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "plugins": ["import", "react", "@typescript-eslint"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"]
+    }
+  ], // this makes sure that all JS and TS files are linted
+  "rules": {
+    // Note: I use numeric values for marking untested/temporary rules.
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ], // this requires extension to be react-ish for JSX to work
+    "react/jsx-props-no-spreading": "off", // this allows spread syntax in React
+    "react/prop-types": "off", // WHY: prop types are only needed for React Class Components
+    "react/react-in-jsx-scope": "off", // WHY: in modern React, there's no need for React in scope,
+    "react/jsx-one-expression-per-line": 0, // WHY: this rule is not aware of how human-readable are multiple JSX expression on one line in my code.
+
+    "import/prefer-default-export": "off", // WHY: this rule is not aware of my plans to add more exports in the future
+    "import/no-unresolved": 0, // BUG?: this rule thinks that "./App" is unresolved, though it resolves perfectly
+    "import/extensions": 0, // BUG?: This rule errors with paths like "./App", which is perfectly valid
+
+    "max-len": "off", // WHY: I don't see any problem with long lines. Other developers may enable word wrapping in their IDE if they want to. This rule is not aware of my (or even average) screen size, and in "airbnb" config it prevents building (it is an "error"), which is not what I want for a styleguide rule.
+    "operator-linebreak": "off", // WHY: this rule leaves some operators unattended, and is a styleguide rule, so I don't really need it.
+    "no-plusplus": "off", // WHY: never had any problems with ++
+    "no-continue": "off", // WHY: I am perfectly capable of writing stable code with "continue"
+    "object-curly-newline": 0, // A rule from "airbnb" that I don't need for now.
+    "implicit-arrow-linebreak": 0, // A rule from "airbnb" that I don't need for now.
+
+    // Project-specific rules
+    "consistent-return": 0, // in `useEffect()`, I sometimes want an early return if a feature is unsupported or validation fails. It is fair to say though that the `useEffect()` should probably not run at all if the feature that it provides is not supported in the client's browser.
+    "no-console": 0 // this is an open-source project with no commercial code or sensitive data, so there is no problem with leaving console logs in production code.
+  }
+}
