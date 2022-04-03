@@ -1,0 +1,18 @@
+name: CI
+on:
+  - push
+  - pull_request
+
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install dependencies (production)
+        run: npm i --production
+
+      - name: Test
+        run: npm test
