@@ -44,12 +44,12 @@ export default function Portfolio() {
         </a>
       </div>
 
-      {Object.keys(categories).map((category, categoryIndex) => (
-        <article key={categoryIndex}>
+      {Object.keys(categories).map((category) => (
+        <article key={category}>
           <h2 className="portfolio__subtitle">{localization.portfolio[category]}</h2>
           <ul className="portfolio__projects">
-            {categories[category].map((project, projectIndex) => (
-              <Project project={project} key={projectIndex} />
+            {categories[category].map((project) => (
+              <Project project={project} key={project.title} />
             ))}
           </ul>
         </article>

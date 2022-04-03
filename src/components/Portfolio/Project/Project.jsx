@@ -2,7 +2,9 @@ import { useLanguage } from '../../../contexts/LanguageContext';
 
 import './Project.scss';
 
-const project_color_background = 'ddd';
+// eslint-disable-next-line camelcase
+const project_color_background = 'ddd'; // 'ddd' is a value also used in .scss files. Marked it with underscores to remind myself of that.
+// eslint-disable-next-line camelcase
 const projectBadgeStyle = `style=flat-square&color=${project_color_background}&labelColor=${project_color_background}`;
 
 export default function Project({ project }) {

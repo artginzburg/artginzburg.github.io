@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useMemo } from 'react';
 
 import useLocalStorage from '../hooks/useLocalStorage';
 import { languages } from '../languages';
@@ -15,10 +15,10 @@ export function LanguageProvider({ children }) {
 
   const [currentLanguage] = languageState;
 
-  const context = {
+  const context = useMemo(() => ({
     localization: languages[currentLanguage],
     state: languageState,
-  };
+  }), [currentLanguage, languageState]);
 
   return <LanguageContext.Provider value={context}>{children}</LanguageContext.Provider>;
 }

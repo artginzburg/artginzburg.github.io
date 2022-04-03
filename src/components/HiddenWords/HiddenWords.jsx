@@ -156,6 +156,8 @@ const HiddenWords = memo(({ words }) => {
   return (
     <div ref={containerRef} className="hiddenWords">
       {hiddenWords.map((row, rowIndex) => (
+        // TODO? I temporarily have nothing but array index key here.
+        // eslint-disable-next-line react/no-array-index-key
         <p className="hiddenWords__char" key={rowIndex}>
           {row.map((column, columnIndex) => {
             if (column.length === 1) {
@@ -168,6 +170,8 @@ const HiddenWords = memo(({ words }) => {
               <span
                 id={`char-${wordIndex}`}
                 className="hiddenWords__char-active"
+                // TODO? I temporarily have nothing but array index key here.
+                // eslint-disable-next-line react/no-array-index-key
                 key={`${rowIndex}${columnIndex}`}
               >
                 {char}

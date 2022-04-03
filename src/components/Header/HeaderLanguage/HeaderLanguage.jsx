@@ -21,11 +21,15 @@ export default function HeaderLanguage() {
   const [isLanguageSecond, setLanguageSecond] = useState(defaultLanguageSecondState);
 
   function handleHoverEnter(e) {
-    language !== e.target.innerText.toLowerCase() && setLanguageSecond(!defaultLanguageSecondState);
+    if (language !== e.target.innerText.toLowerCase()) {
+      setLanguageSecond(!defaultLanguageSecondState);
+    }
   }
 
   function handleHoverLeave(e) {
-    language !== e.target.innerText.toLowerCase() && setLanguageSecond(defaultLanguageSecondState);
+    if (language !== e.target.innerText.toLowerCase()) {
+      setLanguageSecond(defaultLanguageSecondState);
+    }
   }
 
   // Mixed
@@ -38,6 +42,8 @@ export default function HeaderLanguage() {
 
   return (
     <div {...classNames(['header__language', isLanguageSecond && 'header__language_moved'])}>
+      {/* This button has type, which is defined in `languageButtonProps` */}
+      {/* eslint-disable-next-line react/button-has-type */}
       <button
         {...classNames([
           'header__language-button',
@@ -47,6 +53,8 @@ export default function HeaderLanguage() {
       >
         EN
       </button>
+      {/* This button has type, which is defined in `languageButtonProps` */}
+      {/* eslint-disable-next-line react/button-has-type */}
       <button
         {...classNames([
           'header__language-button',
