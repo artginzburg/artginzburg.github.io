@@ -42,7 +42,7 @@
     "@testing-library/user-event": "^14.0.4",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
-    "@types/react": "^17.0.43",
+    "@types/react": "^18.0.0",
     "@types/react-dom": "^17.0.14",
     "node-sass": "^7.0.1",
     "pace-js": "^1.2.4",
