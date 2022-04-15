@@ -3,7 +3,6 @@ name: auto-merge
 on:
   pull_request:
 
-  workflow_dispatch:
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
