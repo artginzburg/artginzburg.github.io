@@ -15,6 +15,7 @@
     "postbuild": "ln -s index.html build/404.html",
     "lint": "eslint .",
     "test": "react-scripts test",
+    "unused-exports": "npx ts-unused-exports tsconfig.json",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
