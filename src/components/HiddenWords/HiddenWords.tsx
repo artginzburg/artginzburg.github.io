@@ -34,7 +34,7 @@ function insertHiddenWord(word, wordIndex, grid, longestWordLength, length, quan
 
   const wordCharacters = word.split('');
 
-  const result = [];
+  const result = [] as any[];
 
   const initialVerticalCell = randomStartingHeight;
 
@@ -126,12 +126,12 @@ function replaceMatrixCenter(mainMatrix, insertedMatrix) {
   return matrixToReturn;
 }
 
-const HiddenWords = memo(({ words }) => {
+const HiddenWords = memo<{ words: string[] }>(({ words }) => {
   const [width, height] = useWindowSizeThrottled();
 
   const [hiddenWords, setHiddenWords] = useState(initialBoard);
 
-  const containerRef = useRef();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const recalc = useCallback(() => {
     const sizeOfALetter = getSizeOfALetter(containerRef.current);
