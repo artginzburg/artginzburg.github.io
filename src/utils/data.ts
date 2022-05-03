@@ -1,5 +1,6 @@
 import powerchime from '../images/projects/powerchime.png';
 import sudotouchid from '../images/projects/sudotouchid.png';
+import type { languages } from '../languages';
 
 interface Project {
   title: string,
@@ -8,7 +9,7 @@ interface Project {
   year: number,
   link: string,
   category: string,
-  description: Record<'en' | 'ru', string>,
+  description: Record<keyof typeof languages, string>,
   downloads?: string,
   stars?: string,
 }
