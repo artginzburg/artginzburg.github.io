@@ -1,4 +1,6 @@
-export const ru = {
+import type { Language } from './schema';
+
+export const ru: Language = {
   titles: {
     main: 'Разработчик из Москвы',
     portfolio: 'Портфолио Разработчика',
