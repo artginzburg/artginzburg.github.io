@@ -55,6 +55,7 @@ export default function Home() {
           to="/portfolio"
           className="home__description"
           style={{
+            // @ts-expect-error valid CSS variable
             '--typewriter-characters-length': description.length,
           }}
         >
