@@ -1,17 +1,24 @@
 import { createContext, useContext, useMemo } from 'react';
 
 import useLocalStorage from '../hooks/useLocalStorage';
-import { languages } from '../languages';
 
-const defaultLanguage = 'en';
+import { languages, LanguageKey } from '../languages';
+import type { Language } from '../languages/schema';
 
-const LanguageContext = createContext();
+const defaultLanguage: LanguageKey = 'en';
 
-export function LanguageProvider({ children }) {
+type LanguageContextType = {
+  localization: Language;
+  state: [LanguageKey, React.Dispatch<React.SetStateAction<LanguageKey>>];
+}
+
+const LanguageContext = createContext<LanguageContextType>(null as unknown as LanguageContextType);
+
+export function LanguageProvider({ children }: { children: React.ReactFragment }) {
   const languageState = useLocalStorage(
     'language',
-    navigator.language.includes('ru') ? 'ru' : defaultLanguage,
-  );
+    navigator.language.includes('ru') ? 'ru' : defaultLanguage as LanguageKey,
+  ) as LanguageContextType['state'];
 
   const [currentLanguage] = languageState;
 
