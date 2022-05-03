@@ -28,6 +28,7 @@
 
   &__logo {
     height: calc(150px + 5vmin);
+    width: calc(150px + 5vmin); // this fixes width shrinking while image loads
     box-shadow: 0 0 3em 0.5em $global-background;
     border: 3px solid rgba($color: $global-background, $alpha: 0.7);
     border-radius: 100%;
