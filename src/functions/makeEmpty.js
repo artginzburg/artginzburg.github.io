@@ -1,5 +1,5 @@
 function makeEmptyArray(length) {
-  return Array(Math.trunc(length)).fill();
+  return Array(Math.trunc(length)).fill(undefined);
 }
 
 export function makeEmptyMatrix(width, height) {
