@@ -1,4 +1,4 @@
-export function makeEmptyArray(length) {
+function makeEmptyArray(length) {
   return Array(Math.trunc(length)).fill();
 }
 
