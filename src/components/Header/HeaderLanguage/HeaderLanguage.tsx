@@ -37,7 +37,7 @@ export default function HeaderLanguage() {
     onClick: handleLanguageClick,
     onMouseEnter: handleHoverEnter,
     onMouseLeave: handleHoverLeave,
-    type: 'button',
+    type: 'button' as const,
   };
 
   return (
