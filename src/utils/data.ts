@@ -2,7 +2,7 @@ import powerchime from '../images/projects/powerchime.png';
 import sudotouchid from '../images/projects/sudotouchid.png';
 import type { LanguageKey } from '../languages';
 
-interface Project {
+export interface Project {
   title: string,
   subtitle: string,
   image?: string,
