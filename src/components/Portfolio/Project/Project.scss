@@ -69,11 +69,13 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
       border-radius: inherit;
     }
 
-    max-width: 100%;
+    width: 100%;
+    max-width: 100%; // max-width and min-width are not needed if width is specified, though I'm living it here just in case.
     user-select: none;
     border-radius: inherit;
 
     background-color: #000; // visible while image loads
+    color: #000; // visible if the image fails to load (alt text). Combined with the same background, makes alt text invisible.
   }
 
   &__link {
@@ -132,8 +134,13 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
     margin: auto 0;
   }
 
-  &__badges {
-    display: flex;
-    justify-content: space-between;
+  &__badge {
+    &s {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    max-width: 50%;
+    max-height: max-content;
   }
 }

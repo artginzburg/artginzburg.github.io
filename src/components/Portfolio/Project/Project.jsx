@@ -37,12 +37,14 @@ export default function Project({ project }) {
             <img
               src={`${project.downloads}?${projectBadgeStyle}&label=▼`}
               alt={`${project.title} downloads`}
+              className="project__badge"
             />
           )}
           {project.stars && (
             <img
               src={`${project.stars}?${projectBadgeStyle}&label=★`}
               alt={`${project.title} stars`}
+              className="project__badge"
             />
           )}
         </div>
