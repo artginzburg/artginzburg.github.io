@@ -33,11 +33,11 @@ export default function HeaderLanguage() {
   }
 
   // Mixed
-  const languageButtonProps = {
+  const languageButtonProps: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> = {
     onClick: handleLanguageClick,
     onMouseEnter: handleHoverEnter,
     onMouseLeave: handleHoverLeave,
-    type: 'button' as const,
+    type: 'button',
   };
 
   return (
