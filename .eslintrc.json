@@ -39,6 +39,7 @@
     "operator-linebreak": "off", // WHY: this rule leaves some operators unattended, and is a styleguide rule, so I don't really need it.
     "no-plusplus": "off", // WHY: never had any problems with ++
     "no-continue": "off", // WHY: I am perfectly capable of writing stable code with "continue"
+    "no-undef": 0, // e.g. React doesn't have to be defined to be used as a TypeScript namespace
     "object-curly-newline": 0, // A rule from "airbnb" that I don't need for now.
     "implicit-arrow-linebreak": 0, // A rule from "airbnb" that I don't need for now.
 

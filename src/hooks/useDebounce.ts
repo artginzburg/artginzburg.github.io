@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
-export function useDebounce(reactCallback, timeout = 200) {
-  const limiter = useRef();
+export function useDebounce(reactCallback: VoidFunction, timeout = 200) {
+  const limiter = useRef() as React.MutableRefObject<NodeJS.Timeout>;
 
   useEffect(() => {
     clearTimeout(limiter.current);

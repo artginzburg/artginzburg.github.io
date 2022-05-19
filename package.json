@@ -14,16 +14,11 @@
     "build": "react-scripts build",
     "postbuild": "ln -s index.html build/404.html",
     "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
     "test": "react-scripts test",
     "unused-exports": "npx ts-unused-exports tsconfig.json",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [

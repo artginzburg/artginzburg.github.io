@@ -4,6 +4,7 @@ import { useTitle } from '../../hooks/useTitle';
 import { projects, insights, statsUrl } from '../../utils/data';
 
 import Project from './Project/Project';
+import StatsBadge from './StatsBadge/StatsBadge';
 
 import './Portfolio.scss';
 
@@ -19,29 +20,21 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="portfolio">
       <div className="portfolio__stats">
-        <a href="https://github.com/artginzburg" target="_blank" rel="noreferrer">
-          <img
-            src={`https://img.shields.io/badge/dynamic/json?url=${statsUrl}&query=githubDownloads&${statsBadgeStyle}&logo=github&label=${localization.badges.github.downloads}`}
-            alt={localization.badges.github.downloads}
-            className="portfolio__stats-badge"
-          />
-        </a>
-
-        <a href="https://www.npmjs.com/~artginzburg" target="_blank" rel="noreferrer">
-          <img
-            src={`https://img.shields.io/badge/dynamic/json?url=${statsUrl}&query=npmDownloads&${statsBadgeStyle}&logo=npm&label=${localization.badges.npm}`}
-            alt={localization.badges.npm}
-            className="portfolio__stats-badge"
-          />
-        </a>
-
-        <a href="https://github.com/artginzburg" target="_blank" rel="noreferrer">
-          <img
-            src={`https://img.shields.io/github/stars/artginzburg?${statsBadgeStyle}&logo=github&label=${localization.badges.github.stars}`}
-            alt={localization.badges.github.stars}
-            className="portfolio__stats-badge"
-          />
-        </a>
+        <StatsBadge
+          href="https://github.com/artginzburg"
+          src={`https://img.shields.io/badge/dynamic/json?url=${statsUrl}&query=githubDownloads&${statsBadgeStyle}&logo=github&label=${localization.badges.github.downloads}`}
+          alt={localization.badges.github.downloads}
+        />
+        <StatsBadge
+          href="https://www.npmjs.com/~artginzburg"
+          src={`https://img.shields.io/badge/dynamic/json?url=${statsUrl}&query=npmDownloads&${statsBadgeStyle}&logo=npm&label=${localization.badges.npm}`}
+          alt={localization.badges.npm}
+        />
+        <StatsBadge
+          href="https://github.com/artginzburg"
+          src={`https://img.shields.io/github/stars/artginzburg?${statsBadgeStyle}&logo=github&label=${localization.badges.github.stars}`}
+          alt={localization.badges.github.stars}
+        />
       </div>
 
       {Object.keys(categories).map((category) => (

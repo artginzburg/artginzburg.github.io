@@ -7,12 +7,15 @@
       "esnext"
     ],
     "allowJs": true,
+    "checkJs": true, // not from CRA
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "strictNullChecks": true, // not from CRA
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false, // not from CRA
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,

@@ -1,4 +1,5 @@
 import { useLanguage } from '../../../contexts/LanguageContext';
+import type { Project as ProjectType } from '../../../utils/data';
 
 import './Project.scss';
 
@@ -7,7 +8,7 @@ const project_color_background = 'ddd'; // 'ddd' is a value also used in .scss f
 // eslint-disable-next-line camelcase
 const projectBadgeStyle = `style=flat-square&color=${project_color_background}&labelColor=${project_color_background}`;
 
-export default function Project({ project }) {
+export default function Project({ project }: { project: ProjectType }) {
   const {
     state: [language],
   } = useLanguage();
@@ -37,12 +38,14 @@ export default function Project({ project }) {
             <img
               src={`${project.downloads}?${projectBadgeStyle}&label=▼`}
               alt={`${project.title} downloads`}
+              className="project__badge"
             />
           )}
           {project.stars && (
             <img
               src={`${project.stars}?${projectBadgeStyle}&label=★`}
               alt={`${project.title} stars`}
+              className="project__badge"
             />
           )}
         </div>

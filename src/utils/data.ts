@@ -1,7 +1,20 @@
 import powerchime from '../images/projects/powerchime.png';
 import sudotouchid from '../images/projects/sudotouchid.png';
+import type { LanguageKey } from '../languages';
 
-export const projects = [
+export interface Project {
+  title: string,
+  subtitle: string,
+  image?: string,
+  year: number,
+  link: string,
+  category: string,
+  description: Record<LanguageKey, string>,
+  downloads?: string,
+  stars?: string,
+}
+
+export const projects: Project[] = [
   {
     title: '2FA to Tray',
     subtitle: 'Swift & JS',
@@ -179,6 +192,7 @@ export const insights = {
   mustapp: {
     hoursMovies: 595.7,
     hoursSeries: 1000,
+    total: undefined as unknown as number, // TODO think of a better way of defining undefined as number
   },
   steam: {
     // https://steamdb.info/calculator/76561198194789443/
@@ -193,7 +207,10 @@ insights.mustapp.total = insights.mustapp.hoursMovies + insights.mustapp.hoursSe
 
 export const age = {
   birthday: new Date('25 Mar 2002'),
+  ms: undefined as unknown as number,
+  hours: undefined as unknown as number,
 };
+// @ts-expect-error Date is valid for arithmetic operations
 age.ms = new Date() - age.birthday;
 age.hours = age.ms / 1000 / 60 / 60;
 

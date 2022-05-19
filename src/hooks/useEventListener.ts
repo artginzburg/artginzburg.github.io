@@ -1,8 +1,8 @@
 import { useRef, useEffect } from 'react';
 
-export default function useEventListener(eventName, handler, element = window) {
+export default function useEventListener(eventName, handler: Function, element = window) {
   // Create a ref that stores handler
-  const savedHandler = useRef();
+  const savedHandler = useRef(handler);
 
   // Update ref.current value if handler changes.
   // This allows our effect below to always get latest handler ...
