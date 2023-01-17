@@ -1,4 +1,4 @@
-![](https://img.shields.io/github/workflow/status/artginzburg/artginzburg.github.io/Build%20and%20Deploy)
+![](https://img.shields.io/github/actions/workflow/status/artginzburg/artginzburg.github.io/deploy.yml)
 
 # [ginzburg.art](https://ginzburg.art)
 
