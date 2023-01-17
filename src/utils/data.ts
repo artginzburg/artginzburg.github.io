@@ -1,5 +1,6 @@
 import powerchime from '../images/projects/powerchime.png';
 import sudotouchid from '../images/projects/sudotouchid.png';
+import nfotoken from '../images/projects/nfotoken.png';
 import type { LanguageKey } from '../languages';
 
 export interface Project {
@@ -113,6 +114,18 @@ export const projects: Project[] = [
     stars: 'https://img.shields.io/github/stars/artginzburg/wifi-pass',
   },
 
+  {
+    title: 'NFO Token',
+    subtitle: 'React, Tanstack Query, i18next, Vercel',
+    image: nfotoken,
+    year: 2022,
+    link: 'https://nfotoken.com',
+    category: 'frontend',
+    description: {
+      en: 'Landing & Web App for a crypto-investments project',
+      ru: 'Лэндинг и Веб-приложение для криптоинвестиционного проекта',
+    },
+  },
   {
     title: 'Movies Explorer',
     subtitle: 'React Hooks & MongoDB',
