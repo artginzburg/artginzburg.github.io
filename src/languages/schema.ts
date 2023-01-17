@@ -21,6 +21,7 @@ export interface Language {
     frontend: string,
     cli: string,
     apps: string,
+    games: string,
     backend: string,
   },
   badges: {

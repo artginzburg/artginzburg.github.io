@@ -24,6 +24,7 @@ export const ru: Language = {
     frontend: 'Фронтенд',
     cli: 'Консольные утилиты',
     apps: 'Приложения',
+    games: 'Игры',
     backend: 'Бэкенд',
   },
   badges: {

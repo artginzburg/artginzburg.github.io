@@ -46,6 +46,20 @@ export const projects: Project[] = [
   },
 
   {
+    title: 'stack',
+    subtitle: 'TypeScript & React Three Fiber',
+    image: 'https://raw.githubusercontent.com/artginzburg/stack/main/resources/preview.png',
+    year: 2023,
+    link: 'https://ginzburg.art/stack/',
+    category: 'games',
+    description: {
+      en: 'A Web remake of a popular tower stacking game for mobiles.',
+      ru: 'Веб-ремейк популярной игры в стиле "построй башню" для мобильных устройств.',
+    },
+    stars: 'https://img.shields.io/github/stars/artginzburg/stack',
+  },
+
+  {
     title: 'sudo-touchid',
     subtitle: 'Raw Shellscript',
     image: sudotouchid,

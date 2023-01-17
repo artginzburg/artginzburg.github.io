@@ -23,6 +23,7 @@ export const en: Language = {
     frontend: 'Front-end',
     cli: 'CLI',
     apps: 'Apps',
+    games: 'Games',
     backend: 'Back-end',
   },
   badges: {
