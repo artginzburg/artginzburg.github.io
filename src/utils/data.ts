@@ -7,6 +7,7 @@ export interface Project {
   title: string,
   subtitle: string,
   image?: string,
+  isImageIcon?: boolean,
   year: number,
   link: string,
   category: string,
@@ -17,6 +18,21 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'PiPOSS',
+    subtitle: 'Swift & JS',
+    image: 'https://github.com/artginzburg/PiPOSS/blob/main/PiPOSS/Resources/Icon.png?raw=true',
+    isImageIcon: true,
+    year: 2022,
+    link: 'https://github.com/artginzburg/PiPOSS',
+    category: 'apps',
+    description: {
+      en: ' Brings Picture in Picture shortcut and custom button to any video',
+      ru: ' Включает режим "Картинка в картинке" с горячей клавишей и соответствующей кнопкой для любого видео',
+    },
+    downloads: 'https://img.shields.io/github/downloads/artginzburg/PiPOSS/total',
+    stars: 'https://img.shields.io/github/stars/artginzburg/PiPOSS',
+  },
+  {
     title: '2FA to Tray',
     subtitle: 'Swift & JS',
     image:
@@ -25,8 +41,8 @@ export const projects: Project[] = [
     link: 'https://2fatotray.unicornplatform.page',
     category: 'apps',
     description: {
-      en: 'One-time password manager for mac OS, which, despite its simplicity, has almost passed into the daily top of Product Hunt',
-      ru: 'Менеджер одноразовых паролей для macOS, который, несмотря на свою простоту, почти прошёл в ежедневный топ Product Hunt',
+      en: ' One-time password manager for mac OS, which, despite its simplicity, has almost passed into the daily top of Product Hunt',
+      ru: ' Менеджер одноразовых паролей для macOS, который, несмотря на свою простоту, почти прошёл в ежедневный топ Product Hunt',
     },
     downloads: 'https://img.shields.io/github/downloads/artginzburg/2fatotray/total',
     stars: 'https://img.shields.io/github/stars/artginzburg/2fatotray',

@@ -18,8 +18,8 @@ export default function Project({ project }: { project: ProjectType }) {
       <a className="project__link" href={project.link} target="_blank" rel="noreferrer">
         {project.image && (
           <div className="project__image-scroller">
-            <div className="project__image-container">
-              <img className="project__image" src={project.image} alt={project.title} />
+            <div className="project__image-container" style={project.isImageIcon ? { display: 'flex' } : undefined}>
+              <img className="project__image" src={project.image} alt={project.title} style={project.isImageIcon ? { width: '30%', margin: 'auto', backgroundColor: 'transparent' } : undefined} />
             </div>
           </div>
         )}
