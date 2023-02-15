@@ -1,6 +1,7 @@
 import powerchime from '../images/projects/powerchime.png';
 import sudotouchid from '../images/projects/sudotouchid.png';
 import nfotoken from '../images/projects/nfotoken.png';
+import jjdsgn from '../images/projects/jj-dsgn.png';
 import type { LanguageKey } from '../languages';
 
 export interface Project {
@@ -130,6 +131,18 @@ export const projects: Project[] = [
     stars: 'https://img.shields.io/github/stars/artginzburg/wifi-pass',
   },
 
+  {
+    title: 'jj-dsgn',
+    subtitle: 'React, Styled-Components, Framer Motion',
+    image: jjdsgn,
+    year: 2023,
+    link: 'https://jj-dsgn.com',
+    category: 'frontend',
+    description: {
+      en: 'Portfolio for a great product designer',
+      ru: 'Портфолио для отличного продуктового дизайнера',
+    },
+  },
   {
     title: 'NFO Token',
     subtitle: 'React, Tanstack Query, i18next, Vercel',
