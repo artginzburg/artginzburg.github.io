@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.f6e2aff3.css",
-    "main.js": "/static/js/main.28fb93b4.js",
+    "main.js": "/static/js/main.3b5f230b.js",
     "static/js/787.c468f98e.chunk.js": "/static/js/787.c468f98e.chunk.js",
     "static/media/nfotoken.png": "/static/media/nfotoken.51a4f6e6a9ee532e6659.png",
+    "static/media/jj-dsgn.png": "/static/media/jj-dsgn.ddc7ce88c669a622586b.png",
     "static/media/SourceCodePro-Light.ttf": "/static/media/SourceCodePro-Light.122409891594a6f9afc2.ttf",
     "static/media/SourceCodePro-Regular.ttf": "/static/media/SourceCodePro-Regular.70cc7ff27245e82ad414.ttf",
     "static/media/SourceCodePro-Medium.ttf": "/static/media/SourceCodePro-Medium.8502e42c812c53aacf37.ttf",
@@ -14,11 +15,11 @@
     "static/media/powerchime.png": "/static/media/powerchime.88506f7d8ca8b4c407fc.png",
     "index.html": "/index.html",
     "main.f6e2aff3.css.map": "/static/css/main.f6e2aff3.css.map",
-    "main.28fb93b4.js.map": "/static/js/main.28fb93b4.js.map",
+    "main.3b5f230b.js.map": "/static/js/main.3b5f230b.js.map",
     "787.c468f98e.chunk.js.map": "/static/js/787.c468f98e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f6e2aff3.css",
-    "static/js/main.28fb93b4.js"
+    "static/js/main.3b5f230b.js"
   ]
 }
