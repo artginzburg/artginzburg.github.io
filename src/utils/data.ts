@@ -133,7 +133,7 @@ export const projects: Project[] = [
 
   {
     title: 'jj-dsgn',
-    subtitle: 'React, Styled-Components, Framer Motion',
+    subtitle: 'Next.js, Styled-Components, Framer Motion',
     image: jjdsgn,
     year: 2023,
     link: 'https://jj-dsgn.com',
