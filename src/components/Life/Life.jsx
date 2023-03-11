@@ -1,18 +1,44 @@
+import { useEffect, useState } from 'react';
+
 import { shuffle } from '../../functions/shuffle';
 import { humanizeArray } from '../../functions/humanizeArray';
 import { mathRoundRough } from '../../functions/mathRoundRough';
 
-import { insights, age } from '../../utils/data';
+import { insights, age, statsUrl } from '../../utils/data';
 
 import './Life.scss';
 import { useLanguage } from '../../contexts/LanguageContext';
 
-const timeSpent = {
-  films: mathRoundRough((insights.mustapp.total / age.hours) * 100),
-  games: mathRoundRough((insights.steam.hours / age.hours) * 100),
+function getTimeSpentPercents(
+  /** @type {number} */
+  time,
+) {
+  return mathRoundRough((time / age.hours) * 100);
+}
+
+const timeSpentInitial = {
+  films: getTimeSpentPercents(insights.mustapp.total),
+  games: getTimeSpentPercents(insights.steam.hours),
 };
 
+function useTimeSpent() {
+  const [timeSpent, setTimeSpent] = useState(timeSpentInitial);
+
+  useEffect(() => {
+    fetch(statsUrl).then((response) => (response.ok ? response : Promise.reject(response))).then((data) => data.json()).then((jsonData) => {
+      setTimeSpent((prev) => ({
+        ...prev,
+        films: getTimeSpentPercents(jsonData.mustappHours),
+      }));
+    });
+  }, []);
+
+  return timeSpent;
+}
+
 export default function Life() {
+  const timeSpent = useTimeSpent();
+
   const { localization } = useLanguage();
 
   const countriesShuffledHumanized = humanizeArray(

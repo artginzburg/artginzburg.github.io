@@ -246,8 +246,8 @@ export const projects: Project[] = [
 
 export const insights = {
   mustapp: {
-    hoursMovies: 595.7,
-    hoursSeries: 1000,
+    hoursMovies: 657.8,
+    hoursSeries: 1274.5,
     total: undefined as unknown as number, // TODO think of a better way of defining undefined as number
   },
   steam: {
