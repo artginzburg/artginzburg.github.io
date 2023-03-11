@@ -30,7 +30,10 @@ function useTimeSpent() {
         ...prev,
         films: getTimeSpentPercents(jsonData.mustappHours),
       }));
-    });
+    })
+      .catch((response) => {
+        console.warn('Could not fetch movies data from \'stats-fetcher\'', response);
+      });
   }, []);
 
   return timeSpent;
