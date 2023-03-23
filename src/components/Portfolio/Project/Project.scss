@@ -139,8 +139,18 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
       display: flex;
       justify-content: space-between;
     }
-    
+
     max-width: 50%;
     max-height: max-content;
+
+    &-link {
+      display: flex;
+      appearance: none;
+      cursor: pointer;
+      max-width: 50%;
+    }
+    &-link > & {
+      max-width: unset;
+    }
   }
 }

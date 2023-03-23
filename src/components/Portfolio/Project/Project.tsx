@@ -8,6 +8,21 @@ const project_color_background = 'ddd'; // 'ddd' is a value also used in .scss f
 // eslint-disable-next-line camelcase
 const projectBadgeStyle = `style=flat-square&color=${project_color_background}&labelColor=${project_color_background}`;
 
+function getStargazersLinkFromStarsLink(
+  /** @example 'https://img.shields.io/github/stars/artginzburg/PiPOSS' // => https://github.com/artginzburg/PiPOSS/stargazers */
+  starsLink: string,
+) {
+  const splitBySlash = starsLink.split('/');
+  const username = splitBySlash.at(-2)!;
+  const repo = splitBySlash.at(-1)!;
+  return `https://github.com/${username}/${repo}/stargazers` as const;
+}
+
+const openInNewTabProps: JSX.IntrinsicElements['a'] = {
+  rel: 'noreferrer',
+  target: '_blank',
+};
+
 export default function Project({ project }: { project: ProjectType }) {
   const {
     state: [language],
@@ -15,7 +30,7 @@ export default function Project({ project }: { project: ProjectType }) {
 
   return (
     <li className="project">
-      <a className="project__link" href={project.link} target="_blank" rel="noreferrer">
+      <a className="project__link" href={project.link} {...openInNewTabProps}>
         {project.image && (
           <div className="project__image-scroller">
             <div className="project__image-container" style={project.isImageIcon ? { display: 'flex' } : undefined}>
@@ -42,11 +57,13 @@ export default function Project({ project }: { project: ProjectType }) {
             />
           )}
           {project.stars && (
-            <img
-              src={`${project.stars}?${projectBadgeStyle}&label=★`}
-              alt={`${project.title} stars`}
-              className="project__badge"
-            />
+            <a href={getStargazersLinkFromStarsLink(project.stars)} className="project__badge-link" {...openInNewTabProps}>
+              <img
+                src={`${project.stars}?${projectBadgeStyle}&label=★`}
+                alt={`${project.title} stars`}
+                className="project__badge"
+              />
+            </a>
           )}
         </div>
       )}
