@@ -3,16 +3,19 @@
 
 $project-transition-dur: 0.35s;
 
-$portfolio-shadow: -0.06em 0.05em 0 0.05em #aaa;
-$portfolio-shadow-upper: -0.17em 0.12em 0 0.1em #aaa;
-$portfolio-shadow-solid: -0.3em 0.2em 0 0.1em #aaa;
+$portfolio-project-background: #151617;
+$portfolio-project-background-darkened: darken($portfolio-project-background, 2);
 
-$portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
+$portfolio-shadow: -0.06em 0.05em 0 0.05em $portfolio-project-background-darkened;
+$portfolio-shadow-upper: -0.17em 0.12em 0 0.1em $portfolio-project-background-darkened;
+$portfolio-shadow-solid: -0.3em 0.2em 0 0.1em $portfolio-project-background-darkened;
+
+$portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em  darken($portfolio-project-background, 2.5);
 
 .project {
   width: 20em;
 
-  background-color: #ddd;
+  background-color: $portfolio-project-background;
   border-radius: 1em;
   padding: 1em;
 
@@ -27,6 +30,7 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
   transition-duration: $project-transition-dur;
 
   box-shadow: $portfolio-shadow, $portfolio-shadow-upper, $portfolio-shadow-solid;
+  // box-shadow: 0 0 100px darken(#cd8839, 40);
 
   ::selection {
     text-shadow: 0 0 6px #515656, 0 0 20px #5156566b !important;
@@ -50,12 +54,14 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
     &-scroller {
       border-radius: 0.6em;
       transition-duration: $project-transition-dur;
-      transition-property: transform;
+      transition-property: transform, filter;
 
       @media screen and (hover: hover) {
+        filter: grayscale(0.7) brightness(0.7) saturate(4);
         &:hover {
           transition-delay: 0.1s;
           transform: scale(1.33) translateY(-12%);
+          filter: none;
         }
       }
     }
@@ -76,6 +82,8 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
 
     background-color: #000; // visible while image loads
     color: #000; // visible if the image fails to load (alt text). Combined with the same background, makes alt text invisible.
+
+    box-shadow: 0 0 45px #000;
   }
 
   &__link {
@@ -109,6 +117,8 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
     transition-duration: $project-transition-dur;
 
     box-shadow: $portfolio-shadow-inside-solid inset;
+
+    box-shadow: 0 0 50px darken($link-color, 40);
   }
 
   &__title {
@@ -122,12 +132,13 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em #999;
   &__subtitle {
     text-align: center;
     margin: 0;
-    color: #555;
+    color: #cd8839;
+    text-shadow: 0 0 30px #f19226;
   }
 
   &__text {
     margin: 0;
-    color: #000;
+    color: #d9e0e3;
 
     text-align: justify;
 

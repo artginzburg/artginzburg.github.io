@@ -2,7 +2,7 @@
 @import '../../styles/shared';
 
 .hiddenWords {
-  $inactive-color: #0a0a0a; // #222
+  $inactive-color: #0b0b0b; // #222
 
   @mixin glow($index: 0, $shadow-color: #ff3177) {
     $shadow-color: rgba($shadow-color, 0.2);

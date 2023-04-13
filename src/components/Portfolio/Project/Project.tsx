@@ -4,7 +4,7 @@ import type { Project as ProjectType } from '../../../utils/data';
 import './Project.scss';
 
 // eslint-disable-next-line camelcase
-const project_color_background = 'ddd'; // 'ddd' is a value also used in .scss files. Marked it with underscores to remind myself of that.
+const project_color_background = '151617'; // 'ddd' is a value also used in .scss files. Marked it with underscores to remind myself of that.
 // eslint-disable-next-line camelcase
 const projectBadgeStyle = `style=flat-square&color=${project_color_background}&labelColor=${project_color_background}`;
 
