@@ -25,6 +25,7 @@ export interface Language {
     games: string,
     backend: string,
   },
+  /** @deprecated not used right now. May be used later if I add tooltips. */
   badges: {
     npm: string,
     github: {
