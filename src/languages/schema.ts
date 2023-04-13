@@ -11,6 +11,7 @@ export interface Language {
   links: {
     github: string,
     telegram: string,
+    npm: string,
   },
   routes: {
     main: string,

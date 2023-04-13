@@ -14,6 +14,7 @@ export const ru: Language = {
   links: {
     github: 'Код',
     telegram: 'Поработаем?',
+    npm: 'Библиотеки',
   },
   routes: {
     main: 'Арт Гинзбург',

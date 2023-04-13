@@ -56,8 +56,9 @@ export default function Home() {
   );
 }
 
-// TODO localizations
 function HomeGithubButton() {
+  const { localization } = useLanguage();
+
   const statsFetcherData = useStatsFetcherData();
 
   const stargazers = useStargazers('artginzburg', { fallbackData: '<title>stars: 1.2k</title>' });
@@ -77,7 +78,7 @@ function HomeGithubButton() {
       <span className="home__button-icon">
         <FaGithub />
       </span>
-      <p className="home__button-text">Code</p>
+      <p className="home__button-text">{localization.links.github}</p>
 
       <span className="home__button-layer">
         <p className="home__button-text">{statsFetcherData?.githubDownloads}</p>
@@ -88,6 +89,8 @@ function HomeGithubButton() {
 }
 
 function HomeNpmButton() {
+  const { localization } = useLanguage();
+
   const statsFetcherData = useStatsFetcherData();
 
   return (
@@ -100,7 +103,7 @@ function HomeNpmButton() {
       <span className="home__button-icon">
         <FaNpm size={30} />
       </span>
-      <p className="home__button-text">Libraries</p>
+      <p className="home__button-text">{localization.links.npm}</p>
 
       <span className="home__button-layer">
         <p className="home__button-text">{statsFetcherData?.npmDownloads}</p>
