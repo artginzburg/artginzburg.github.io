@@ -11,6 +11,7 @@ import './Home.scss';
 import Portfolio from '../Portfolio/Portfolio';
 import Life from '../Life/Life';
 import { useStatsFetcherData } from '../../queries/statsFetcher';
+import { useStargazers } from '../../queries/stargazers';
 
 const hiddenWords = ['develop', 'software', 'ginzburg'];
 
@@ -59,6 +60,8 @@ export default function Home() {
 function HomeGithubButton() {
   const statsFetcherData = useStatsFetcherData();
 
+  const stargazers = useStargazers('artginzburg', { fallbackData: '<title>stars: 1.2k</title>' });
+
   return (
     <a
       className="home__button"
@@ -68,7 +71,7 @@ function HomeGithubButton() {
     >
       <span className="home__button-layer">
         <FaStar />
-        <p className="home__button-text">1.2k</p>
+        <p className="home__button-text">{stargazers}</p>
       </span>
 
       <span className="home__button-icon">

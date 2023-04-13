@@ -20,9 +20,7 @@ const fallbackData: StatsFetcherData = {
 };
 
 export function useStatsFetcherData(
-  config?:
-    | Partial<PublicConfiguration<StatsFetcherData, any, BareFetcher<StatsFetcherData>>>
-    | undefined,
+  config?: Partial<PublicConfiguration<StatsFetcherData, any, BareFetcher<StatsFetcherData>>>,
 ) {
   const { data } = useSWR<StatsFetcherData>(statsUrl, fetcher, {
     fallbackData,
