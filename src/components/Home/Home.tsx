@@ -19,7 +19,7 @@ export default function Home() {
 
   useTitle(localization.titles.main);
 
-  const description = 'Express.js, MongoDB, React.';
+  const description = 'MERN, T3, Next.js, PostgreSQL, NestJS.';
 
   return (
     <>
