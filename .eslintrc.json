@@ -42,6 +42,7 @@
     "no-undef": 0, // e.g. React doesn't have to be defined to be used as a TypeScript namespace
     "object-curly-newline": 0, // A rule from "airbnb" that I don't need for now.
     "implicit-arrow-linebreak": 0, // A rule from "airbnb" that I don't need for now.
+    "no-use-before-define": ["error", { "functions": false }],
 
     // Project-specific rules
     "consistent-return": 0, // in `useEffect()`, I sometimes want an early return if a feature is unsupported or validation fails. It is fair to say though that the `useEffect()` should probably not run at all if the feature that it provides is not supported in the client's browser.
