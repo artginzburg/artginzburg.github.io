@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
+import type { IconType } from 'react-icons';
 
 import { useLanguage } from '../../contexts/LanguageContext';
 import avatar from '../../images/avatar.jpg';
@@ -28,28 +29,12 @@ export default function Home() {
         <img src={avatar} className="home__logo" alt="avatar" />
         <p className="home__text">{localization.home_text}</p>
         <nav className="home__buttons">
-          <a
-            className="home__button"
-            href="https://github.com/artginzburg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="home__button-icon">
-              <FaGithub />
-            </span>
-            <p className="home__button-text">{localization.links.github}</p>
-          </a>
-          <a
-            className="home__button"
-            href="https://t.me/ginzart"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="home__button-icon">
-              <FaTelegramPlane />
-            </span>
-            <p className="home__button-text">{localization.links.telegram}</p>
-          </a>
+          <HomeButton href="https://github.com/artginzburg" Icon={FaGithub}>
+            {localization.links.github}
+          </HomeButton>
+          <HomeButton href="https://t.me/ginzart" Icon={FaTelegramPlane}>
+            {localization.links.telegram}
+          </HomeButton>
         </nav>
         <Link
           to="/portfolio"
@@ -68,5 +53,21 @@ export default function Home() {
       <Life />
       <Portfolio />
     </>
+  );
+}
+
+function HomeButton({ children, href, Icon }: { children: string; href: string; Icon: IconType }) {
+  return (
+    <a
+      className="home__button"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span className="home__button-icon">
+        <Icon />
+      </span>
+      <p className="home__button-text">{children}</p>
+    </a>
   );
 }
