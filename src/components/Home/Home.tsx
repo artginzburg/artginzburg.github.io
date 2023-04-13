@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaGithub, FaTelegramPlane } from 'react-icons/fa';
-import type { IconType } from 'react-icons';
+import { FaArrowDown, FaGithub, FaNpm, FaStar } from 'react-icons/fa';
 
 import { useLanguage } from '../../contexts/LanguageContext';
 import avatar from '../../images/avatar.jpg';
@@ -29,12 +28,11 @@ export default function Home() {
         <img src={avatar} className="home__logo" alt="avatar" />
         <p className="home__text">{localization.home_text}</p>
         <nav className="home__buttons">
-          <HomeButton href="https://github.com/artginzburg" Icon={FaGithub}>
-            {localization.links.github}
-          </HomeButton>
-          <HomeButton href="https://t.me/ginzart" Icon={FaTelegramPlane}>
+          <HomeGithubButton />
+          {/* <HomeButton href="https://t.me/ginzart" Icon={FaTelegramPlane}>
             {localization.links.telegram}
-          </HomeButton>
+          </HomeButton> */}
+          <HomeNpmButton />
         </nav>
         <Link
           to="/portfolio"
@@ -56,18 +54,49 @@ export default function Home() {
   );
 }
 
-function HomeButton({ children, href, Icon }: { children: string; href: string; Icon: IconType }) {
+function HomeGithubButton() {
   return (
     <a
       className="home__button"
-      href={href}
+      href="https://github.com/artginzburg"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span className="home__button-layer">
+        <FaStar />
+        <p className="home__button-text">1.2k</p>
+      </span>
+
+      <span className="home__button-icon">
+        <FaGithub />
+      </span>
+      <p className="home__button-text">Code</p>
+
+      <span className="home__button-layer">
+        <p className="home__button-text">59312</p>
+        <FaArrowDown />
+      </span>
+    </a>
+  );
+}
+
+function HomeNpmButton() {
+  return (
+    <a
+      className="home__button"
+      href="https://www.npmjs.com/~artginzburg"
       target="_blank"
       rel="noopener noreferrer"
     >
       <span className="home__button-icon">
-        <Icon />
+        <FaNpm size={30} />
       </span>
-      <p className="home__button-text">{children}</p>
+      <p className="home__button-text">Libraries</p>
+
+      <span className="home__button-layer">
+        <p className="home__button-text">9742</p>
+        <FaArrowDown />
+      </span>
     </a>
   );
 }
