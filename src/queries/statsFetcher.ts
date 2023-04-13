@@ -12,8 +12,22 @@ type StatsFetcherData = {
   mustappHours: number;
 };
 
-export function useStatsFetcherData(config?: Partial<PublicConfiguration<StatsFetcherData, any, BareFetcher<StatsFetcherData>>> | undefined) {
-  const { data } = useSWR<StatsFetcherData>(statsUrl, fetcher, config);
+const fallbackData: StatsFetcherData = {
+  githubDownloads: 54298,
+  wakatimeMinutes: 19191,
+  npmDownloads: 9742,
+  mustappHours: 1932.2,
+};
+
+export function useStatsFetcherData(
+  config?:
+    | Partial<PublicConfiguration<StatsFetcherData, any, BareFetcher<StatsFetcherData>>>
+    | undefined,
+) {
+  const { data } = useSWR<StatsFetcherData>(statsUrl, fetcher, {
+    fallbackData,
+    ...config,
+  });
 
   return data;
 }

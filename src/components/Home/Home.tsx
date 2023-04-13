@@ -10,6 +10,7 @@ import HiddenWords from '../HiddenWords/HiddenWords';
 import './Home.scss';
 import Portfolio from '../Portfolio/Portfolio';
 import Life from '../Life/Life';
+import { useStatsFetcherData } from '../../queries/statsFetcher';
 
 const hiddenWords = ['develop', 'software', 'ginzburg'];
 
@@ -54,7 +55,10 @@ export default function Home() {
   );
 }
 
+// TODO localizations
 function HomeGithubButton() {
+  const statsFetcherData = useStatsFetcherData();
+
   return (
     <a
       className="home__button"
@@ -73,7 +77,7 @@ function HomeGithubButton() {
       <p className="home__button-text">Code</p>
 
       <span className="home__button-layer">
-        <p className="home__button-text">59312</p>
+        <p className="home__button-text">{statsFetcherData?.githubDownloads}</p>
         <FaArrowDown />
       </span>
     </a>
@@ -81,6 +85,8 @@ function HomeGithubButton() {
 }
 
 function HomeNpmButton() {
+  const statsFetcherData = useStatsFetcherData();
+
   return (
     <a
       className="home__button"
@@ -94,7 +100,7 @@ function HomeNpmButton() {
       <p className="home__button-text">Libraries</p>
 
       <span className="home__button-layer">
-        <p className="home__button-text">9742</p>
+        <p className="home__button-text">{statsFetcherData?.npmDownloads}</p>
         <FaArrowDown />
       </span>
     </a>
