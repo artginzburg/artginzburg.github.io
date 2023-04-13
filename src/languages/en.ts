@@ -13,6 +13,7 @@ export const en: Language = {
   links: {
     github: 'Code',
     telegram: "Let's work",
+    npm: 'Libraries',
   },
   routes: {
     main: 'Art Ginzburg',

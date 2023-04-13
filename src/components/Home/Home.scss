@@ -196,6 +196,11 @@
 
     display: flex;
     column-gap: 1.5em;
+    // #region adapt to mobiles
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1em;
+    // #endregion
 
     font-size: calc(10px + 1vmin);
   }
@@ -264,6 +269,20 @@
 
     &-text {
       margin: 0;
+    }
+
+    &-layer {
+      display: inline-flex;
+      align-items: center;
+      column-gap: inherit;
+
+      border-radius: inherit;
+      padding: 0.2em 0.5em;
+
+      background-color: #0004;
+      color: darken($color: #fff, $amount: 7%);
+
+      line-height: 100%; // for vertical centering
     }
 
     @mixin home__button-shadow-only {

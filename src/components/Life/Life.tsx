@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { shuffle } from '../../functions/shuffle';
 import { humanizeArray } from '../../functions/humanizeArray';
 import { mathRoundRough } from '../../functions/mathRoundRough';
 
-import { insights, age, statsUrl } from '../../utils/data';
+import { insights, age } from '../../utils/data';
 
 import './Life.scss';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useStatsFetcherData } from '../../queries/statsFetcher';
 
 function getTimeSpentPercents(
   /** @type {number} */
@@ -24,17 +25,9 @@ const timeSpentInitial = {
 function useTimeSpent() {
   const [timeSpent, setTimeSpent] = useState(timeSpentInitial);
 
-  useEffect(() => {
-    fetch(statsUrl).then((response) => (response.ok ? response : Promise.reject(response))).then((data) => data.json()).then((jsonData) => {
-      setTimeSpent((prev) => ({
-        ...prev,
-        films: getTimeSpentPercents(jsonData.mustappHours),
-      }));
-    })
-      .catch((response) => {
-        console.warn('Could not fetch movies data from \'stats-fetcher\'', response);
-      });
-  }, []);
+  useStatsFetcherData({ onSuccess: ((data) => {
+    setTimeSpent((prev) => ({ ...prev, films: getTimeSpentPercents(data.mustappHours) }));
+  }) });
 
   return timeSpent;
 }
