@@ -1,0 +1,80 @@
+@import '../../styles/shared';
+@import '../../styles/colors';
+
+.contacts {
+  margin-inline: 7em; // matches Header
+  margin-bottom: 50px; // matches Portfolio
+  padding-block: 10px;
+  padding-inline: 15px;
+
+  background: linear-gradient(transparent, $portfolio-project-background);
+  border-radius: 20px;
+  border-top: 1px solid hsla(0, 0%, 100%, .15);
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    margin: 3vmin;
+    justify-content: space-around;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+    text-align: center;
+
+    margin-block: 10px;
+    row-gap: 20px;
+
+    &_call-to-action {
+      margin: 0;
+
+      color: $global-text;
+    }
+  }
+
+  &__button {
+    $button-text-color: #fff;
+    $button-background-color: #000;
+
+    @include link-shared;
+
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.3em;
+
+    background-color: $button-background-color;
+    color: $button-text-color;
+
+    box-shadow: $button-background-color 0 0 8px 2px, $button-text-color 0 0 0 inset;
+    border: solid 1.5px;
+    border-color: transparent;
+    border-radius: 100px;
+    padding: 10px 1em;
+
+    transition-duration: 0.4s;
+    transition-property: color, box-shadow, border-color;
+
+    user-select: none;
+
+    &:not(:disabled) {
+      cursor: pointer;
+
+      &:hover {
+        transition-duration: 0.7s;
+
+        color: var(--active-color);
+        box-shadow: 0 0 8px 2px $button-background-color, inset 0 0 20px 20px #121212;
+      }
+
+      &:active {
+        transition-duration: 0.05s;
+
+        border-color: $button-text-color;
+      }
+    }
+  }
+}

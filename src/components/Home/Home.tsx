@@ -10,6 +10,7 @@ import HiddenWords from '../HiddenWords/HiddenWords';
 import './Home.scss';
 import Portfolio from '../Portfolio/Portfolio';
 import Life from '../Life/Life';
+import Contacts from '../Contacts/Contacts';
 import { useStatsFetcherData } from '../../queries/statsFetcher';
 import { useStargazers } from '../../queries/stargazers';
 
@@ -31,9 +32,6 @@ export default function Home() {
         <p className="home__text">{localization.home_text}</p>
         <nav className="home__buttons">
           <HomeGithubButton />
-          {/* <HomeButton href="https://t.me/ginzart" Icon={FaTelegramPlane}>
-            {localization.links.telegram}
-          </HomeButton> */}
           <HomeNpmButton />
         </nav>
         <Link
@@ -52,6 +50,7 @@ export default function Home() {
       </section>
       <Life />
       <Portfolio />
+      <Contacts />
     </>
   );
 }

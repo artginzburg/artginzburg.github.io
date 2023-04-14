@@ -10,6 +10,7 @@ export interface Language {
   },
   links: {
     github: string,
+    /** @deprecated not used */
     telegram: string,
     npm: string,
   },
