@@ -2,6 +2,7 @@ import powerchime from '../images/projects/powerchime.png';
 import sudotouchid from '../images/projects/sudotouchid.png';
 import nfotoken from '../images/projects/nfotoken.png';
 import jjdsgn from '../images/projects/jj-dsgn.png';
+import kryshiIVyshe from '../images/projects/kryshi-i-vyshe.png';
 import type { LanguageKey } from '../languages';
 
 export interface Project {
@@ -131,6 +132,18 @@ export const projects: Project[] = [
     stars: 'https://img.shields.io/github/stars/artginzburg/wifi-pass',
   },
 
+  {
+    title: 'Kryshi i Vyshe',
+    subtitle: 'gRPC, SSR, ISR',
+    image: kryshiIVyshe,
+    year: 2023,
+    link: 'https://concerts.kryshi-i-vyshe.ru',
+    category: 'frontend',
+    description: {
+      en: 'Automatic event listing website for a local event organizer',
+      ru: 'Автоматический список мероприятий для локального организатора',
+    },
+  },
   {
     title: 'jj-dsgn',
     subtitle: 'Next.js, Styled-Components, Framer Motion',
