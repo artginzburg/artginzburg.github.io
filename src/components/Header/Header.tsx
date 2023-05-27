@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithubAlt, FaLinkedinIn } from 'react-icons/fa';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -42,14 +42,14 @@ export default function Header() {
             {...openInNewTabProps}
             className="header__link"
           >
-            <FaLinkedin />
+            <FaLinkedinIn />
           </a>
           <a
             href="https://github.com/artginzburg"
             {...openInNewTabProps}
             className="header__link"
           >
-            <FaGithub />
+            <FaGithubAlt />
           </a>
         </ul>
 
