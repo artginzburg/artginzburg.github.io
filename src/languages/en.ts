@@ -74,6 +74,7 @@ export const en: Language = {
           dates: ' | Jan, 2021 - Oct, 2021',
           faculty: 'Web-Developer ',
           project: 'Portfolio',
+          diploma: 'Diploma',
         },
         ibdp: {
           dates: ' | Sep, 2018 - Jun, 2020',

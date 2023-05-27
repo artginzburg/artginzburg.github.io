@@ -75,6 +75,7 @@ export const ru: Language = {
           dates: ' | янв. 2021 - окт. 2021',
           faculty: 'Веб-разработчик ',
           project: 'Портфолио',
+          diploma: 'Диплом',
         },
         ibdp: {
           dates: ' | сен. 2018 - янв. 2020',

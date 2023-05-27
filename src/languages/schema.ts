@@ -73,6 +73,7 @@ export interface Language {
           dates: string,
           faculty: string,
           project: string,
+          diploma: string,
         },
         ibdp: {
           dates: string,

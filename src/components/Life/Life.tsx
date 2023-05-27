@@ -115,14 +115,24 @@ export default function Life() {
             </p>
             <p>
               {localization.life.texts.education.practicum.faculty}
-              <a
-                href="https://github.com/artginzburg/yandex.praktikum-portfolio"
-                target="_blank"
-                rel="noreferrer"
-                className="life__link life__link_button"
-              >
-                {localization.life.texts.education.practicum.project}
-              </a>
+              <span className="life__links">
+                <a
+                  href="https://github.com/artginzburg/yandex.praktikum-portfolio"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="life__link life__link_button"
+                >
+                  {localization.life.texts.education.practicum.project}
+                </a>
+                <a
+                  href="./education/Praktikum-Diploma.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="life__link life__link_button"
+                >
+                  {localization.life.texts.education.practicum.diploma}
+                </a>
+              </span>
             </p>
           </li>
           <li className="life__text">
