@@ -1,0 +1,16 @@
+.random-facts {
+  &__shuffle {
+    &-container {
+      display: flex;
+      column-gap: 1ch;
+    }
+
+    height: auto;
+
+    fill: #525252;
+
+    &:hover {
+      fill: currentColor;
+    }
+  }
+}

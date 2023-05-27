@@ -34,7 +34,18 @@ export interface Language {
       downloads: string,
     },
   },
+  randomFacts: {
+    title: string,
+    texts: {
+      countries: (humanizedCountries: string) => typeof humanizedCountries,
+      coding: [string, string, string],
+      gaming: [string, string, string],
+      watchingFilms: [string],
+      photos: [string]
+    }
+  },
   countries: [
+    string,
     string,
     string,
     string,
@@ -52,15 +63,6 @@ export interface Language {
     story: string,
     education: string,
     texts: {
-      countries: (humanizedCountries: string) => typeof humanizedCountries,
-      stats: [
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-      ],
       links: {
         steam: string,
         instagram: string,
