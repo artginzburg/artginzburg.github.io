@@ -8,35 +8,28 @@
   right: 0;
   z-index: 1;
 
-  height: 50px;
+  height: 30px;
 
   display: flex;
   justify-content: space-between;
-  padding: 0 7em;
+  padding-inline: 1em;
 
   background: linear-gradient(to top, $header-background, 60%, $global-background);
   backdrop-filter: blur(2px);
 
   box-shadow: 0 0 2em 1em $header-background;
 
-  @media screen and (max-width: $breakpoint-mobile) {
-    padding: 0;
-    justify-content: space-around;
-  }
-
   &__logo {
     @media screen and (max-width: 400px) {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 25vw;
     }
 
     font-size: 1.25rem;
     line-height: 1.75rem;
     text-decoration-line: none;
     color: $global-text;
-    margin: 0.5em 15px;
     letter-spacing: -0.08em;
     font-weight: 300;
 
@@ -67,12 +60,27 @@
   }
 
   &__navigation {
+    padding: 0;
     margin: 0;
-    padding: 0.25em 15px;
-    border-left: 1px solid #525252;
+    padding-inline: 1em;
+    margin-left: 1em;
 
     display: flex;
-    column-gap: 15px;
+    align-items: center;
+    column-gap: 1em;
+
+    $dot-size: 3px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      left: -$dot-size / 2;
+      top: auto;
+      width: $dot-size;
+      height: $dot-size;
+      background-color: #525252;
+      border-radius: 100%;
+    }
   }
 
   &__links {
@@ -85,6 +93,13 @@
     @include link-shared;
 
     color: #999;
+
+    display: flex;
+    width: 18px;
+    > svg {
+      height: 100%;
+      width: 100%;
+    }
 
     @media screen and (hover: hover) {
       &:hover {

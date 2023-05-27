@@ -1,3 +1,4 @@
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -20,6 +21,11 @@ function CustomNavLink({ children, to, className, activeClassName, ...props }) {
 export default function Header() {
   const { localization } = useLanguage();
 
+  const openInNewTabProps: JSX.IntrinsicElements['a'] = {
+    rel: 'noreferrer',
+    target: '_blank',
+  };
+
   return (
     <header className="header">
       <nav className="header__links">
@@ -28,10 +34,25 @@ export default function Header() {
         </CustomNavLink>
 
         <ul className="header__navigation">
-          <CustomNavLink to="/portfolio" className="header__link" activeClassName="header__link_active">
+          {/* <CustomNavLink to="/portfolio" className="header__link" activeClassName="header__link_active">
             {localization.routes.portfolio}
-          </CustomNavLink>
+          </CustomNavLink> */}
+          <a
+            href="https://www.linkedin.com/in/artginzburg/"
+            {...openInNewTabProps}
+            className="header__link"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/artginzburg"
+            {...openInNewTabProps}
+            className="header__link"
+          >
+            <FaGithub />
+          </a>
         </ul>
+
       </nav>
 
       <HeaderLanguage />
