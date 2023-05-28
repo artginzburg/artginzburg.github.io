@@ -20,6 +20,7 @@ export interface Language {
     life: string,
   },
   portfolio: {
+    all: string,
     frontend: string,
     cli: string,
     apps: string,

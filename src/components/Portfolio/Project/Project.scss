@@ -31,6 +31,8 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em  darken($portfolio-project-
   box-shadow: $portfolio-shadow, $portfolio-shadow-upper, $portfolio-shadow-solid;
   // box-shadow: 0 0 100px darken(#cd8839, 40);
 
+  position: relative; // for 'project__kind'
+
   ::selection {
     text-shadow: 0 0 6px #515656, 0 0 20px #5156566b !important;
     background-color: #fff !important;
@@ -162,5 +164,12 @@ $portfolio-shadow-inside-solid: -0.3em 0.2em 0 0.1em  darken($portfolio-project-
     &-link > & {
       max-width: unset;
     }
+  }
+
+  &__kind {
+    position: absolute;
+    bottom: (-20px / 4);
+    right: (-20px / 4);
+    fill: #cd8839;
   }
 }

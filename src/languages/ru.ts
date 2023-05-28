@@ -22,6 +22,7 @@ export const ru: Language = {
     life: 'Лайф',
   },
   portfolio: {
+    all: 'Все',
     frontend: 'Фронтенд',
     cli: 'Консольные утилиты',
     apps: 'Приложения',

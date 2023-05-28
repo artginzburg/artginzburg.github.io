@@ -21,6 +21,7 @@ export const en: Language = {
     life: 'Life',
   },
   portfolio: {
+    all: 'All',
     frontend: 'Front-end',
     cli: 'CLI',
     apps: 'Apps',

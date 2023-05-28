@@ -5,6 +5,19 @@ import jjdsgn from '../images/projects/jj-dsgn.png';
 import kryshiIVyshe from '../images/projects/kryshi-i-vyshe.png';
 import type { LanguageKey } from '../languages';
 
+/** Sorted by level of... importance? */
+// eslint-disable-next-line no-shadow, no-unused-vars
+export enum ProjectKind {
+  // eslint-disable-next-line no-unused-vars
+  Commerce,
+  // eslint-disable-next-line no-unused-vars
+  Initiative,
+  // eslint-disable-next-line no-unused-vars
+  Experiment,
+  // eslint-disable-next-line no-unused-vars
+  Education,
+}
+
 export interface Project {
   title: string,
   subtitle: string,
@@ -16,6 +29,7 @@ export interface Project {
   description: Record<LanguageKey, string>,
   downloads?: string,
   stars?: string,
+  kind: ProjectKind,
 }
 
 export const projects: Project[] = [
@@ -33,6 +47,7 @@ export const projects: Project[] = [
     },
     downloads: 'https://img.shields.io/github/downloads/artginzburg/PiPOSS/total',
     stars: 'https://img.shields.io/github/stars/artginzburg/PiPOSS',
+    kind: ProjectKind.Initiative,
   },
   {
     title: '2FA to Tray',
@@ -48,6 +63,7 @@ export const projects: Project[] = [
     },
     downloads: 'https://img.shields.io/github/downloads/artginzburg/2fatotray/total',
     stars: 'https://img.shields.io/github/stars/artginzburg/2fatotray',
+    kind: ProjectKind.Initiative,
   },
   {
     title: 'MiddleClick',
@@ -62,6 +78,7 @@ export const projects: Project[] = [
     },
     downloads: 'https://img.shields.io/github/downloads/artginzburg/middleclick-catalina/total',
     stars: 'https://img.shields.io/github/stars/artginzburg/middleclick-catalina',
+    kind: ProjectKind.Initiative,
   },
 
   {
@@ -76,6 +93,7 @@ export const projects: Project[] = [
       ru: 'Веб-ремейк популярной игры в стиле "построй башню" для мобильных устройств.',
     },
     stars: 'https://img.shields.io/github/stars/artginzburg/stack',
+    kind: ProjectKind.Initiative,
   },
 
   {
@@ -91,6 +109,7 @@ export const projects: Project[] = [
     },
     downloads: 'https://img.shields.io/github/downloads/artginzburg/sudo-touchid/total',
     stars: 'https://img.shields.io/github/stars/artginzburg/sudo-touchid',
+    kind: ProjectKind.Initiative,
   },
   {
     title: 'barhide',
@@ -104,6 +123,7 @@ export const projects: Project[] = [
     },
     downloads: 'https://img.shields.io/github/downloads/artginzburg/barhide/total',
     stars: 'https://img.shields.io/github/stars/artginzburg/barhide',
+    kind: ProjectKind.Initiative,
   },
   {
     title: 'powerchime',
@@ -118,6 +138,7 @@ export const projects: Project[] = [
     },
     downloads: 'https://img.shields.io/github/downloads/artginzburg/powerchime/total',
     stars: 'https://img.shields.io/github/stars/artginzburg/powerchime',
+    kind: ProjectKind.Initiative,
   },
   {
     title: 'wifi-pass',
@@ -130,6 +151,7 @@ export const projects: Project[] = [
       ru: 'Быстрый шеринг паролей Wi-Fi',
     },
     stars: 'https://img.shields.io/github/stars/artginzburg/wifi-pass',
+    kind: ProjectKind.Experiment,
   },
 
   {
@@ -143,6 +165,7 @@ export const projects: Project[] = [
       en: 'Automatic event listing website for a local event organizer',
       ru: 'Автоматический список мероприятий для локального организатора',
     },
+    kind: ProjectKind.Commerce,
   },
   {
     title: 'jj-dsgn',
@@ -155,10 +178,11 @@ export const projects: Project[] = [
       en: 'Portfolio for a great product designer',
       ru: 'Портфолио для отличного продуктового дизайнера',
     },
+    kind: ProjectKind.Commerce,
   },
   {
     title: 'NFO Token',
-    subtitle: 'React, Tanstack Query, i18next, Vercel',
+    subtitle: 'React, Tanstack Query, i18next, Vercel, Web3',
     image: nfotoken,
     year: 2022,
     link: 'https://nfotoken.com',
@@ -167,6 +191,7 @@ export const projects: Project[] = [
       en: 'Landing & Web App for a crypto-investments project',
       ru: 'Лэндинг и Веб-приложение для криптоинвестиционного проекта',
     },
+    kind: ProjectKind.Commerce,
   },
   {
     title: 'Movies Explorer',
@@ -180,6 +205,7 @@ export const projects: Project[] = [
       en: 'Diploma for 100/100 points while studying at Yandex.Practicum',
       ru: 'Диплом на 100/100 баллов во время обучения в Yandex.Practicum',
     },
+    kind: ProjectKind.Education,
   },
   {
     title: 'Mesto',
@@ -193,6 +219,7 @@ export const projects: Project[] = [
       en: 'The first full-fledged educational React project with authorization (6th course of Yandex.Practicum)',
       ru: 'Первый полноценный учебный React-проект с авторизацией (6-й курс Яндекс.Практикума)',
     },
+    kind: ProjectKind.Education,
   },
   {
     title: 'Travelling in Russia',
@@ -206,6 +233,7 @@ export const projects: Project[] = [
       en: 'Educational project, 2nd course of Yandex.Practicum',
       ru: 'Учебный проект, 2-й курс Яндекс.Практикума',
     },
+    kind: ProjectKind.Education,
   },
   {
     title: 'How to Learn',
@@ -219,6 +247,7 @@ export const projects: Project[] = [
       en: 'Educational project, 1st course of Yandex.Practicum',
       ru: 'Учебный проект, 1-й курс Яндекс.Практикума',
     },
+    kind: ProjectKind.Education,
   },
   {
     title: '3D School Map',
@@ -231,6 +260,7 @@ export const projects: Project[] = [
       en: 'Interactive map of the school building, the first independent frontend project',
       ru: 'Интерактивная карта школьного здания, первый самостоятельный фронтенд-проект',
     },
+    kind: ProjectKind.Initiative,
   },
 
   {
@@ -243,6 +273,7 @@ export const projects: Project[] = [
       en: 'Telegram bot for notifications about takeoffs and landings of private planes',
       ru: 'Телеграм-бот для уведомлений о взлётах и посадках частных самолётов',
     },
+    kind: ProjectKind.Experiment,
   },
   {
     title: 'sigcheck',
@@ -254,6 +285,7 @@ export const projects: Project[] = [
       en: 'Backend of electronic signature verification for NBKI',
       ru: 'Бэкенд проверки электронных подписей для НБКИ',
     },
+    kind: ProjectKind.Commerce,
   },
 ];
 

@@ -1,21 +1,48 @@
 @import '../../styles/colors';
+@import '../../styles/shared';
 
 .portfolio {
   padding: 50px 0;
 
   display: flex;
   flex-direction: column;
+  row-gap: (50px / 2);
   min-height: 100vh;
 
   color: $global-text;
 
   margin: 0 3vmin;
 
-  &__subtitle {
-    color: $global-text;
-    margin: 1em 0;
-    text-align: center;
-    font-weight: 600;
+  &__category-button {
+    &s {
+      display: flex;
+      flex-wrap: wrap;
+
+      margin-inline: auto;
+      justify-content: center;
+
+      gap: 5px;
+    }
+
+    appearance: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    color: inherit;
+
+    padding-inline: 10px;
+    border: 1px solid $portfolio-project-background;
+    border-radius: 10px;
+    font-size: x-large;
+    color: #d9e0e3;
+
+    transition: color 0.3s, transform 0.2s;
+    @extend %default-link-effects;
+
+    &_selected {
+      color: #cd8839;
+    }
   }
 
   &__projects {

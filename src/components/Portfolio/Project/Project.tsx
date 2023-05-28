@@ -1,5 +1,9 @@
+import { BsCoin } from 'react-icons/bs';
+import { FaGraduationCap } from 'react-icons/fa';
+import { AiOutlineExperiment } from 'react-icons/ai';
+
 import { useLanguage } from '../../../contexts/LanguageContext';
-import type { Project as ProjectType } from '../../../utils/data';
+import { ProjectKind, Project as ProjectType } from '../../../utils/data';
 
 import './Project.scss';
 
@@ -67,6 +71,9 @@ export default function Project({ project }: { project: ProjectType }) {
           )}
         </div>
       )}
+      {project.kind === ProjectKind.Commerce ? <BsCoin className="project__kind" size={20} /> : null}
+      {project.kind === ProjectKind.Education ? <FaGraduationCap className="project__kind" size={20} /> : null}
+      {project.kind === ProjectKind.Experiment ? <AiOutlineExperiment className="project__kind" size={20} /> : null}
     </li>
   );
 }
