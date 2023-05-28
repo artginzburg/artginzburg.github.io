@@ -42,8 +42,15 @@
     transition: color 0.3s, transform 0.2s;
     @extend %default-link-effects;
 
+    @media screen and (hover: hover) {
+      &:hover {
+        text-shadow: 0 0 30px #f19226;
+      }
+    }
+
     &_selected {
       color: #cd8839;
+      text-shadow: 0 0 30px #f19226;
     }
   }
 
