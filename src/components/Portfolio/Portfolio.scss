@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import '../../styles/colors';
 @import '../../styles/shared';
 
@@ -6,7 +8,7 @@
 
   display: flex;
   flex-direction: column;
-  row-gap: (50px / 2);
+  row-gap: math.div(50px, 2);
   min-height: 100vh;
 
   color: $global-text;
