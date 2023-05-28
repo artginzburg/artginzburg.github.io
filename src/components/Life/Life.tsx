@@ -10,7 +10,7 @@ export default function Life() {
       <RandomFacts />
       <article>
         <h2 className="life__subtitle">{localization.life.education}</h2>
-        <ul>
+        <ul className="life__list">
           <li className="life__text">
             <p>
               <a
