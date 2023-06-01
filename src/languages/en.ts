@@ -5,7 +5,7 @@ export const en: Language = {
     main: 'Developer from Moscow',
     portfolio: "Developer's portfolio",
   },
-  home_text: 'Arthur, builds impressive yet functional websites, APIs, CLI tools, apps.',
+  home_text: "Hi! I'm Arthur. I build anything that improves the Web for users and developers",
   notFound: {
     subtitle: 'Page not found',
     back: 'Back',
