@@ -56,19 +56,21 @@ export const en: Language = {
   },
   countries: [
     'Bulgaria',
-    'Finland',
-    'Spain',
+    'Finland', // Helsinki
+    'Spain', // Barcelona
     'France',
     'Ukraine',
     'Cyprus',
-    'Italy',
+    'Italy', // Sicily: Taormina, Castelbuono, Cefalù. Italy: Praiano
     'Georgia',
     'Armenia',
     'Thailand',
     'Israel',
-    'Croatia',
-    'Russia',
-    'the Netherlands',
+    'Croatia', // Korčula
+    'Russia', // Saint-Petersburg, Moscow, Nizhny Novgorod, Veliky Novgorod; to be extended (I don't remember that much right now)...
+    'the Netherlands', // Amsterdam, Leeuwarden, Haarlem, Utrecht
+    'the United Arab Emirates', // Dubai, Abu Dhabi
+    'Turkey', // Istanbul
   ],
   life: {
     story: 'Story',

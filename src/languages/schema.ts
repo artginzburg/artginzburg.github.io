@@ -60,6 +60,8 @@ export interface Language {
     string,
     string,
     string,
+    string,
+    string,
   ],
   life: {
     story: string,
