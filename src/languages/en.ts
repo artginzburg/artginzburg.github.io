@@ -68,6 +68,7 @@ export const en: Language = {
     'Israel',
     'Croatia',
     'Russia',
+    'the Netherlands',
   ],
   life: {
     story: 'Story',
