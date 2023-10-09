@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders steam link', () => {
+test('renders github link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/yandex.praсtiсum/i);
+  const linkElement = screen.getByText(/code/i);
   expect(linkElement).toBeDefined();
 });
