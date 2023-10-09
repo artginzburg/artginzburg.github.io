@@ -2,7 +2,7 @@ import type { Language } from './schema';
 
 export const ru: Language = {
   titles: {
-    main: 'Разработчик из Москвы',
+    main: 'Веб-энтузиаст',
     portfolio: 'Портфолио Разработчика',
   },
   home_text:
