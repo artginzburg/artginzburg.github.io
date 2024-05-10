@@ -9,7 +9,7 @@ export function useStargazers(
 ) {
   const { data } = useSWR(`https://img.shields.io/github/stars/${username}`, htmlFetcher, config);
 
-  const match = data?.match(/<title>stars: (?<stars>.*)<\/title>/)?.groups;
+  const match = data?.match(/<title>Stars: (?<stars>.*)<\/title>/i)?.groups;
 
   const stars = match?.stars;
 
